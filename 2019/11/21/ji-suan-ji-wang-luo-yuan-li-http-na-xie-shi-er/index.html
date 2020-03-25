@@ -1,0 +1,1863 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="计算机网络原理-http那些事儿, Dreamcat">
+    <meta name="description" content="あなたが好きです">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>计算机网络原理-http那些事儿 | Dreamcat</title>
+    <link rel="icon" type="image/png" href="http://media.dreamcat.ink/cat.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery.min.js"></script>
+    
+<meta name="generator" content="Hexo 4.2.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="http://media.dreamcat.ink/cat.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">Dreamcat</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>Home</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="" class="waves-effect waves-light">
+
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>Java架构</span>
+      <i class="fas fa-chevron-down" aria-hidden="true" style="zoom: 0.6;"></i>
+    </a>
+    <ul class="sub-nav menus_item_child ">
+      
+      <li>
+        <a href="/categories/java-basic">
+          
+          <i class="fas fa-bookmark" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>基础系列</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/categories/java-coll">
+          
+          <i class="fas fa-bookmark" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>集合系列</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/categories/java-mul">
+          
+          <i class="fas fa-bookmark" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>多线程系列</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/categories/java-jvm">
+          
+          <i class="fas fa-bookmark" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>JVM系列</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/categories/java-db">
+          
+          <i class="fas fa-bookmark" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>数据库系列</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/categories/java-spring">
+          
+          <i class="fas fa-bookmark" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>spring系列</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/categories/java-data">
+          
+          <i class="fas fa-bookmark" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>数据结构系列</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/categories/java-network">
+          
+          <i class="fas fa-bookmark" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>计算机网络系列</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/categories/java-interview">
+          
+          <i class="fas fa-bookmark" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>吐血系列</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/categories/java-front">
+          
+          <i class="fas fa-bookmark" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>前端系列</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/categories/java-other">
+          
+          <i class="fas fa-bookmark" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>其他系列</span>
+        </a>
+      </li>
+      
+    </ul>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="" class="waves-effect waves-light">
+
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>在线网站</span>
+      <i class="fas fa-chevron-down" aria-hidden="true" style="zoom: 0.6;"></i>
+    </a>
+    <ul class="sub-nav menus_item_child ">
+      
+      <li>
+        <a href="http://dreamcat.ink/2019/07/11/shou-ji-chang-yong-de-wang-zhan-chi-xu-geng-xin.../">
+          
+          <i class="fas fa-bookmark" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>常用网站</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="http://dreamcat.ink/2019/03/24/kai-yuan-de-github-xiang-mu-zong-jie/">
+          
+          <i class="fas fa-bookmark" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>开源项目</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="http://dreamcat.ink/2019/06/08/ming-ling-xing-de-qi-yin-ji-qiao/">
+          
+          <i class="fas fa-bookmark" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>常用终端命令</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="http://dreamcat.ink/2020/01/20/github-biao-qing-tu-biao/">
+          
+          <i class="fas fa-bookmark" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>常用表情</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank" rel="noopener">
+          
+          <i class="fas fa-bookmark" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>主题链接</span>
+        </a>
+      </li>
+      
+    </ul>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories/tools" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>常用工具</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>Archives</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>About</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="Search" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="http://media.dreamcat.ink/cat.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">Dreamcat</div>
+        <div class="logo-desc">
+            
+            あなたが好きです
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			Home
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="javascript:;">
+			
+				<i class="fa-fw fas fa-bookmark"></i>
+			
+			Java架构
+			<span class="m-icon"><i class="fas fa-chevron-right"></i></span>
+		</a>
+            <ul  style="background:  ;" >
+              
+                <li>   
+				
+                  <a href="/categories/java-basic " style="margin-left:75px";>
+				  
+				   <i class="fa fas fa-bookmark" style="position: absolute;left:50px" ></i>
+			      
+		          <span>基础系列</span>
+                  </a>
+                </li>
+              
+                <li>   
+				
+                  <a href="/categories/java-coll " style="margin-left:75px";>
+				  
+				   <i class="fa fas fa-bookmark" style="position: absolute;left:50px" ></i>
+			      
+		          <span>集合系列</span>
+                  </a>
+                </li>
+              
+                <li>   
+				
+                  <a href="/categories/java-mul " style="margin-left:75px";>
+				  
+				   <i class="fa fas fa-bookmark" style="position: absolute;left:50px" ></i>
+			      
+		          <span>多线程系列</span>
+                  </a>
+                </li>
+              
+                <li>   
+				
+                  <a href="/categories/java-jvm " style="margin-left:75px";>
+				  
+				   <i class="fa fas fa-bookmark" style="position: absolute;left:50px" ></i>
+			      
+		          <span>JVM系列</span>
+                  </a>
+                </li>
+              
+                <li>   
+				
+                  <a href="/categories/java-db " style="margin-left:75px";>
+				  
+				   <i class="fa fas fa-bookmark" style="position: absolute;left:50px" ></i>
+			      
+		          <span>数据库系列</span>
+                  </a>
+                </li>
+              
+                <li>   
+				
+                  <a href="/categories/java-spring " style="margin-left:75px";>
+				  
+				   <i class="fa fas fa-bookmark" style="position: absolute;left:50px" ></i>
+			      
+		          <span>spring系列</span>
+                  </a>
+                </li>
+              
+                <li>   
+				
+                  <a href="/categories/java-data " style="margin-left:75px";>
+				  
+				   <i class="fa fas fa-bookmark" style="position: absolute;left:50px" ></i>
+			      
+		          <span>数据结构系列</span>
+                  </a>
+                </li>
+              
+                <li>   
+				
+                  <a href="/categories/java-network " style="margin-left:75px";>
+				  
+				   <i class="fa fas fa-bookmark" style="position: absolute;left:50px" ></i>
+			      
+		          <span>计算机网络系列</span>
+                  </a>
+                </li>
+              
+                <li>   
+				
+                  <a href="/categories/java-interview " style="margin-left:75px";>
+				  
+				   <i class="fa fas fa-bookmark" style="position: absolute;left:50px" ></i>
+			      
+		          <span>吐血系列</span>
+                  </a>
+                </li>
+              
+                <li>   
+				
+                  <a href="/categories/java-front " style="margin-left:75px";>
+				  
+				   <i class="fa fas fa-bookmark" style="position: absolute;left:50px" ></i>
+			      
+		          <span>前端系列</span>
+                  </a>
+                </li>
+              
+                <li>   
+				
+                  <a href="/categories/java-other " style="margin-left:75px";>
+				  
+				   <i class="fa fas fa-bookmark" style="position: absolute;left:50px" ></i>
+			      
+		          <span>其他系列</span>
+                  </a>
+                </li>
+               
+            </ul>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="javascript:;">
+			
+				<i class="fa-fw fas fa-bookmark"></i>
+			
+			在线网站
+			<span class="m-icon"><i class="fas fa-chevron-right"></i></span>
+		</a>
+            <ul  style="background:  ;" >
+              
+                <li>   
+				
+                  <a href="http://dreamcat.ink/2019/07/11/shou-ji-chang-yong-de-wang-zhan-chi-xu-geng-xin.../ " style="margin-left:75px";>
+				  
+				   <i class="fa fas fa-bookmark" style="position: absolute;left:50px" ></i>
+			      
+		          <span>常用网站</span>
+                  </a>
+                </li>
+              
+                <li>   
+				
+                  <a href="http://dreamcat.ink/2019/03/24/kai-yuan-de-github-xiang-mu-zong-jie/ " style="margin-left:75px";>
+				  
+				   <i class="fa fas fa-bookmark" style="position: absolute;left:50px" ></i>
+			      
+		          <span>开源项目</span>
+                  </a>
+                </li>
+              
+                <li>   
+				
+                  <a href="http://dreamcat.ink/2019/06/08/ming-ling-xing-de-qi-yin-ji-qiao/ " style="margin-left:75px";>
+				  
+				   <i class="fa fas fa-bookmark" style="position: absolute;left:50px" ></i>
+			      
+		          <span>常用终端命令</span>
+                  </a>
+                </li>
+              
+                <li>   
+				
+                  <a href="http://dreamcat.ink/2020/01/20/github-biao-qing-tu-biao/ " style="margin-left:75px";>
+				  
+				   <i class="fa fas fa-bookmark" style="position: absolute;left:50px" ></i>
+			      
+		          <span>常用表情</span>
+                  </a>
+                </li>
+              
+                <li>   
+				
+                  <a href="https://github.com/blinkfox/hexo-theme-matery " target="_blank" rel="noopener" style="margin-left:75px";>
+				  
+				   <i class="fa fas fa-bookmark" style="position: absolute;left:50px" ></i>
+			      
+		          <span>主题链接</span>
+                  </a>
+                </li>
+               
+            </ul>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories/tools" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			常用工具
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			Archives
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			About
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/Dreamcats" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/Dreamcats" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/3.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">计算机网络原理-http那些事儿</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        height: calc(100vh - 250px);
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #toc-content .is-active-link::before {
+        background-color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">
+                                <span class="chip bg-color">计算机网络</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/java-network/" class="post-category">
+                                java-network
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>Publish Date:&nbsp;&nbsp;
+                    2019-11-21
+                </div>
+                
+
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
+                    4.5k
+                </div>
+                
+
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>Read Count:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+
+        </div>
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h2 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h2><blockquote>
+<p>想必大家都用过浏览器吧？</p>
+<p>在浏览器上输入url，居然能渲染出这么多信息，是不是感觉好6呀？</p>
+<p>本文简单聊一下http，当然面试的时候也会经常问这种类型相关的题。</p>
+</blockquote>
+<a id="more"></a>
+
+<h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><ul>
+<li>URI：Uniform Resource Identifier:统一资源标识符</li>
+<li>URL：Uniform Resource Locator:统一资源定位符，eg：<a href="https://www.baidu.com" target="_blank" rel="noopener">https://www.baidu.com</a></li>
+<li>URN：Uniform Resource Name:统一资源名称</li>
+</ul>
+<h3 id="请求和响应报文"><a href="#请求和响应报文" class="headerlink" title="请求和响应报文"></a>请求和响应报文</h3><h4 id="请求报文"><a href="#请求报文" class="headerlink" title="请求报文"></a>请求报文</h4><p>简单来说：</p>
+<ul>
+<li>请求行：Request Line</li>
+<li>请求头：Request Headers</li>
+<li>请求体：Request Body</li>
+</ul>
+<h4 id="响应报文"><a href="#响应报文" class="headerlink" title="响应报文"></a>响应报文</h4><p>简单来说：</p>
+<ul>
+<li>状态行：Status Line</li>
+<li>响应头：Response Headers</li>
+<li>响应体：Response Body</li>
+</ul>
+<h2 id="HTTP方法"><a href="#HTTP方法" class="headerlink" title="HTTP方法"></a>HTTP方法</h2><p>客户端发送的  <strong>请求报文</strong> 第一行为请求行，包含了方法字段。</p>
+<h3 id="GET"><a href="#GET" class="headerlink" title="GET"></a>GET</h3><blockquote>
+<p>获取资源</p>
+</blockquote>
+<p>当前网络请求中，绝大部分使用的是 GET 方法。</p>
+<h3 id="HEAD"><a href="#HEAD" class="headerlink" title="HEAD"></a>HEAD</h3><blockquote>
+<p>获取报文头部</p>
+</blockquote>
+<p>和 GET 方法类似，但是不返回报文实体主体部分。</p>
+<p>主要用于确认 URL 的有效性以及资源更新的日期时间等。</p>
+<h3 id="POST"><a href="#POST" class="headerlink" title="POST"></a>POST</h3><blockquote>
+<p>传输实体主体</p>
+</blockquote>
+<p>POST 主要用来传输数据，而 GET 主要用来获取资源。</p>
+<p>更多 POST 与 GET 的比较见后</p>
+<h3 id="PUT"><a href="#PUT" class="headerlink" title="PUT"></a>PUT</h3><blockquote>
+<p>上传文件</p>
+</blockquote>
+<p>由于自身不带验证机制，任何人都可以上传文件，因此存在安全性问题，一般不使用该方法。</p>
+<h3 id="PATCH"><a href="#PATCH" class="headerlink" title="PATCH"></a>PATCH</h3><blockquote>
+<p>对资源进行部分修改</p>
+</blockquote>
+<p>PUT 也可以用于修改资源，但是只能完全替代原始资源，PATCH 允许部分修改。</p>
+<h3 id="DELETE"><a href="#DELETE" class="headerlink" title="DELETE"></a>DELETE</h3><blockquote>
+<p>删除文件</p>
+</blockquote>
+<p>与 PUT 功能相反，并且同样不带验证机制。</p>
+<h3 id="OPTIONS"><a href="#OPTIONS" class="headerlink" title="OPTIONS"></a>OPTIONS</h3><blockquote>
+<p>查询支持的方法</p>
+</blockquote>
+<p>查询指定的 URL 能够支持的方法。</p>
+<p>会返回 <code>Allow: GET, POST, HEAD, OPTIONS</code> 这样的内容。</p>
+<h3 id="CONNECT"><a href="#CONNECT" class="headerlink" title="CONNECT"></a>CONNECT</h3><blockquote>
+<p>要求在与代理服务器通信时建立隧道</p>
+</blockquote>
+<p>使用 SSL（Secure Sockets Layer，安全套接层）和 TLS（Transport Layer Security，传输层安全）协议把通信内容加密后经网络隧道传输。</p>
+<h2 id="HTTP状态码"><a href="#HTTP状态码" class="headerlink" title="HTTP状态码"></a>HTTP状态码</h2><p>服务器返回的  <strong>响应报文</strong> 中第一行为状态行，包含了状态码以及原因短语，用来告知客户端请求的结果。</p>
+<table>
+<thead>
+<tr>
+<th align="center">状态码</th>
+<th align="center">类别</th>
+<th align="center">含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">1XX</td>
+<td align="center">Informational（信息性状态码）</td>
+<td align="center">接收的请求正在处理</td>
+</tr>
+<tr>
+<td align="center">2XX</td>
+<td align="center">Success（成功状态码）</td>
+<td align="center">请求正常处理完毕</td>
+</tr>
+<tr>
+<td align="center">3XX</td>
+<td align="center">Redirection（重定向状态码）</td>
+<td align="center">需要进行附加操作以完成请求</td>
+</tr>
+<tr>
+<td align="center">4XX</td>
+<td align="center">Client Error（客户端错误状态码）</td>
+<td align="center">服务器无法处理请求</td>
+</tr>
+<tr>
+<td align="center">5XX</td>
+<td align="center">Server Error（服务器错误状态码）</td>
+<td align="center">服务器处理请求出错</td>
+</tr>
+</tbody></table>
+<h3 id="1XX-信息"><a href="#1XX-信息" class="headerlink" title="1XX 信息"></a>1XX 信息</h3><ul>
+<li><strong>100 Continue</strong> ：表明到目前为止都很正常，客户端可以继续发送请求或者忽略这个响应。</li>
+</ul>
+<h3 id="2XX-成功"><a href="#2XX-成功" class="headerlink" title="2XX 成功"></a>2XX 成功</h3><ul>
+<li><strong>200 OK</strong></li>
+<li><strong>204 No Content</strong> ：请求已经成功处理，但是返回的响应报文不包含实体的主体部分。一般在只需要从客户端往服务器发送信息，而不需要返回数据时使用。</li>
+<li><strong>206 Partial Content</strong> ：表示客户端进行了范围请求，响应报文包含由 Content-Range 指定范围的实体内容。</li>
+</ul>
+<h3 id="3XX-重定向"><a href="#3XX-重定向" class="headerlink" title="3XX 重定向"></a>3XX 重定向</h3><ul>
+<li><strong>301 Moved Permanently</strong> ：永久性重定向</li>
+<li><strong>302 Found</strong> ：临时性重定向</li>
+<li><strong>303 See Other</strong> ：和 302 有着相同的功能，但是 303 明确要求客户端应该采用 GET 方法获取资源。</li>
+<li><strong>304 Not Modified</strong> ：如果请求报文首部包含一些条件，例如：If-Match，If-Modified-Since，If-None-Match，If-Range，If-Unmodified-Since，如果不满足条件，则服务器会返回 304 状态码。</li>
+<li><strong>307 Temporary Redirect</strong> ：临时重定向，与 302 的含义类似，但是 307 要求浏览器不会把重定向请求的 POST 方法改成 GET 方法。</li>
+</ul>
+<h3 id="4XX-客户端错误"><a href="#4XX-客户端错误" class="headerlink" title="4XX 客户端错误"></a>4XX 客户端错误</h3><ul>
+<li><strong>400 Bad Request</strong> ：请求报文中存在语法错误。</li>
+<li><strong>401 Unauthorized</strong> ：该状态码表示发送的请求需要有认证信息（BASIC 认证、DIGEST 认证）。如果之前已进行过一次请求，则表示用户认证失败。</li>
+<li><strong>403 Forbidden</strong> ：请求被拒绝。</li>
+<li><strong>404 Not Found</strong></li>
+</ul>
+<h3 id="5XX-服务器错误"><a href="#5XX-服务器错误" class="headerlink" title="5XX 服务器错误"></a>5XX 服务器错误</h3><ul>
+<li><strong>500 Internal Server Error</strong> ：服务器正在执行请求时发生错误。</li>
+<li><strong>503 Service Unavailable</strong> ：服务器暂时处于超负载或正在进行停机维护，现在无法处理请求。</li>
+</ul>
+<h2 id="HTTP首部"><a href="#HTTP首部" class="headerlink" title="HTTP首部"></a>HTTP首部</h2><p>有 4 种类型的首部字段：通用首部字段、请求首部字段、响应首部字段和实体首部字段。</p>
+<p>各种首部字段及其含义如下（<strong>不需要全记，仅供查阅）：</strong></p>
+<h3 id="通用首部字段"><a href="#通用首部字段" class="headerlink" title="通用首部字段"></a>通用首部字段</h3><table>
+<thead>
+<tr>
+<th align="center">首部字段名</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">Cache-Control</td>
+<td align="center">控制缓存的行为</td>
+</tr>
+<tr>
+<td align="center">Connection</td>
+<td align="center">控制不再转发给代理的首部字段、管理持久连接</td>
+</tr>
+<tr>
+<td align="center">Date</td>
+<td align="center">创建报文的日期时间</td>
+</tr>
+<tr>
+<td align="center">Pragma</td>
+<td align="center">报文指令</td>
+</tr>
+<tr>
+<td align="center">Trailer</td>
+<td align="center">报文末端的首部一览</td>
+</tr>
+<tr>
+<td align="center">Transfer-Encoding</td>
+<td align="center">指定报文主体的传输编码方式</td>
+</tr>
+<tr>
+<td align="center">Upgrade</td>
+<td align="center">升级为其他协议</td>
+</tr>
+<tr>
+<td align="center">Via</td>
+<td align="center">代理服务器的相关信息</td>
+</tr>
+<tr>
+<td align="center">Warning</td>
+<td align="center">错误通知</td>
+</tr>
+</tbody></table>
+<h3 id="请求首部字段"><a href="#请求首部字段" class="headerlink" title="请求首部字段"></a>请求首部字段</h3><table>
+<thead>
+<tr>
+<th align="center">首部字段名</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">Accept</td>
+<td align="center">用户代理可处理的媒体类型</td>
+</tr>
+<tr>
+<td align="center">Accept-Charset</td>
+<td align="center">优先的字符集</td>
+</tr>
+<tr>
+<td align="center">Accept-Encoding</td>
+<td align="center">优先的内容编码</td>
+</tr>
+<tr>
+<td align="center">Accept-Language</td>
+<td align="center">优先的语言（自然语言）</td>
+</tr>
+<tr>
+<td align="center">Authorization</td>
+<td align="center">Web 认证信息</td>
+</tr>
+<tr>
+<td align="center">Expect</td>
+<td align="center">期待服务器的特定行为</td>
+</tr>
+<tr>
+<td align="center">From</td>
+<td align="center">用户的电子邮箱地址</td>
+</tr>
+<tr>
+<td align="center">Host</td>
+<td align="center">请求资源所在服务器</td>
+</tr>
+<tr>
+<td align="center">If-Match</td>
+<td align="center">比较实体标记（ETag）</td>
+</tr>
+<tr>
+<td align="center">If-Modified-Since</td>
+<td align="center">比较资源的更新时间</td>
+</tr>
+<tr>
+<td align="center">If-None-Match</td>
+<td align="center">比较实体标记（与 If-Match 相反）</td>
+</tr>
+<tr>
+<td align="center">If-Range</td>
+<td align="center">资源未更新时发送实体 Byte 的范围请求</td>
+</tr>
+<tr>
+<td align="center">If-Unmodified-Since</td>
+<td align="center">比较资源的更新时间（与 If-Modified-Since 相反）</td>
+</tr>
+<tr>
+<td align="center">Max-Forwards</td>
+<td align="center">最大传输逐跳数</td>
+</tr>
+<tr>
+<td align="center">Proxy-Authorization</td>
+<td align="center">代理服务器要求客户端的认证信息</td>
+</tr>
+<tr>
+<td align="center">Range</td>
+<td align="center">实体的字节范围请求</td>
+</tr>
+<tr>
+<td align="center">Referer</td>
+<td align="center">对请求中 URI 的原始获取方</td>
+</tr>
+<tr>
+<td align="center">TE</td>
+<td align="center">传输编码的优先级</td>
+</tr>
+<tr>
+<td align="center">User-Agent</td>
+<td align="center">HTTP 客户端程序的信息</td>
+</tr>
+</tbody></table>
+<h3 id="响应首部字段"><a href="#响应首部字段" class="headerlink" title="响应首部字段"></a>响应首部字段</h3><table>
+<thead>
+<tr>
+<th align="center">首部字段名</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">Accept-Ranges</td>
+<td align="center">是否接受字节范围请求</td>
+</tr>
+<tr>
+<td align="center">Age</td>
+<td align="center">推算资源创建经过时间</td>
+</tr>
+<tr>
+<td align="center">ETag</td>
+<td align="center">资源的匹配信息</td>
+</tr>
+<tr>
+<td align="center">Location</td>
+<td align="center">令客户端重定向至指定 URI</td>
+</tr>
+<tr>
+<td align="center">Proxy-Authenticate</td>
+<td align="center">代理服务器对客户端的认证信息</td>
+</tr>
+<tr>
+<td align="center">Retry-After</td>
+<td align="center">对再次发起请求的时机要求</td>
+</tr>
+<tr>
+<td align="center">Server</td>
+<td align="center">HTTP 服务器的安装信息</td>
+</tr>
+<tr>
+<td align="center">Vary</td>
+<td align="center">代理服务器缓存的管理信息</td>
+</tr>
+<tr>
+<td align="center">WWW-Authenticate</td>
+<td align="center">服务器对客户端的认证信息</td>
+</tr>
+</tbody></table>
+<h3 id="实体首部字段"><a href="#实体首部字段" class="headerlink" title="实体首部字段"></a>实体首部字段</h3><table>
+<thead>
+<tr>
+<th align="center">首部字段名</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">Allow</td>
+<td align="center">资源可支持的 HTTP 方法</td>
+</tr>
+<tr>
+<td align="center">Content-Encoding</td>
+<td align="center">实体主体适用的编码方式</td>
+</tr>
+<tr>
+<td align="center">Content-Language</td>
+<td align="center">实体主体的自然语言</td>
+</tr>
+<tr>
+<td align="center">Content-Length</td>
+<td align="center">实体主体的大小</td>
+</tr>
+<tr>
+<td align="center">Content-Location</td>
+<td align="center">替代对应资源的 URI</td>
+</tr>
+<tr>
+<td align="center">Content-MD5</td>
+<td align="center">实体主体的报文摘要</td>
+</tr>
+<tr>
+<td align="center">Content-Range</td>
+<td align="center">实体主体的位置范围</td>
+</tr>
+<tr>
+<td align="center">Content-Type</td>
+<td align="center">实体主体的媒体类型</td>
+</tr>
+<tr>
+<td align="center">Expires</td>
+<td align="center">实体主体过期的日期时间</td>
+</tr>
+<tr>
+<td align="center">Last-Modified</td>
+<td align="center">资源的最后修改日期时间</td>
+</tr>
+</tbody></table>
+<h2 id="具体应用"><a href="#具体应用" class="headerlink" title="具体应用"></a>具体应用</h2><p>举一点例子即可</p>
+<h3 id="Cookies"><a href="#Cookies" class="headerlink" title="Cookies"></a>Cookies</h3><p>HTTP 协议是无状态的，主要是为了让 HTTP 协议尽可能简单，使得它能够处理大量事务。HTTP/1.1 引入 Cookie 来保存状态信息。</p>
+<p>Cookie 是服务器发送到用户浏览器并保存在本地的一小块数据，它会在浏览器之后向同一服务器再次发起请求时被携带上，用于告知服务端两个请求是否来自同一浏览器。由于之后每次请求都会需要携带 Cookie 数据，因此会带来额外的性能开销（尤其是在移动环境下）。</p>
+<p>Cookie 曾一度用于客户端数据的存储，因为当时并没有其它合适的存储办法而作为唯一的存储手段，但现在随着现代浏览器开始支持各种各样的存储方式，Cookie 渐渐被淘汰。新的浏览器 API 已经允许开发者直接将数据存储到本地，如使用 Web storage API（本地存储和会话存储）或 IndexedDB。</p>
+<p><strong>用途</strong></p>
+<ul>
+<li>会话状态管理（如用户登录状态、购物车、游戏分数或其它需要记录的信息）</li>
+<li>个性化设置（如用户自定义设置、主题等）</li>
+<li>浏览器行为跟踪（如跟踪分析用户行为等）</li>
+</ul>
+<h3 id="Session"><a href="#Session" class="headerlink" title="Session"></a>Session</h3><p>除了可以将用户信息通过 Cookie 存储在用户浏览器中，也可以利用 Session 存储在服务器端，存储在服务器端的信息更加安全。</p>
+<p>Session 可以存储在服务器上的文件、数据库或者内存中。也可以将 Session 存储在 Redis 这种内存型数据库中，效率会更高。</p>
+<p>使用 Session 维护用户登录状态的过程如下：</p>
+<ul>
+<li>用户进行登录时，用户提交包含用户名和密码的表单，放入 HTTP 请求报文中；</li>
+<li>服务器验证该用户名和密码，如果正确则把用户信息存储到 Redis 中，它在 Redis 中的 Key 称为 Session ID；</li>
+<li>服务器返回的响应报文的 Set-Cookie 首部字段包含了这个 Session ID，客户端收到响应报文之后将该 Cookie 值存入浏览器中；</li>
+<li>客户端之后对同一个服务器进行请求时会包含该 Cookie 值，服务器收到之后提取出 Session ID，从 Redis 中取出用户信息，继续之前的业务操作。</li>
+</ul>
+<p>应该注意 Session ID 的安全性问题，不能让它被恶意攻击者轻易获取，那么就不能产生一个容易被猜到的 Session ID 值。此外，还需要经常重新生成 Session ID。在对安全性要求极高的场景下，例如转账等操作，除了使用 Session 管理用户状态之外，还需要对用户进行重新验证，比如重新输入密码，或者使用短信验证码等方式。</p>
+<h3 id="Cookie与Session选择"><a href="#Cookie与Session选择" class="headerlink" title="Cookie与Session选择"></a>Cookie与Session选择</h3><ul>
+<li>Cookie 只能存储 ASCII 码字符串，而 Session 则可以存储任何类型的数据，因此在考虑数据复杂性时首选 Session；</li>
+<li>Cookie 存储在浏览器中，容易被恶意查看。如果非要将一些隐私数据存在 Cookie 中，可以将 Cookie 值进行加密，然后在服务器进行解密；</li>
+<li>对于大型网站，如果用户所有的信息都存储在 Session 中，那么开销是非常大的，因此不建议将所有的用户信息都存储到 Session 中。</li>
+</ul>
+<h2 id="HTTPS"><a href="#HTTPS" class="headerlink" title="HTTPS"></a>HTTPS</h2><p>HTTP 有以下安全性问题：</p>
+<ul>
+<li>使用明文进行通信，内容可能会被窃听；</li>
+<li>不验证通信方的身份，通信方的身份有可能遭遇伪装；</li>
+<li>无法证明报文的完整性，报文有可能遭篡改。</li>
+</ul>
+<p>HTTPS 并不是新协议，而是让 HTTP 先和 SSL（Secure Sockets Layer）通信，再由 SSL 和 TCP 通信，也就是说 HTTPS 使用了隧道进行通信。</p>
+<p>通过使用 SSL，HTTPS 具有了加密（防窃听）、认证（防伪装）和完整性保护（防篡改）。</p>
+<h3 id="加密"><a href="#加密" class="headerlink" title="加密"></a>加密</h3><h4 id="对称密钥加密"><a href="#对称密钥加密" class="headerlink" title="对称密钥加密"></a>对称密钥加密</h4><p>对称密钥加密（Symmetric-Key Encryption），加密和解密使用同一密钥。</p>
+<ul>
+<li>优点：运算速度快</li>
+<li>缺点：无法安全地将密钥传输给通信方</li>
+</ul>
+<h4 id="非对称密钥加密"><a href="#非对称密钥加密" class="headerlink" title="非对称密钥加密"></a>非对称密钥加密</h4><p>非对称密钥加密，又称公开密钥加密（Public-Key Encryption），加密和解密使用不同的密钥。</p>
+<p>公开密钥所有人都可以获得，通信发送方获得接收方的公开密钥之后，就可以使用公开密钥进行加密，接收方收到通信内容后使用私有密钥解密。</p>
+<p>非对称密钥除了用来加密，还可以用来进行签名。因为私有密钥无法被其他人获取，因此通信发送方使用其私有密钥进行签名，通信接收方使用发送方的公开密钥对签名进行解密，就能判断这个签名是否正确。</p>
+<ul>
+<li>优点：可以更安全地将公开密钥传输给通信发送方；</li>
+<li>缺点：运算速度慢。</li>
+</ul>
+<h3 id="HTTPS采用的加密方式"><a href="#HTTPS采用的加密方式" class="headerlink" title="HTTPS采用的加密方式"></a>HTTPS采用的加密方式</h3><p>HTTPS 采用混合的加密机制，使用非对称密钥加密用于传输对称密钥来保证传输过程的安全性，之后使用对称密钥加密进行通信来保证通信过程的效率。</p>
+<p>确保传输安全过程（其实就是rsa原理）：</p>
+<ol>
+<li>Client给出协议版本号、一个客户端生成的随机数（Client random），以及客户端支持的加密方法。</li>
+<li>Server确认双方使用的加密方法，并给出数字证书、以及一个服务器生成的随机数（Server random）。</li>
+<li>Client确认数字证书有效，然后生成呀一个新的随机数（Premaster secret），并使用数字证书中的公钥，加密这个随机数，发给Server。</li>
+<li>Server使用自己的私钥，获取Client发来的随机数（Premaster secret）。</li>
+<li>Client和Server根据约定的加密方法，使用前面的三个随机数，生成”对话密钥”（session key），用来加密接下来的整个对话过程。</li>
+</ol>
+<p><img src="https://raw.githubusercontent.com/DreamCats/PicBed/master/20191121192634.png" alt=""></p>
+<h3 id="认证"><a href="#认证" class="headerlink" title="认证"></a>认证</h3><p>通过使用  <strong>证书</strong> 来对通信方进行认证。</p>
+<p>数字证书认证机构（CA，Certificate Authority）是客户端与服务器双方都可信赖的第三方机构。</p>
+<p>服务器的运营人员向 CA 提出公开密钥的申请，CA 在判明提出申请者的身份之后，会对已申请的公开密钥做数字签名，然后分配这个已签名的公开密钥，并将该公开密钥放入公开密钥证书后绑定在一起。</p>
+<p>进行 HTTPS 通信时，服务器会把证书发送给客户端。客户端取得其中的公开密钥之后，先使用数字签名进行验证，如果验证通过，就可以开始通信了。</p>
+<h3 id="HTTPS的缺点"><a href="#HTTPS的缺点" class="headerlink" title="HTTPS的缺点"></a>HTTPS的缺点</h3><ul>
+<li>因为需要进行加密解密等过程，因此速度会更慢；</li>
+<li>需要支付证书授权的高额费用。</li>
+</ul>
+<h2 id="HTTP几个问题"><a href="#HTTP几个问题" class="headerlink" title="HTTP几个问题"></a>HTTP几个问题</h2><h3 id="代浏览器在与服务器建立了一个-TCP-连接后是否会在一个-HTTP-请求完成后断开？什么情况下会断开？"><a href="#代浏览器在与服务器建立了一个-TCP-连接后是否会在一个-HTTP-请求完成后断开？什么情况下会断开？" class="headerlink" title="代浏览器在与服务器建立了一个 TCP 连接后是否会在一个 HTTP 请求完成后断开？什么情况下会断开？"></a><strong>代浏览器在与服务器建立了一个 TCP 连接后是否会在一个 HTTP 请求完成后断开？什么情况下会断开？</strong></h3><p>在 HTTP/1.0 中，一个服务器在发送完一个 HTTP 响应后，会断开 TCP 链接。但是这样每次请求都会重新建立和断开 TCP 连接，代价过大。所以虽然标准中没有设定，某些服务器对 Connection: keep-alive 的 Header 进行了支持。意思是说，完成这个 HTTP 请求之后，不要断开 HTTP 请求使用的 TCP 连接。这样的好处是连接可以被重新使用，之后发送 HTTP 请求的时候不需要重新建立 TCP 连接，以及如果维持连接，那么 SSL 的开销也可以避免。</p>
+<p>持久连接：既然维持 TCP 连接好处这么多，HTTP/1.1 就把 Connection 头写进标准，并且默认开启持久连接，除非请求中写明 Connection: close，那么浏览器和服务器之间是会维持一段时间的 TCP 连接，不会一个请求结束就断掉。</p>
+<p>默认情况下建立 TCP 连接不会断开，只有在请求报头中声明 Connection: close 才会在请求完成后关闭连接。</p>
+<h3 id="一个-TCP-连接可以对应几个-HTTP-请求？"><a href="#一个-TCP-连接可以对应几个-HTTP-请求？" class="headerlink" title="一个 TCP 连接可以对应几个 HTTP 请求？"></a>一个 TCP 连接可以对应几个 HTTP 请求？</h3><p>如果维持连接，一个 TCP 连接是可以发送多个 HTTP 请求的。</p>
+<h3 id="一个-TCP-连接中-HTTP-请求发送可以一起发送么（比如一起发三个请求，再三个响应一起接收）？"><a href="#一个-TCP-连接中-HTTP-请求发送可以一起发送么（比如一起发三个请求，再三个响应一起接收）？" class="headerlink" title="一个 TCP 连接中 HTTP 请求发送可以一起发送么（比如一起发三个请求，再三个响应一起接收）？"></a>一个 TCP 连接中 HTTP 请求发送可以一起发送么（比如一起发三个请求，再三个响应一起接收）？</h3><p>HTTP/1.1 存在一个问题，单个 TCP 连接在同一时刻只能处理一个请求，意思是说：两个请求的生命周期不能重叠，任意两个 HTTP 请求从开始到结束的时间在同一个 TCP 连接里不能重叠。</p>
+<p>在 HTTP/1.1 存在 Pipelining 技术可以完成这个多个请求同时发送，但是由于浏览器默认关闭，所以可以认为这是不可行的。在 HTTP2 中由于 Multiplexing 特点的存在，多个 HTTP 请求可以在同一个 TCP 连接中并行进行。</p>
+<p>那么在 HTTP/1.1 时代，浏览器是如何提高页面加载效率的呢？主要有下面两点：</p>
+<ul>
+<li>维持和服务器已经建立的 TCP 连接，在同一连接上顺序处理多个请求。</li>
+<li>和服务器建立多个 TCP 连接。</li>
+</ul>
+<h3 id="为什么有的时候刷新页面不需要重新建立-SSL-连接？"><a href="#为什么有的时候刷新页面不需要重新建立-SSL-连接？" class="headerlink" title="为什么有的时候刷新页面不需要重新建立 SSL 连接？"></a>为什么有的时候刷新页面不需要重新建立 SSL 连接？</h3><p>TCP 连接有的时候会被浏览器和服务端维持一段时间。TCP 不需要重新建立，SSL 自然也会用之前的。</p>
+<h3 id="浏览器对同一-Host-建立-TCP-连接到数量有没有限制？"><a href="#浏览器对同一-Host-建立-TCP-连接到数量有没有限制？" class="headerlink" title="浏览器对同一 Host 建立 TCP 连接到数量有没有限制？"></a>浏览器对同一 Host 建立 TCP 连接到数量有没有限制？</h3><p>假设我们还处在 HTTP/1.1 时代，那个时候没有多路传输，当浏览器拿到一个有几十张图片的网页该怎么办呢？肯定不能只开一个 TCP 连接顺序下载，那样用户肯定等的很难受，但是如果每个图片都开一个 TCP 连接发 HTTP 请求，那电脑或者服务器都可能受不了，要是有 1000 张图片的话总不能开 1000 个TCP 连接吧，你的电脑同意 NAT 也不一定会同意。</p>
+<p>有。Chrome 最多允许对同一个 Host 建立六个 TCP 连接。不同的浏览器有一些区别。</p>
+<p>如果图片都是 HTTPS 连接并且在同一个域名下，那么浏览器在 SSL 握手之后会和服务器商量能不能用 HTTP2，如果能的话就使用 Multiplexing 功能在这个连接上进行多路传输。不过也未必会所有挂在这个域名的资源都会使用一个 TCP 连接去获取，但是可以确定的是 Multiplexing 很可能会被用到。</p>
+<p>如果发现用不了 HTTP2 呢？或者用不了 HTTPS（现实中的 HTTP2 都是在 HTTPS 上实现的，所以也就是只能使用 HTTP/1.1）。那浏览器就会在一个 HOST 上建立多个 TCP 连接，连接数量的最大限制取决于浏览器设置，这些连接会在空闲的时候被浏览器用来发送新的请求，如果所有的连接都正在发送请求呢？那其他的请求就只能等等了。</p>
+
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        Author:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="http://dreamcat.ink" rel="external nofollow noreferrer">买斯基</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        Link:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="http://dreamcat.ink/2019/11/21/ji-suan-ji-wang-luo-yuan-li-http-na-xie-shi-er/">http://dreamcat.ink/2019/11/21/ji-suan-ji-wang-luo-yuan-li-http-na-xie-shi-er/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        Reprint policy:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    All articles in this blog are used except for special statements
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    reprint polocy. If reproduced, please indicate source
+                    <a href="http://dreamcat.ink" target="_blank">买斯基</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>Copied successfully, please follow the reprint policy of this article</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">more</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">
+                                    <span class="chip bg-color">计算机网络</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+
+<div id="article-share">
+    
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
+            <div class="card">
+                <a href="/2019/11/23/redis-mian-shi-chang-jian-de-wen-ti/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="Redis-面试常见的问题">
+                        
+                        <span class="card-title">Redis-面试常见的问题</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            引言
+Redis在大型项目中也是经常用到的非关系型数据库，面试官也挺喜欢问的。
+
+
+
+常见问题redis是什么玩意？简单来说redis就是一个数据库，不过与传统数据库不同的是redis的数据库是存在内存中，所以读写速度非常快，因此redis
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2019-11-23
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/java-db/" class="post-category">
+                                    java-db
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/redis/">
+                        <span class="chip bg-color">redis</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                Next&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2019/11/21/ji-suan-ji-wang-luo-yuan-li-dns-shi-gan-shi-me-de/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="计算机网络原理-DNS是干什么的">
+                        
+                        <span class="card-title">计算机网络原理-DNS是干什么的</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            引言
+咱们这个这样一个面试问题：“从输入url到页面展示到底发生了什么？“
+回答的话，的确很简单！但是其中涉及到的细节非常多，估计能讲半个小时。
+大概的过程分为这8步（俗称天龙八部）
+
+根据域名，进行DNS域名解析；
+拿到解析的IP地址，建
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2019-11-21
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/java-network/" class="post-category">
+                                    java-network
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">
+                        <span class="chip bg-color">计算机网络</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('200')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + 'From: Dreamcat<br />'
+            + 'Author: 买斯基<br />'
+            + 'Link: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+<!-- 代码块折行 -->
+
+<style type="text/css">
+code[class*="language-"], pre[class*="language-"] { white-space: pre !important; }
+</style>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;TOC</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+    <footer class="page-footer bg-color">
+    
+    <div class="container row center-align" style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            <span id="year">2019</span>
+            <a href="http://dreamcat.ink" target="_blank">买斯基</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            <br>
+            
+            <br>
+            
+            <span id="icp"><img src="/medias/icp.png" style="vertical-align: text-bottom;" />
+                <a href="http://www.beian.miit.gov.cn/" target="_blank">蜀ICP备19007262号</a>
+            </span>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/DreamCats" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:470957137@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=470957137" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 470957137" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;Search</span>
+            <input type="search" id="searchInput" name="s" placeholder="Please enter a search keyword"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+});
+</script>
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    
+    <script type="text/javascript" color="0,0,255"
+        pointColor="0,0,255" opacity='0.7'
+        zIndex="-1" count="99"
+        src="/libs/background/canvas-nest.js"></script>
+    
+
+    
+
+    
+    
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>
