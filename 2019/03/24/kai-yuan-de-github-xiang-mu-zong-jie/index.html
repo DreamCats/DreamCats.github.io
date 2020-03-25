@@ -1,0 +1,1362 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="开源的github项目总结, Dreamcat">
+    <meta name="description" content="あなたが好きです">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>开源的github项目总结 | Dreamcat</title>
+    <link rel="icon" type="image/png" href="http://media.dreamcat.ink/cat.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery.min.js"></script>
+    
+<meta name="generator" content="Hexo 4.2.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="http://media.dreamcat.ink/cat.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">Dreamcat</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>Index</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="" class="waves-effect waves-light">
+
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>Java</span>
+      <i class="fas fa-chevron-down" aria-hidden="true" style="zoom: 0.6;"></i>
+    </a>
+    <ul class="sub-nav menus_item_child ">
+      
+      <li>
+        <a href="/categories/java-know">
+          
+          <i class="fas fa-bookmark" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>知识系列</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/categories/java-intervie">
+          
+          <i class="fas fa-bookmark" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>吐血系列</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/categories/java-other">
+          
+          <i class="fas fa-bookmark" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>其他系列</span>
+        </a>
+      </li>
+      
+    </ul>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="" class="waves-effect waves-light">
+
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>在线网站</span>
+      <i class="fas fa-chevron-down" aria-hidden="true" style="zoom: 0.6;"></i>
+    </a>
+    <ul class="sub-nav menus_item_child ">
+      
+      <li>
+        <a href="http://dreamcat.ink/2019/03/24/kai-yuan-de-github-xiang-mu-zong-jie/">
+          
+          <i class="fas fa-bookmark" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>常用网站</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="http://dreamcat.ink/2019/03/24/kai-yuan-de-github-xiang-mu-zong-jie/">
+          
+          <i class="fas fa-bookmark" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>开源项目</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank" rel="noopener">
+          
+          <i class="fas fa-bookmark" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>主题链接</span>
+        </a>
+      </li>
+      
+    </ul>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>Archives</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>About</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="Search" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="http://media.dreamcat.ink/cat.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">Dreamcat</div>
+        <div class="logo-desc">
+            
+            あなたが好きです
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			Index
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="javascript:;">
+			
+				<i class="fa-fw fas fa-bookmark"></i>
+			
+			Java
+			<span class="m-icon"><i class="fas fa-chevron-right"></i></span>
+		</a>
+            <ul  style="background:  ;" >
+              
+                <li>   
+				
+                  <a href="/categories/java-know " style="margin-left:75px";>
+				  
+				   <i class="fa fas fa-bookmark" style="position: absolute;left:50px" ></i>
+			      
+		          <span>知识系列</span>
+                  </a>
+                </li>
+              
+                <li>   
+				
+                  <a href="/categories/java-intervie " style="margin-left:75px";>
+				  
+				   <i class="fa fas fa-bookmark" style="position: absolute;left:50px" ></i>
+			      
+		          <span>吐血系列</span>
+                  </a>
+                </li>
+              
+                <li>   
+				
+                  <a href="/categories/java-other " style="margin-left:75px";>
+				  
+				   <i class="fa fas fa-bookmark" style="position: absolute;left:50px" ></i>
+			      
+		          <span>其他系列</span>
+                  </a>
+                </li>
+               
+            </ul>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="javascript:;">
+			
+				<i class="fa-fw fas fa-bookmark"></i>
+			
+			在线网站
+			<span class="m-icon"><i class="fas fa-chevron-right"></i></span>
+		</a>
+            <ul  style="background:  ;" >
+              
+                <li>   
+				
+                  <a href="http://dreamcat.ink/2019/03/24/kai-yuan-de-github-xiang-mu-zong-jie/ " style="margin-left:75px";>
+				  
+				   <i class="fa fas fa-bookmark" style="position: absolute;left:50px" ></i>
+			      
+		          <span>常用网站</span>
+                  </a>
+                </li>
+              
+                <li>   
+				
+                  <a href="http://dreamcat.ink/2019/03/24/kai-yuan-de-github-xiang-mu-zong-jie/ " style="margin-left:75px";>
+				  
+				   <i class="fa fas fa-bookmark" style="position: absolute;left:50px" ></i>
+			      
+		          <span>开源项目</span>
+                  </a>
+                </li>
+              
+                <li>   
+				
+                  <a href="https://github.com/blinkfox/hexo-theme-matery " target="_blank" rel="noopener" style="margin-left:75px";>
+				  
+				   <i class="fa fas fa-bookmark" style="position: absolute;left:50px" ></i>
+			      
+		          <span>主题链接</span>
+                  </a>
+                </li>
+               
+            </ul>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			Archives
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			About
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/Dreamcats" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/Dreamcats" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/4.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">开源的github项目总结</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        height: calc(100vh - 250px);
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #toc-content .is-active-link::before {
+        background-color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/github/">
+                                <span class="chip bg-color">github</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/web/" class="post-category">
+                                web
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>Publish Date:&nbsp;&nbsp;
+                    2019-03-24
+                </div>
+                
+
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
+                    2.2k
+                </div>
+                
+
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>Read Count:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+
+        </div>
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h2 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h2><blockquote>
+<p><strong>一些有趣的github项目总结，其中包括终端、Python、Java、笔试&amp;面试、效率软件等。</strong></p>
+</blockquote>
+<h2 id="终端"><a href="#终端" class="headerlink" title="终端"></a>终端</h2><ul>
+<li><a href="https://github.com/jlevy/the-art-of-command-line" target="_blank" rel="noopener">The Art of Command Line</a> :系统的学习命令行的用法。<strong>star:57509</strong></li>
+<li><a href="https://github.com/robbyrussell/oh-my-zsh" target="_blank" rel="noopener">oh-my-zsh</a>: 这玩意不用我简单介绍了吧？<strong>star:90516</strong></li>
+<li><a href="https://github.com/521xueweihan/git-tips" target="_blank" rel="noopener">git-tips</a> Git的奇技淫巧 <strong>star：11400</strong></li>
+<li><a href="https://github.com/supermarin/powerline-fonts" target="_blank" rel="noopener">powerline-fonts</a> : mac挺好用的一款终端字体。<strong>star:169</strong></li>
+<li><a href="https://github.com/bhilburn/powerlevel9k" target="_blank" rel="noopener">powerlevel9k</a> : oh-my-zsh的一款皮肤。<strong>star:9952</strong></li>
+<li><a href="https://github.com/zsh-users/zsh-syntax-highlighting" target="_blank" rel="noopener">zsh-syntax-highlighting</a> : 终端输入的命令有语法高亮效果。<strong>star:7326</strong></li>
+<li><a href="https://github.com/zsh-users/zsh-autosuggestions" target="_blank" rel="noopener">zsh-autosuggestions</a> : 终端代码补全插件。<strong>star:6662</strong></li>
+</ul>
+<a id="more"></a>
+
+<h2 id="Python"><a href="#Python" class="headerlink" title="Python"></a>Python</h2><ul>
+<li><p><a href="https://github.com/CriseLYJ/awesome-python-login-model" target="_blank" rel="noopener">awesome-python-login-model</a> : 模拟登陆一些大型网站的demo，个人觉得不错，值得学习。<strong>star:8403</strong></p>
+</li>
+<li><p><a href="https://github.com/miyakogi/pyppeteer" target="_blank" rel="noopener">pyppeteer</a> : 模拟动态加载js，比selenium稍微好用一些。<strong>star:1924</strong></p>
+</li>
+<li><p><a href="https://github.com/psf/requests" target="_blank" rel="noopener">requests</a> :Python HTTP Requests for Humans™ ✨🍰✨ <strong>star:39860</strong></p>
+</li>
+<li><p><a href="https://github.com/psf/requests-html" target="_blank" rel="noopener">requests-html</a> : Pythonic HTML Parsing for Humans™  <strong>star:10111</strong></p>
+</li>
+<li><p><a href="https://github.com/encode/httpx" target="_blank" rel="noopener">httpx</a> A next generation HTTP client for Python. 🦋 <a href="https://www.encode.io/httpx" target="_blank" rel="noopener">https://www.encode.io/httpx</a> <strong>star:1900</strong></p>
+</li>
+<li><p><a href="https://github.com/PySimpleGUI/PySimpleGUI" target="_blank" rel="noopener">PySimpleGUI</a> : 做一些简单的GUI，可以用这个，简单应用。<strong>star:1608</strong></p>
+</li>
+<li><p><a href="https://github.com/bokeh/bokeh" target="_blank" rel="noopener">bokeh</a> Interactive Web Plotting for Python。 <strong>star:10701</strong></p>
+</li>
+<li><p><a href="https://github.com/youfou/wxpy" target="_blank" rel="noopener">wxpy</a> 微信机器人 / 可能是最优雅的微信个人号 API ✨✨ <a href="http://wxpy.readthedocs.io/" target="_blank" rel="noopener">http://wxpy.readthedocs.io</a> <strong>star:10700</strong></p>
+</li>
+</ul>
+<h2 id="Java"><a href="#Java" class="headerlink" title="Java"></a>Java</h2><ul>
+<li><a href="https://github.com/akullpp/awesome-java" target="_blank" rel="noopener">Awesome Java</a> A curated list of awesome frameworks, libraries and software for the Java programming language. <strong>star:21651</strong></li>
+</ul>
+<h3 id="1-后端"><a href="#1-后端" class="headerlink" title="1. 后端"></a>1. 后端</h3><ul>
+<li><a href="https://github.com/ityouknow/spring-boot-examples" target="_blank" rel="noopener">spring-boot-examples</a> : 对于初学者学习Spring-boot，是个非常不错的例子。<strong>star:16408</strong></li>
+<li><a href="https://github.com/wuyouzhuguli/SpringAll" target="_blank" rel="noopener">SpringAll</a>循序渐进，学习Spring Boot、Spring Boot &amp; Shiro、Spring Cloud、Spring Security &amp; Spring Security OAuth2，博客Spring系列源码。<strong>star:6181</strong></li>
+<li><a href="https://github.com/Big-Chinese-Cabbage/interest" target="_blank" rel="noopener">interest</a> : Vue+Spring boot前后端分离博客项目。<strong>star:494</strong></li>
+<li><a href="https://github.com/linlinjava/litemall" target="_blank" rel="noopener">litemall</a> : 一个小商城。litemall = Spring Boot后端 + Vue管理员前端 + 微信小程序用户前端 + Vue用户移动端。<strong>star:7586</strong></li>
+<li><a href="https://github.com/lenve/vhr" target="_blank" rel="noopener">vhr</a>微人事是一个前后端分离的人力资源管理系统，项目采用SpringBoot+Vue开发。<strong>star:4705</strong></li>
+<li><a href="https://github.com/mybatis/mybatis-3" target="_blank" rel="noopener">mybatis</a> MyBatis SQL mapper framework for Java  <strong>star:11335</strong></li>
+<li><a href="https://github.com/qiurunze123/miaosha" target="_blank" rel="noopener">miaosha</a> ⭐⭐⭐⭐秒杀系统设计与实现.互联网工程师进阶与分析🙋🐓 <strong>star:9400</strong></li>
+<li><a href="https://github.com/geekidea/spring-boot-plus" target="_blank" rel="noopener">spring-boot-plus</a>🔥spring-boot-plus集成Spring Boot 2.1.6,Mybatis,Mybatis Plus,Druid,FastJson,Redis,Rabbit MQ,Kafka等，可使用代码生成器快速开发项目. <strong>star:551</strong></li>
+<li><a href="https://github.com/hope-for/hope-boot" target="_blank" rel="noopener">hope-boot</a> 🌱🚀一款现代化的脚手架项目。🍻整合Springboot2 <strong>star:1543</strong></li>
+<li><a href="https://github.com/xkcoding/spring-boot-demo" target="_blank" rel="noopener">spring-boot-demo</a> spring boot demo 是一个用来学习 spring boot 的项目，总共包含 57 个集成demo，已经完成 47 个。<strong>star:2149</strong></li>
+<li><a href="https://github.com/lihengming/spring-boot-api-project-seed" target="_blank" rel="noopener">spring-boot-api-project-seed</a> 🌱🚀一个基于Spring Boot &amp; MyBatis的种子项目，用于快速构建中小型API、RESTful API项目~ <strong>star:1543</strong></li>
+<li><a href="https://github.com/Antabot/White-Jotter" target="_blank" rel="noopener">White-Jotter</a>: 白卷是一款使用 Vue+Spring Boot 开发的前后端分离的图书管理项目 <strong>star:115</strong></li>
+<li><a href="https://github.com/elunez/eladmin" target="_blank" rel="noopener">eladmin</a> 项目基于 Spring Boot 2.1.0 、 Jpa、 Spring Security、redis、Vue的前后端分离的后台管理系统，项目采用分模块开发方式， 权限控制采用 RBAC，支持数据字典与数据权限管理，支持一键生成前后端代码，支持动态路由 <strong>start:3163</strong></li>
+<li><a href="https://github.com/llldddbbb/dbblog" target="_blank" rel="noopener">dbblog</a> 基于SpringBoot2.x+Vue2.x+ElementUI+Iview+Elasticsearch+RabbitMQ+Redis+Shiro的多模块前后端分离的博客项目 <strong>star:375</strong></li>
+<li><a href="https://github.com/seaswalker/spring-analysis" target="_blank" rel="noopener">spring-analysis</a> Spring源码阅读 <strong>star:4045</strong></li>
+<li><a href="https://github.com/macrozheng/mall" target="_blank" rel="noopener">mall</a> mall项目是一套电商系统，包括前台商城系统及后台管理系统，基于SpringBoot+MyBatis实现。<strong>star:21926</strong></li>
+<li><a href="https://github.com/xingshaocheng/architect-awesome" target="_blank" rel="noopener">后端架构师技术图谱</a> <strong>star:42900</strong></li>
+<li><a href="https://github.com/macrozheng/mall-swarm" target="_blank" rel="noopener">mall-swarm</a>mall-swarm是一套微服务商城系统，采用了 Spring Cloud Greenwich、Spring Boot 2、MyBatis、Docker、Elasticsearch等核心技术，同时提供了基于Vue的管理后台方便快速搭建系统。<strong>star:1400</strong></li>
+<li><a href="https://github.com/zhangdaiscott/jeecg-boot" target="_blank" rel="noopener">jeecg-boot</a>一款基于代码生成器的JAVA快速开发平台，开源界“小普元”超越传统商业企业级开发平台！<strong>star:9600</strong></li>
+<li><a href="https://github.com/llldddbbb/dbblog" target="_blank" rel="noopener">dbblog</a> 基于SpringBoot2.x+Vue2.x+ElementUI+Iview+Elasticsearch+RabbitMQ+Redis+Shiro的多模块前后端分离的博客项目 <a href="http://www.dblearn.cn/" target="_blank" rel="noopener">http://www.dblearn.cn</a> <strong>star:643</strong></li>
+<li><a href="https://github.com/zaiyunduan123/springboot-seckill" target="_blank" rel="noopener"> springboot-seckill</a> 基于SpringBoot + MySQL + Redis + RabbitMQ + Guava开发的高并发商品限时秒杀系统 <strong>star:943</strong></li>
+<li><a href="https://github.com/daydreamdev/MeetingFilm" target="_blank" rel="noopener">MeetingFilm</a>基于微服务架构的在线电影购票平台 <strong>star：111</strong></li>
+<li><a href="https://github.com/google/guava" target="_blank" rel="noopener">guava</a> Google core libraries for Java <strong>star:36400</strong></li>
+<li><a href="https://github.com/looly/hutool" target="_blank" rel="noopener">hutool</a> A set of tools that keep Java sweet. <a href="http://www.hutool.cn/" target="_blank" rel="noopener">http://www.hutool.cn</a> <strong>star:10800</strong></li>
+</ul>
+<h3 id="2-笔试-amp-amp-面试"><a href="#2-笔试-amp-amp-面试" class="headerlink" title="2. 笔试&amp;&amp;面试"></a>2. 笔试&amp;&amp;面试</h3><ul>
+<li><a href="https://github.com/Snailclimb/JavaGuide" target="_blank" rel="noopener">JavaGuide</a> :一份涵盖大部分Java程序员所需要掌握的核心知识。<strong>star:45159</strong></li>
+<li><a href="https://github.com/doocs/advanced-java" target="_blank" rel="noopener">advanced-java</a> :互联网 Java 工程师进阶知识完全扫盲：涵盖高并发、分布式、高可用、微服务等领域知识，后端同学必看，前端同学也可学习。<strong>star:22747</strong></li>
+<li><a href="https://github.com/MisterBooo/LeetCodeAnimation" target="_blank" rel="noopener">LeetCodeAnimation</a> : LeetCode用动画的形式的呈现。<strong>star:32650</strong></li>
+<li><a href="https://github.com/aalansehaiyang/technology-talk" target="_blank" rel="noopener">technology-talk</a> 汇总java生态圈常用技术框架等。<strong>star:6229</strong></li>
+<li><a href="https://github.com/0voice/interview_internal_reference" target="_blank" rel="noopener">interview_internal_reference</a> 2019年最新总结，阿里，腾讯，百度，美团，头条等技术面试题目，以及答案，专家出题人分析汇总。 <strong>star:14335</strong></li>
+<li><a href="https://github.com/kdn251/interviews" target="_blank" rel="noopener">interviews</a> Everything you need to know to get the job. <strong>star:37598</strong></li>
+<li><a href="https://github.com/0voice/interview_internal_reference" target="_blank" rel="noopener">interview_internal_reference</a>2019年最新总结，阿里，腾讯，百度，美团，头条等技术面试题目，以及答案，专家出题人分析汇总。 <strong>star:15570</strong></li>
+<li><a href="https://github.com/azl397985856/leetcode" target="_blank" rel="noopener">leetcode</a> LeetCode Solutions: A Record of My Problem Solving Journey.( leetcode题解，记录自己的leetcode解题之路。)</li>
+<li><a href="https://github.com/yifeikong/reverse-interview-zh" target="_blank" rel="noopener">reverse-interview-zh</a> 技术面试最后反问面试官的话 <strong>star:4500</strong></li>
+<li><a href="https://github.com/wangzheng0822/algo" target="_blank" rel="noopener">algo</a> 数据结构和算法必知必会的50个代码实现 <strong>star:10700</strong></li>
+<li><a href="https://github.com/labuladong/fucking-algorithm" target="_blank" rel="noopener">fucking-algorithm</a> 手把手撕LeetCode题目，扒各种算法套路的裤子，not only how，but also why. English version supported! <a href="https://labuladong.gitbook.io/algo/" target="_blank" rel="noopener">https://labuladong.gitbook.io/algo/</a> <strong>star：4700</strong></li>
+<li><a href="https://github.com/AobingJava/JavaFamily" target="_blank" rel="noopener">JavaFamily</a>【互联网一线大厂面试+学习指南】进阶知识完全扫盲：涵盖高并发、分布式、高可用、微服务等领域知识，作者风格幽默，看起来津津有味，把学习当做一种乐趣，何乐而不为，后端同学必看，前端同学我保证你也看得懂，看不懂你加我微信骂我渣男就好了。 <strong>star：7100</strong></li>
+<li><a href="https://github.com/gzc426/Java-Interview" target="_blank" rel="noopener">Java-Interview</a> Java 面试必会 直通BAT <strong>star:3500</strong></li>
+</ul>
+<h2 id="Vue-amp-amp-前端"><a href="#Vue-amp-amp-前端" class="headerlink" title="Vue&amp;&amp;前端"></a>Vue&amp;&amp;前端</h2><ul>
+<li><a href="https://github.com/vuejs/awesome-vue" target="_blank" rel="noopener">awesome-vue</a> awesome things related to Vue.js <strong>star:46634</strong></li>
+<li><a href="https://github.com/GavinZhuLei/vue-form-making" target="_blank" rel="noopener">vue-form-making</a>基于Vue的表单设计器，让表单开发简单而高效。 <strong>star:1347</strong></li>
+<li><a href="https://github.com/haizlin/fe-interview" target="_blank" rel="noopener">fe-interview</a> 前端面试每日 3+1，以面试题来驱动学习，提倡每日学习与思考，每天进步一点！每天早上5点纯手工发布面试题（死磕自己，愉悦大家）<strong>star:6667</strong></li>
+<li><a href="https://github.com/bailicangdu/vue2-elm" target="_blank" rel="noopener">vue2-elm</a> 基于 vue2 + vuex 构建一个具有 45 个页面的大型单页面应用 <strong>star:30300</strong></li>
+<li><a href="https://github.com/qianguyihao/Web" target="_blank" rel="noopener">Web</a> 前端入门和进阶学习笔记，超详细的Web前端学习图文教程。从零开始学前端，做一名精致的前端工程师。持续更新… <strong>star:55300</strong></li>
+<li><a href="https://github.com/trekhleb/javascript-algorithms" target="_blank" rel="noopener">javascript-algorithms</a>  Algorithms and data structures implemented in JavaScript with explanations and links to further readings <strong>star:55277</strong></li>
+<li><a href="https://github.com/goldbergyoni/nodebestpractices" target="_blank" rel="noopener">nodebestpractices</a> ✅ The largest Node.js best practices list (September 2019) <a href="https://twitter.com/nodepractices/" target="_blank" rel="noopener">https://twitter.com/nodepractices/</a> <strong>star:35000</strong></li>
+<li><a href="https://github.com/ymm-tech/gods-pen" target="_blank" rel="noopener">gods-pen</a> 基于vue的高扩展在线网页制作平台，可自定义组件，可添加脚本，可数据统计。A mobile page builder/editor, similar with amolink. <a href="https://godspen.ymm56.com/" target="_blank" rel="noopener">https://godspen.ymm56.com</a> <strong>star:1200</strong></li>
+<li><a href="https://github.com/Advanced-Frontend/Daily-Interview-Question" target="_blank" rel="noopener">Daily-Interview-Question</a> 我是木易杨，公众号「高级前端进阶」作者，每天搞定一道前端大厂面试题，祝大家天天进步，一年后会看到不一样的自己。<strong>star：17000</strong></li>
+</ul>
+<h2 id="面试"><a href="#面试" class="headerlink" title="面试"></a>面试</h2><ul>
+<li><a href="https://github.com/CyC2018/CS-Notes" target="_blank" rel="noopener">CS-Notes</a> : 技术面试必备基础知识、Leetcode 题解、Java、C++、Python、后端面试、操作系统、计算机网络、系统设计。<strong>star:67433</strong></li>
+</ul>
+<h2 id="Flutter"><a href="#Flutter" class="headerlink" title="Flutter"></a>Flutter</h2><ul>
+<li><a href="https://github.com/popeyelau/Flutter_YYeTs" target="_blank" rel="noopener">Flutter_YYeTs</a> : 基于Flutter的人人影视移动端。<strong>star:233</strong></li>
+<li><a href="https://github.com/OpenFlutter/Flutter-Notebook" target="_blank" rel="noopener">Flutter-Notebook</a> 日更的FlutterDemo合集，今天你fu了吗 <strong>star:3879</strong></li>
+<li><a href="https://github.com/mitesh77/Best-Flutter-UI-Templates" target="_blank" rel="noopener">Best-Flutter-UI-Templates</a> completely free for everyone. Its build-in Flutter Dart. <strong>star:1261</strong></li>
+</ul>
+<h2 id="效率软件"><a href="#效率软件" class="headerlink" title="效率软件"></a>效率软件</h2><ul>
+<li><a href="https://github.com/fatedier/frp" target="_blank" rel="noopener">frp</a> : 内网穿透，你懂的。<strong>star:24539</strong></li>
+<li><a href="https://github.com/darknessomi/musicbox" target="_blank" rel="noopener">musicbox</a> : 网易云音乐命令行版本。<strong>star:7601</strong></li>
+<li><a href="https://github.com/agalwood/Motrix" target="_blank" rel="noopener">motrix</a> : 配合百度云有着奇淫技巧。 <strong>star:11098</strong></li>
+<li><a href="https://github.com/geeeeeeeeek/electronic-wechat" target="_blank" rel="noopener">Electronic WeChat</a> : 该项目虽然不再维护，但挺好用的(linux)。<strong>star:12622</strong></li>
+<li><a href="https://github.com/hexojs/hexo" target="_blank" rel="noopener">hexo</a> : 搭建博客系统框架，挺好用。<strong>star:26868</strong></li>
+<li><a href="https://github.com/jaywcjlove/awesome-mac" target="_blank" rel="noopener">awesome-mac</a>推荐的非常给力且实用。 <strong>star:29814</strong></li>
+<li><a href="https://github.com/getlantern/download" target="_blank" rel="noopener">蓝灯</a> 免费的vpn。 <strong>star:9520</strong></li>
+<li><a href="https://github.com/jesseduffield/lazydocker" target="_blank" rel="noopener">LazyDocker</a> The lazier way to manage everything docker. <strong>star:10906</strong></li>
+<li><a href="https://github.com/liyasthomas/postwoman" target="_blank" rel="noopener">postwoman</a> 👽 API request builder - Helps you create your requests faster, saving you precious time on your development. <strong>star:2190</strong></li>
+<li><a href="https://github.com/x64dbg/x64dbg" target="_blank" rel="noopener">x64dbg</a>An open-source x64/x32 debugger for windows. <strong>star:34260</strong></li>
+<li><a href="https://github.com/haotian-wang/google-access-helper" target="_blank" rel="noopener">google-access-helper</a> 谷歌访问助手破解版 <strong>star:3887</strong></li>
+<li><a href="https://github.com/v2ray/v2ray-core" target="_blank" rel="noopener">v2ray-core</a> A platform for building proxies to bypass network restrictions.  <strong>star:21444</strong></li>
+<li><a href="https://github.com/2dust/v2rayN" target="_blank" rel="noopener">v2rayN</a> vpn <strong>star:1249</strong></li>
+<li><a href="https://github.com/msoedov/Alfred-collection" target="_blank" rel="noopener">Alfred-collection</a> A collection of all known Alfred3 workflows <strong>star:411</strong></li>
+<li><a href="https://github.com/huiyadanli/RevokeMsgPatcher" target="_blank" rel="noopener">RevokeMsgPatcher</a>  editor for WeChat/QQ/TIM - PC版微信/QQ/TIM防撤回补丁（我已经看到了，撤回也没用了） <strong>star:1500</strong></li>
+<li><a href="https://github.com/lyswhut/lx-music-desktop" target="_blank" rel="noopener">lx-music-desktop</a> 一个基于 electron 的音乐软件 <strong>star:1300</strong></li>
+<li><a href="https://github.com/nondanee/UnblockNeteaseMusic" target="_blank" rel="noopener">UnblockNeteaseMusic</a> Revive unavailable songs for Netease Cloud Music <strong>star:7900</strong></li>
+</ul>
+<h2 id="有趣"><a href="#有趣" class="headerlink" title="有趣"></a>有趣</h2><ul>
+<li><p><a href="ChineseBQB">ChineseBQB</a>🇨🇳Chinese sticker pack,More joy / 中国表情包大集合,更欢乐 <strong>star:2319</strong></p>
+</li>
+<li><p><a href="https://github.com/justjavac/free-programming-books-zh_CN" target="_blank" rel="noopener">free-programming-books-zh_CN</a>📚 免费的计算机编程类中文书籍，欢迎投稿 <strong>star:55296</strong></p>
+</li>
+<li><p><a href="https://github.com/freeCodeCamp/freeCodeCamp" target="_blank" rel="noopener">freeCodeCamp</a> The <a href="https://www.freecodecamp.org/" target="_blank" rel="noopener">https://www.freeCodeCamp.org</a> open source codebase and curriculum. Learn to code for free together with millions of people. <strong>star:304920</strong></p>
+</li>
+<li><p><a href="https://github.com/googlehosts/hosts" target="_blank" rel="noopener">hosts</a> 镜像 <strong>star:15582</strong></p>
+</li>
+<li><p><a href="https://github.com/fangzesheng/free-api" target="_blank" rel="noopener">free-api</a> 收集免费的接口服务,做一个api的搬运工 <strong>star:6000</strong></p>
+</li>
+<li><p><a href="https://github.com/imfht/fanhaodaquan" target="_blank" rel="noopener">fanhaodaquan</a> 番号大全。 <strong>star:1200</strong></p>
+</li>
+<li><p><a href="https://github.com/menzi11/BullshitGenerator" target="_blank" rel="noopener">BullshitGenerator</a> Needs to generate some texts to test if my GUI rendering codes good or not. so I made this. <strong>star:3700</strong></p>
+</li>
+<li><p><a href="https://github.com/easychen/howto-make-more-money" target="_blank" rel="noopener">howto-make-more-money</a>: 程序员如何优雅的挣零花钱 <strong>star:8200</strong></p>
+</li>
+<li><p><a href="https://github.com/marktext/marktext" target="_blank" rel="noopener">marktext</a> A simple and elegant markdown editor, available for Linux, macOS and Windows. <a href="https://marktext.app/" target="_blank" rel="noopener">https://marktext.app</a> <strong>star：14800</strong></p>
+</li>
+<li><p><a href="https://github.com/xiaoming2028/FreePAC" target="_blank" rel="noopener">FreePAC</a> 科学上网/梯子/自由上网/翻墙 SS/SSR/V2Ray/Brook 搭建教程 <strong>star：2146</strong></p>
+</li>
+</ul>
+<h2 id="持续更新…"><a href="#持续更新…" class="headerlink" title="持续更新…"></a>持续更新…</h2>
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        Author:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="http://dreamcat.ink" rel="external nofollow noreferrer">买斯基</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        Link:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="http://dreamcat.ink/2019/03/24/kai-yuan-de-github-xiang-mu-zong-jie/">http://dreamcat.ink/2019/03/24/kai-yuan-de-github-xiang-mu-zong-jie/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        Reprint policy:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    All articles in this blog are used except for special statements
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    reprint polocy. If reproduced, please indicate source
+                    <a href="http://dreamcat.ink" target="_blank">买斯基</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>Copied successfully, please follow the reprint policy of this article</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">more</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/github/">
+                                    <span class="chip bg-color">github</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+
+<div id="article-share">
+    
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
+            <div class="card">
+                <a href="/2020/03/25/ge-ren-tu-xie-zong-jie-duo-xian-cheng/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="个人吐血总结多线程">
+                        
+                        <span class="card-title">个人吐血总结多线程</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            什么是线程和进程？进程进程是程序的一次执行过程，是系统运行程序的基本单位，因此进程是动态的。系统运行一个程序即是一个进程从创建，运行到消亡的过程。
+比如：当我们启动 main 函数时其实就是启动了一个 JVM 的进程，而 main 函数所在
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-03-25
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/java-know/" class="post-category">
+                                    java-know
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/">
+                        <span class="chip bg-color">多线程</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                Current&nbsp;<i class="far fa-dot-circle"></i>
+            </div>
+            <div class="card">
+                <a href="/2019/03/24/kai-yuan-de-github-xiang-mu-zong-jie/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="开源的github项目总结">
+                        
+                        <span class="card-title">开源的github项目总结</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            引言
+一些有趣的github项目总结，其中包括终端、Python、Java、笔试&amp;面试、效率软件等。
+
+终端
+The Art of Command Line :系统的学习命令行的用法。star:57509
+oh-my-zsh: 这玩
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2019-03-24
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/web/" class="post-category">
+                                    web
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/github/">
+                        <span class="chip bg-color">github</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('200')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + 'From: Dreamcat<br />'
+            + 'Author: 买斯基<br />'
+            + 'Link: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+<!-- 代码块折行 -->
+
+<style type="text/css">
+code[class*="language-"], pre[class*="language-"] { white-space: pre !important; }
+</style>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;TOC</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+    <footer class="page-footer bg-color">
+    
+    <div class="container row center-align" style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            <span id="year">2019</span>
+            <a href="http://dreamcat.ink" target="_blank">买斯基</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            <br>
+            
+            <br>
+            
+            <span id="icp"><img src="/medias/icp.png" style="vertical-align: text-bottom;" />
+                <a href="http://www.beian.miit.gov.cn/" target="_blank">蜀ICP备19007262号</a>
+            </span>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/DreamCats" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:470957137@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=470957137" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 470957137" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;Search</span>
+            <input type="search" id="searchInput" name="s" placeholder="Please enter a search keyword"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+});
+</script>
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    
+    <script type="text/javascript" color="0,0,255"
+        pointColor="0,0,255" opacity='0.7'
+        zIndex="-1" count="99"
+        src="/libs/background/canvas-nest.js"></script>
+    
+
+    
+
+    
+    
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>

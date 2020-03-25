@@ -77,16 +77,68 @@
           
           <i class="fas fa-bookmark" style="margin-top: -20px; zoom: 0.6;"></i>
           
-          <span>知识点</span>
+          <span>知识系列</span>
         </a>
       </li>
       
       <li>
-        <a href="/interview">
+        <a href="/categories/java-intervie">
           
           <i class="fas fa-bookmark" style="margin-top: -20px; zoom: 0.6;"></i>
           
           <span>吐血系列</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/categories/java-other">
+          
+          <i class="fas fa-bookmark" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>其他系列</span>
+        </a>
+      </li>
+      
+    </ul>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="" class="waves-effect waves-light">
+
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>在线网站</span>
+      <i class="fas fa-chevron-down" aria-hidden="true" style="zoom: 0.6;"></i>
+    </a>
+    <ul class="sub-nav menus_item_child ">
+      
+      <li>
+        <a href="http://dreamcat.ink/2019/03/24/kai-yuan-de-github-xiang-mu-zong-jie/">
+          
+          <i class="fas fa-bookmark" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>常用网站</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="http://dreamcat.ink/2019/03/24/kai-yuan-de-github-xiang-mu-zong-jie/">
+          
+          <i class="fas fa-bookmark" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>开源项目</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank" rel="noopener">
+          
+          <i class="fas fa-bookmark" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>主题链接</span>
         </a>
       </li>
       
@@ -169,17 +221,72 @@
 				  
 				   <i class="fa fas fa-bookmark" style="position: absolute;left:50px" ></i>
 			      
-		          <span>知识点</span>
+		          <span>知识系列</span>
                   </a>
                 </li>
               
                 <li>   
 				
-                  <a href="/interview " style="margin-left:75px";>
+                  <a href="/categories/java-intervie " style="margin-left:75px";>
 				  
 				   <i class="fa fas fa-bookmark" style="position: absolute;left:50px" ></i>
 			      
 		          <span>吐血系列</span>
+                  </a>
+                </li>
+              
+                <li>   
+				
+                  <a href="/categories/java-other " style="margin-left:75px";>
+				  
+				   <i class="fa fas fa-bookmark" style="position: absolute;left:50px" ></i>
+			      
+		          <span>其他系列</span>
+                  </a>
+                </li>
+               
+            </ul>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="javascript:;">
+			
+				<i class="fa-fw fas fa-bookmark"></i>
+			
+			在线网站
+			<span class="m-icon"><i class="fas fa-chevron-right"></i></span>
+		</a>
+            <ul  style="background:  ;" >
+              
+                <li>   
+				
+                  <a href="http://dreamcat.ink/2019/03/24/kai-yuan-de-github-xiang-mu-zong-jie/ " style="margin-left:75px";>
+				  
+				   <i class="fa fas fa-bookmark" style="position: absolute;left:50px" ></i>
+			      
+		          <span>常用网站</span>
+                  </a>
+                </li>
+              
+                <li>   
+				
+                  <a href="http://dreamcat.ink/2019/03/24/kai-yuan-de-github-xiang-mu-zong-jie/ " style="margin-left:75px";>
+				  
+				   <i class="fa fas fa-bookmark" style="position: absolute;left:50px" ></i>
+			      
+		          <span>开源项目</span>
+                  </a>
+                </li>
+              
+                <li>   
+				
+                  <a href="https://github.com/blinkfox/hexo-theme-matery " target="_blank" rel="noopener" style="margin-left:75px";>
+				  
+				   <i class="fa fas fa-bookmark" style="position: absolute;left:50px" ></i>
+			      
+		          <span>主题链接</span>
                   </a>
                 </li>
                
@@ -316,8 +423,7 @@
 
 
 <script>
-    // 每天切换 banner 图.  Switch banner image every day.
-    $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay() + '.jpg)');
+    $('.bg-cover').css('background-image', 'url(/medias/banner/0.jpg)');
 </script>
 
 
@@ -342,6 +448,15 @@
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
                             style="background-color: #F9EBEA;">java-know
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/categories/web/" title="web: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            style="background-color: #F5EEF8;">web
                         <span class="tag-length">1</span>
                     </span>
                 </a>
@@ -388,7 +503,7 @@
                     color: '#3C4858'
                 }
             },
-            indicator: [{"name":"java-know","max":2}],
+            indicator: [{"name":"java-know","max":2},{"name":"web","max":2}],
             nameGap: 5,
             center: ['50%','55%'],
             radius: '66%'
@@ -399,7 +514,7 @@
             itemStyle: {normal: {areaStyle: {type: 'default'}}},
             data : [
                 {
-                    value : [1],
+                    value : [1,1],
                     name : 'Number of Categories'
                 }
             ]
