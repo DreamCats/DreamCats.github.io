@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="为什么说ArrayList是线程不安全的?, Dreamcat">
+    <meta name="keywords" content="Spring-MyBatis框架面试常见问题, Dreamcat">
     <meta name="description" content="あなたが好きです">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>为什么说ArrayList是线程不安全的? | Dreamcat</title>
+    <title>Spring-MyBatis框架面试常见问题 | Dreamcat</title>
     <link rel="icon" type="image/png" href="http://media.dreamcat.ink/cat.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -611,7 +611,7 @@
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">为什么说ArrayList是线程不安全的?</h1>
+                    <h1 class="description center-align post-title">Spring-MyBatis框架面试常见问题</h1>
                 </div>
             </div>
         </div>
@@ -728,8 +728,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E9%9B%86%E5%90%88/">
-                                <span class="chip bg-color">集合</span>
+                            <a href="/tags/mybatis/">
+                                <span class="chip bg-color">mybatis</span>
                             </a>
                         
                     </div>
@@ -740,8 +740,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/java-coll/" class="post-category">
-                                java-coll
+                            <a href="/categories/java-spring/" class="post-category">
+                                java-spring
                             </a>
                         
                     </div>
@@ -753,7 +753,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>Publish Date:&nbsp;&nbsp;
-                    2020-02-14
+                    2020-02-19
                 </div>
                 
 
@@ -762,7 +762,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    831
+                    3.2k
                 </div>
                 
 
@@ -781,76 +781,100 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h2 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h2><blockquote>
-<p>面试时相信面试官首先就会问到关于它的知识。一个经常被问到的问题就是：ArrayList是否是线程安全的？那么它为什么是线程不安全的呢？它线程不安全的具体体现又是怎样的呢？我们从源码的角度来看下。</p>
+<p>项目中，经常用到MyBatis，面试也需要掌握滴！</p>
 </blockquote>
 <a id="more"></a>
 
-<h2 id="源码分析"><a href="#源码分析" class="headerlink" title="源码分析"></a>源码分析</h2><p><strong>首先看看该类的属性字段</strong>：</p>
-<pre class=" language-java"><code class="language-java">         <span class="token comment" spellcheck="true">/**
-     * 列表元素集合数组
-     * 如果新建ArrayList对象时没有指定大小，那么会将EMPTY_ELEMENTDATA赋值给elementData，
-     * 并在第一次添加元素时，将列表容量设置为DEFAULT_CAPACITY 
-     */</span>
-    <span class="token keyword">transient</span> Object<span class="token punctuation">[</span><span class="token punctuation">]</span> elementData<span class="token punctuation">;</span> 
-
-    <span class="token comment" spellcheck="true">/**
-     * 列表大小，elementData中存储的元素个数
-     */</span>
-    <span class="token keyword">private</span> <span class="token keyword">int</span> size<span class="token punctuation">;</span></code></pre>
-<p><strong>ArrayList的实现主要就是用了一个Object的数组，用来保存所有的元素，以及一个size变量用来保存当前数组中已经添加了多少元素。</strong></p>
-<p><strong>再次看add方法的源码</strong></p>
-<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">boolean</span> <span class="token function">add</span><span class="token punctuation">(</span>E e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-
-    <span class="token comment" spellcheck="true">/**
-     * 添加一个元素时，做了如下两步操作
-     * 1.判断列表的capacity容量是否足够，是否需要扩容
-     * 2.真正将元素放在列表的元素数组里面
-     */</span>
-    <span class="token function">ensureCapacityInternal</span><span class="token punctuation">(</span>size <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">// Increments modCount!!</span>
-    elementData<span class="token punctuation">[</span>size<span class="token operator">++</span><span class="token punctuation">]</span> <span class="token operator">=</span> e<span class="token punctuation">;</span>
-    <span class="token keyword">return</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span></code></pre>
-<p><strong>由此看到add元素时，实际做了两个大的步骤：</strong></p>
-<ol>
-<li>判断elementData数组容量是否满足需求</li>
-<li>在elementData对应位置上设置值</li>
-</ol>
-<h2 id="数组越界"><a href="#数组越界" class="headerlink" title="数组越界"></a>数组越界</h2><ol>
-<li>列表大小为9，即size=9</li>
-<li>线程A开始进入add方法，这时它获取到size的值为9，调用ensureCapacityInternal方法进行容量判断。</li>
-<li>线程B此时也进入add方法，它获取到size的值也为9，也开始调用ensureCapacityInternal方法。</li>
-<li>线程A发现需求大小为10，而elementData的大小就为10，可以容纳。于是它不再扩容，返回。</li>
-<li>线程B也发现需求大小为10，也可以容纳，返回。</li>
-<li>线程A开始进行设置值操作， elementData[size++] = e 操作。此时size变为10。</li>
-<li>线程B也开始进行设置值操作，它尝试设置elementData[10] = e，而elementData没有进行过扩容，它的下标最大为9。于是此时会报出一个数组越界的异常ArrayIndexOutOfBoundsException.</li>
-</ol>
-<h2 id="null值的情况"><a href="#null值的情况" class="headerlink" title="null值的情况"></a>null值的情况</h2><p><strong>elementData[size++] = e不是一个原子操作</strong>：</p>
-<ul>
-<li>elementData[size] = e;</li>
-<li>size = size + 1;</li>
+<h2 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h2><h3 id="数据持久化"><a href="#数据持久化" class="headerlink" title="数据持久化"></a>数据持久化</h3><p><strong>数据持久化是将内存中的数据模型转换为存储模型，以及将存储模型转换为内存中的数据模型的统称。例如，文件的存储、数据的读取等都是数据持久化操作。数据模型可以是任何数据结构或对象的模型、XML、二进制流等。</strong></p>
+<p><strong>当我们编写应用程序操作数据库，对表数据进行增删改查的操作的时候就是数据持久化的操作。</strong></p>
+<h3 id="Mybatis框架简介"><a href="#Mybatis框架简介" class="headerlink" title="Mybatis框架简介"></a>Mybatis框架简介</h3><ul>
+<li><strong>MyBatis框架是一个开源的数据持久层框架。</strong></li>
+<li><strong>它的内部封装了通过JDBC访问数据库的操作，支持普通的SQL查询、存储过程和高级映射，几乎消除了所有的JDBC代码和参数的手工设置以及结果集的检索。</strong></li>
+<li><strong>MyBatis作为持久层框架，其主要思想是将程序中的大量SQL语句剥离出来，配置在配置文件当中，实现SQL的灵活配置。</strong></li>
+<li><strong>这样做的好处是将SQL与程序代码分离，可以在不修改代码的情况下，直接在配置文件当中修改SQL。</strong></li>
 </ul>
-<p><strong>逻辑：</strong></p>
-<ol>
-<li>列表大小为0，即size=0</li>
-<li>线程A开始添加一个元素，值为A。此时它执行第一条操作，将A放在了elementData下标为0的位置上。</li>
-<li>接着线程B刚好也要开始添加一个值为B的元素，且走到了第一步操作。此时线程B获取到size的值依然为0，于是它将B也放在了elementData下标为0的位置上。</li>
-<li>线程A开始将size的值增加为1</li>
-<li>线程B开始将size的值增加为2</li>
+<h3 id="ORM"><a href="#ORM" class="headerlink" title="ORM"></a>ORM</h3><p><strong>ORM（Object/Relational Mapping）即对象关系映射，是一种数据持久化技术。它在对象模型和关系型数据库直接建立起对应关系，并且提供一种机制，通过JavaBean对象去操作数据库表的数据。</strong></p>
+<p><strong>MyBatis通过简单的XML或者注解的方式进行配置和原始映射，将实体类和SQL语句之间建立映射关系，是一种半自动（之所以说是半自动，因为我们要自己写SQL）的ORM实现。</strong></p>
+<h2 id="MyBatis框架的优缺点及其适用的场合"><a href="#MyBatis框架的优缺点及其适用的场合" class="headerlink" title="MyBatis框架的优缺点及其适用的场合"></a>MyBatis框架的优缺点及其适用的场合</h2><h3 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h3><ol>
+<li>与JDBC相比，减少了50%以上的代码量。</li>
+<li>MyBatis是嘴加单的持久层框架，小巧并且简单易学。</li>
+<li>MyBatis相当灵活，不会对应用程序或者数据库的现有设计强加任何影响，SQL写在XML文件里，从程序代码中彻底分离，降低耦合度，便于统一的管理和优化，并可重用。</li>
+<li>提供XML标签，支持编写动态的SQL，满足不同的业务需求。</li>
+<li>提供映射标签，支持对象与数据库的ORM字段关系映射。</li>
 </ol>
-<p><strong>这样线程AB执行完毕后，理想中情况为size为2，elementData下标0的位置为A，下标1的位置为B。而实际情况变成了size为2，elementData下标为0的位置变成了B，下标1的位置上什么都没有。并且后续除非使用set方法修改此位置的值，否则将一直为null，因为size为2，添加元素时会从下标为2的位置上开始。</strong></p>
-<h2 id="案例"><a href="#案例" class="headerlink" title="案例"></a>案例</h2><pre class=" language-java"><code class="language-java">    <span class="token comment" spellcheck="true">/**
-     * 故障现象
-     * java.util.ConcurrentModificationException
-     */</span>
-    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">notSafe</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        List<span class="token operator">&lt;</span>String<span class="token operator">></span> list <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token operator">&lt;</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">&lt;=</span> <span class="token number">3</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-            <span class="token keyword">new</span> <span class="token class-name">Thread</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> <span class="token punctuation">{</span>
-                list<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>UUID<span class="token punctuation">.</span><span class="token function">randomUUID</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">substring</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">8</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-                System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>list<span class="token punctuation">)</span><span class="token punctuation">;</span>
-            <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token string">"Thread "</span> <span class="token operator">+</span> i<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">start</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
-    <span class="token punctuation">}</span></code></pre>
+<h3 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h3><ol>
+<li>SQL语句的编写工作量较大，对开发人员编写SQL的能力有一定的要求。</li>
+<li>SQL语句依赖于数据库，导致数据库不具有好的移植性，不可以随便更换数据库。</li>
+</ol>
+<h3 id="适用场合"><a href="#适用场合" class="headerlink" title="适用场合"></a>适用场合</h3><p><strong>MyBatis专注于SQL自身，是一个足够灵活的DAO层解决方案。对性能的要求很高，或者需求变化较多的项目，例如Web项目，那么MyBatis是不二的选择。</strong></p>
+<h2 id="MyBatis与Hibernate有哪些不同？"><a href="#MyBatis与Hibernate有哪些不同？" class="headerlink" title="MyBatis与Hibernate有哪些不同？"></a>MyBatis与Hibernate有哪些不同？</h2><ol>
+<li>Mybatis和hibernate不同，它不完全是一个ORM框架，因为MyBatis需要程序员自己编写Sql语句。</li>
+<li>Mybatis直接编写原生态sql，可以严格控制sql执行性能，灵活度高，非常适合对关系数据模型要求不高的软件开发，因为这类软件需求变化频繁，一但需求变化要求迅速输出成果。但是灵活的前提是mybatis无法做到数据库无关性，如果需要实现支持多种数据库的软件，则需要自定义多套sql映射文件，工作量大。</li>
+<li>Hibernate对象/关系映射能力强，数据库无关性好，对于关系模型要求高的软件，如果用hibernate开发可以节省很多代码，提高效率。</li>
+</ol>
+<h2 id="和-的区别是什么？"><a href="#和-的区别是什么？" class="headerlink" title="#{}和${}的区别是什么？"></a><strong>#{}和${}的区别是什么？</strong></h2><ol>
+<li><p>#{} 是预编译处理，${}是字符串替换。</p>
+</li>
+<li><p>Mybatis在处理#{}时，会将sql中的#{}替换为?号，调用PreparedStatement的set方法来赋值；</p>
+</li>
+<li><p>Mybatis在处理${}时，就是把${}替换成变量的值。</p>
+</li>
+<li><p>使用#{}可以有效的防止SQL注入，提高系统安全性。</p>
+</li>
+</ol>
+<h2 id="当实体类中的属性名和表中的字段名不一样-，怎么办-？"><a href="#当实体类中的属性名和表中的字段名不一样-，怎么办-？" class="headerlink" title="当实体类中的属性名和表中的字段名不一样 ，怎么办 ？"></a>当实体类中的属性名和表中的字段名不一样 ，怎么办 ？</h2><ol>
+<li>第1种： 通过在查询的sql语句中定义字段名的别名，让字段名的别名和实体类的属性名一致。</li>
+<li>第2种： 通过 <code>&lt;resultMap&gt;</code> 来映射字段名和实体类属性名的一一对应的关系。</li>
+</ol>
+<h2 id="模糊查询like语句该怎么写"><a href="#模糊查询like语句该怎么写" class="headerlink" title="模糊查询like语句该怎么写?"></a>模糊查询like语句该怎么写?</h2><ol>
+<li>第1种：在Java代码中添加sql通配符。</li>
+<li>第2种：在sql语句中拼接通配符，会引起sql注入</li>
+</ol>
+<h2 id="通常一个Xml映射文件，都会写一个Dao接口与之对应，请问，这个Dao接口的工作原理是什么？Dao接口里的方法，参数不同时，方法能重载吗？"><a href="#通常一个Xml映射文件，都会写一个Dao接口与之对应，请问，这个Dao接口的工作原理是什么？Dao接口里的方法，参数不同时，方法能重载吗？" class="headerlink" title="通常一个Xml映射文件，都会写一个Dao接口与之对应，请问，这个Dao接口的工作原理是什么？Dao接口里的方法，参数不同时，方法能重载吗？"></a>通常一个Xml映射文件，都会写一个Dao接口与之对应，请问，这个Dao接口的工作原理是什么？Dao接口里的方法，参数不同时，方法能重载吗？</h2><p><strong>Dao接口即Mapper接口。接口的全限名，就是映射文件中的namespace的值；接口的方法名，就是映射文件中Mapper的Statement的id值；接口方法内的参数，就是传递给sql的参数。</strong><br><strong>Mapper接口是没有实现类的，当调用接口方法时，接口全限名+方法名拼接字符串作为key值，可唯一定位一个MapperStatement。在Mybatis中每<code>&lt;select&gt;、&lt;insert&gt;、&lt;update&gt;、&lt;delete&gt;</code>标签，都会被解析为一个MapperStatement对象。</strong></p>
+<p><strong>Mapper接口里的方法，是不能重载的，因为是使用 全限名+方法名 的保存和寻找策略。Mapper 接口的工作原理是JDK动态代理，Mybatis运行时会使用JDK动态代理为Mapper接口生成代理对象proxy，代理对象会拦截接口方法，转而执行MapperStatement所代表的sql，然后将sql执行结果返回。</strong></p>
+<h2 id="Mybatis是如何进行分页的？分页插件的原理是什么？"><a href="#Mybatis是如何进行分页的？分页插件的原理是什么？" class="headerlink" title="Mybatis是如何进行分页的？分页插件的原理是什么？"></a>Mybatis是如何进行分页的？分页插件的原理是什么？</h2><p><strong>Mybatis使用RowBounds对象进行分页，它是针对ResultSet结果集执行的内存分页，而非物理分页。可以在sql内直接书写带有物理分页的参数来完成物理分页功能，也可以使用分页插件来完成物理分页。</strong></p>
+<p><strong>分页插件的基本原理是使用Mybatis提供的插件接口，实现自定义插件，在插件的拦截方法内拦截待执行的sql，然后重写sql，根据dialect方言，添加对应的物理分页语句和物理分页参数。</strong></p>
+<h2 id="Mybatis是如何将sql执行结果封装为目标对象并返回的？都有哪些映射形式？"><a href="#Mybatis是如何将sql执行结果封装为目标对象并返回的？都有哪些映射形式？" class="headerlink" title="Mybatis是如何将sql执行结果封装为目标对象并返回的？都有哪些映射形式？"></a>Mybatis是如何将sql执行结果封装为目标对象并返回的？都有哪些映射形式？</h2><ol>
+<li>第一种是使用<code>&lt;resultMap&gt;</code>标签，逐一定义数据库列名和对象属性名之间的映射关系。</li>
+<li>第二种是使用sql列的别名功能，将列的别名书写为对象属性名。</li>
+</ol>
+<p><strong>有了列名与属性名的映射关系后，Mybatis通过反射创建对象，同时使用反射给对象的属性逐一赋值并返回，那些找不到映射关系的属性，是无法完成赋值的。</strong></p>
+<h2 id="如何获取自动生成的-主-键值"><a href="#如何获取自动生成的-主-键值" class="headerlink" title="如何获取自动生成的(主)键值?"></a><strong>如何获取自动生成的(主)键值?</strong></h2><ul>
+<li>insert 方法总是返回一个int值 ，这个值代表的是插入的行数。</li>
+<li>如果采用自增长策略，自动生成的键值在 insert 方法执行完后可以被设置到传入的参数对象中。</li>
+</ul>
+<h2 id="在mapper中如何传递多个参数"><a href="#在mapper中如何传递多个参数" class="headerlink" title="在mapper中如何传递多个参数?"></a>在mapper中如何传递多个参数?</h2><ol>
+<li>DAO层的函数</li>
+<li>使用@param注解</li>
+<li>多个参数封装成map</li>
+</ol>
+<h2 id="Mybatis动态sql有什么用？执行原理？有哪些动态sql？"><a href="#Mybatis动态sql有什么用？执行原理？有哪些动态sql？" class="headerlink" title="Mybatis动态sql有什么用？执行原理？有哪些动态sql？"></a>Mybatis动态sql有什么用？执行原理？有哪些动态sql？</h2><p><strong>Mybatis动态sql可以在Xml映射文件内，以标签的形式编写动态sql，执行原理是根据表达式的值 完成逻辑判断并动态拼接sql的功能。</strong></p>
+<h2 id="Xml映射文件中，除了常见的select-insert-updae-delete标签之外，还有哪些标签？"><a href="#Xml映射文件中，除了常见的select-insert-updae-delete标签之外，还有哪些标签？" class="headerlink" title="Xml映射文件中，除了常见的select|insert|updae|delete标签之外，还有哪些标签？"></a>Xml映射文件中，除了常见的select|insert|updae|delete标签之外，还有哪些标签？</h2><p><strong><code>&lt;resultMap&gt;、&lt;parameterMap&gt;、&lt;sql&gt;、&lt;include&gt;、&lt;selectKey&gt;</code> ，加上动态sql的9个标签，其中 <code>&lt;sql&gt;</code>为sql片段标签，通过 <code>&lt;include&gt;</code>标签引入sql片段， <code>&lt;selectKey&gt;</code>为不支持自增的主键生成策略标签。</strong></p>
+<h2 id="Mybatis的Xml映射文件中，不同的Xml映射文件，id是否可以重复？"><a href="#Mybatis的Xml映射文件中，不同的Xml映射文件，id是否可以重复？" class="headerlink" title="Mybatis的Xml映射文件中，不同的Xml映射文件，id是否可以重复？"></a>Mybatis的Xml映射文件中，不同的Xml映射文件，id是否可以重复？</h2><p><strong>不同的Xml映射文件，如果配置了namespace，那么id可以重复；如果没有配置namespace，那么id不能重复；</strong></p>
+<p><strong>原因就是namespace+id是作为Map &lt;String,MapperStatement&gt; 的key使用的，如果没有namespace，就剩下id，那么，id重复会导致数据互相覆盖。有了namespace，自然id就可以重复，namespace不同，namespace+id自然也就不同。</strong></p>
+<h2 id="为什么说Mybatis是半自动ORM映射工具？它与全自动的区别在哪里？"><a href="#为什么说Mybatis是半自动ORM映射工具？它与全自动的区别在哪里？" class="headerlink" title="为什么说Mybatis是半自动ORM映射工具？它与全自动的区别在哪里？"></a>为什么说Mybatis是半自动ORM映射工具？它与全自动的区别在哪里？</h2><p><strong>Hibernate属于全自动ORM映射工具，使用Hibernate查询关联对象或者关联集合对象时，可以根据对象关系模型直接获取，所以它是全自动的。而Mybatis在查询关联对象或关联集合对象时，需要手动编写sql来完成，所以，称之为半自动ORM映射工具。</strong></p>
+<h2 id="MyBatis实现一对一有几种方式-具体怎么操作的？"><a href="#MyBatis实现一对一有几种方式-具体怎么操作的？" class="headerlink" title="MyBatis实现一对一有几种方式?具体怎么操作的？"></a>MyBatis实现一对一有几种方式?具体怎么操作的？</h2><p><strong>有联合查询和嵌套查询,联合查询是几个表联合查询,只查询一次, 通过在resultMap里面配置association节点配置一对一的类就可以完成；</strong></p>
+<p><strong>嵌套查询是先查一个表，根据这个表里面的结果的 外键id，去再另外一个表里面查询数据,也是通过association配置，但另外一个表的查询通过select属性配置。</strong></p>
+<h2 id="MyBatis实现一对多有几种方式-怎么操作的？"><a href="#MyBatis实现一对多有几种方式-怎么操作的？" class="headerlink" title="MyBatis实现一对多有几种方式,怎么操作的？"></a>MyBatis实现一对多有几种方式,怎么操作的？</h2><p><strong>有联合查询和嵌套查询。联合查询是几个表联合查询,只查询一次,通过在resultMap里面的collection节点配置一对多的类就可以完成；嵌套查询是先查一个表,根据这个表里面的 结果的外键id,去再另外一个表里面查询数据,也是通过配置collection,但另外一个表的查询通过select节点配置。</strong></p>
+<h2 id="Mybatis是否支持延迟加载？如果支持，它的实现原理是什么？"><a href="#Mybatis是否支持延迟加载？如果支持，它的实现原理是什么？" class="headerlink" title="Mybatis是否支持延迟加载？如果支持，它的实现原理是什么？"></a>Mybatis是否支持延迟加载？如果支持，它的实现原理是什么？</h2><p><strong>Mybatis仅支持association关联对象和collection关联集合对象的延迟加载，association指的就是一对一，collection指的就是一对多查询。在Mybatis配置文件中，可以配置是否启用延迟加载lazyLoadingEnabled=true|false。</strong></p>
+<p><strong>它的原理是，使用CGLIB创建目标对象的代理对象，当调用目标方法时，进入拦截器方法，比如调用a.getB().getName()，拦截器invoke()方法发现a.getB()是null值，那么就会单独发送事先保存好的查询关联B对象的sql，把B查询上来，然后调用a.setB(b)，于是a的对象b属性就有值了，接着完成a.getB().getName()方法的调用。</strong></p>
+<h2 id="Mybatis的一级、二级缓存"><a href="#Mybatis的一级、二级缓存" class="headerlink" title="Mybatis的一级、二级缓存:"></a>Mybatis的一级、二级缓存:</h2><ul>
+<li>一级缓存: 基于 PerpetualCache 的 HashMap 本地缓存，其存储作用域为 Session，当 Session flush 或 close 之后，该 Session 中的所有 Cache 就将清空，默认打开一级缓存。</li>
+<li>二级缓存与一级缓存其机制相同，默认也是采用 PerpetualCache，HashMap 存储，不同在于其存储作用域为 Mapper(Namespace)，并且可自定义存储源，如 Ehcache。默认不打开二级缓存，要开启二级缓存，使用二级缓存属性类需要实现Serializable序列化接口(可用来保存对象的状态),可在它的映射文件中配置 <cache/> ；</li>
+<li>对于缓存数据更新机制，当某一个作用域(一级缓存 Session/二级缓存Namespaces)的进行了C/U/D 操作后，默认该作用域下所有 select 中的缓存将被 clear。</li>
+</ul>
+<h2 id="什么是MyBatis的接口绑定？有哪些实现方式？"><a href="#什么是MyBatis的接口绑定？有哪些实现方式？" class="headerlink" title="什么是MyBatis的接口绑定？有哪些实现方式？"></a>什么是MyBatis的接口绑定？有哪些实现方式？</h2><p>接口绑定，就是在MyBatis中任意定义接口,然后把接口里面的方法和SQL语句绑定, 我们直接调用接口方法就可以,这样比起原来了SqlSession提供的方法我们可以有更加灵活的选择和设置。</p>
+<p>接口绑定有两种实现方式：</p>
+<ul>
+<li>注解绑定，就是在接口的方法上面加上 @Select、@Update等注解，里面包含Sql语句来绑定；</li>
+<li>外一种就是通过xml里面写SQL来绑定, 在这种情况下,要指定xml映射文件里面的namespace必须为接口的全路径名。当Sql语句比较简单时候,用注解绑定, 当SQL语句比较复杂时候,用xml绑定,一般用xml绑定的比较多。</li>
+</ul>
+<h2 id="使用MyBatis的mapper接口调用时有哪些要求？"><a href="#使用MyBatis的mapper接口调用时有哪些要求？" class="headerlink" title="使用MyBatis的mapper接口调用时有哪些要求？"></a>使用MyBatis的mapper接口调用时有哪些要求？</h2><ul>
+<li>Mapper接口方法名和mapper.xml中定义的每个sql的id相同；</li>
+<li>Mapper接口方法的输入参数类型和mapper.xml中定义的每个sql 的parameterType的类型相同；</li>
+<li>Mapper接口方法的输出参数类型和mapper.xml中定义的每个sql的resultType的类型相同；</li>
+<li>Mapper.xml文件中的namespace即是mapper接口的类路径。</li>
+</ul>
 
             </div>
             <hr/>
@@ -876,7 +900,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://dreamcat.ink/2020/02/14/wei-shi-me-shuo-arraylist-shi-xian-cheng-bu-an-quan-de/">http://dreamcat.ink/2020/02/14/wei-shi-me-shuo-arraylist-shi-xian-cheng-bu-an-quan-de/</a>
+                    <a href="http://dreamcat.ink/2020/02/19/spring-mybatis-kuang-jia-mian-shi-chang-jian-wen-ti/">http://dreamcat.ink/2020/02/19/spring-mybatis-kuang-jia-mian-shi-chang-jian-wen-ti/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -914,8 +938,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E9%9B%86%E5%90%88/">
-                                    <span class="chip bg-color">集合</span>
+                                <a href="/tags/mybatis/">
+                                    <span class="chip bg-color">mybatis</span>
                                 </a>
                             
                         </div>
@@ -1085,36 +1109,39 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
             <div class="card">
-                <a href="/2020/02/19/spring-mybatis-kuang-jia-mian-shi-chang-jian-wen-ti/">
+                <a href="/2020/02/21/centos7-an-zhuang-rocketmq-ji-pei-zhi/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="Spring-MyBatis框架面试常见问题">
+                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="Centos7安装RocketMQ及配置">
                         
-                        <span class="card-title">Spring-MyBatis框架面试常见问题</span>
+                        <span class="card-title">Centos7安装RocketMQ及配置</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
                             引言
-项目中，经常用到MyBatis，面试也需要掌握滴！
+项目中用到消息队列RocketMQ，因此在Centos7安装及配置。。。
 
 
 
-基本概念数据持久化数据持久化是将内存中的数据模型转换为存储模型，以及将存储模型转换为内存中的数据模型的统称。例如，文件的存储、数据的读取等都是数据持久化操作。数据模型可以是任何
+下载
+rocketmq
+选择rocketmq-all-4.6.1-bin-release.zip 
+因为RocketMQ依赖maven打包，因此需要安装m
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-02-19
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-02-21
                         </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/java-spring/" class="post-category">
-                                    java-spring
+                            <a href="/categories/tools/" class="post-category">
+                                    tools
                                 </a>
                             
                             
@@ -1124,8 +1151,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/mybatis/">
-                        <span class="chip bg-color">mybatis</span>
+                    <a href="/tags/MQ/">
+                        <span class="chip bg-color">MQ</span>
                     </a>
                     
                 </div>
@@ -1139,20 +1166,24 @@
                 Next&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/02/14/java-duo-xian-cheng-cas-yuan-li-pou-xi/">
+                <a href="/2020/02/14/wei-shi-me-shuo-arraylist-shi-xian-cheng-bu-an-quan-de/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="Java多线程 CAS原理剖析">
+                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="为什么说ArrayList是线程不安全的?">
                         
-                        <span class="card-title">Java多线程 CAS原理剖析</span>
+                        <span class="card-title">为什么说ArrayList是线程不安全的?</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
                             引言
-大家都知道，在Java并发种，我们最初接触的应该就是synchronized关键字了，但是synchronized属于重量级锁，很多时候会引起性能问题，volatile也是个不错的选择，但是volatile不能保证原子性，只能在某些场
+面试时相信面试官首先就会问到关于它的知识。一个经常被问到的问题就是：ArrayList是否是线程安全的？那么它为什么是线程不安全的呢？它线程不安全的具体体现又是怎样的呢？我们从源码的角度来看下。
+
+
+
+源码分析首先看看该类的属性字段：
                         
                     </div>
                     <div class="publish-info">
@@ -1163,8 +1194,8 @@
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/java-mul/" class="post-category">
-                                    java-mul
+                            <a href="/categories/java-coll/" class="post-category">
+                                    java-coll
                                 </a>
                             
                             
@@ -1174,8 +1205,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/">
-                        <span class="chip bg-color">多线程</span>
+                    <a href="/tags/%E9%9B%86%E5%90%88/">
+                        <span class="chip bg-color">集合</span>
                     </a>
                     
                 </div>
