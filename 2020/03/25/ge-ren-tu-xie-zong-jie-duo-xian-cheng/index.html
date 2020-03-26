@@ -1091,13 +1091,13 @@ ctorInstance(memory);  //2. 初始化对象 </code></pre><p><strong>这样优化
 <li>在每个volatile读操作的后面插入一个LoadStore屏障。</li>
 </ul>
 <p><strong>volatile写插入内存指令图：</strong></p>
-<p><img src="https://segmentfault.com/img/bV7PaN?w=485&h=313" alt="volatile"></p>
+<p><img src="https://image-static.segmentfault.com/416/041/416041851-5ac871370fec9_articlex" alt="volatile"></p>
 </li>
 </ol>
 <p><strong>上图中的StoreStore屏障可以保证在volatile写之前，其前面的所有普通写操作已经对任意处理器可见了。这是因为StoreStore屏障将保障上面所有的普通写在volatile写之前刷新到主内存。</strong></p>
 <p><strong>这里比较有意思的是volatile写后面的StoreLoad屏障。这个屏障的作用是避免volatile写与后面可能有的volatile读/写操作重排序。因为编译器常常无法准确判断在一个volatile写的后面，是否需要插入一个StoreLoad屏障（比如，一个volatile写之后方法立即return）。为了保证能正确实现volatile的内存语义，JMM在这里采取了保守策略：在每个volatile写的后面或在每个volatile读的前面插入一个StoreLoad屏障。从整体执行效率的角度考虑，JMM选择了在每个volatile写的后面插入一个StoreLoad屏障。因为volatile写-读内存语义的常见使用模式是：一个写线程写volatile变量，多个读线程读同一个volatile变量。当读线程的数量大大超过写线程时，选择在volatile写之后插入StoreLoad屏障将带来可观的执行效率的提升。从这里我们可以看到JMM在实现上的一个特点：首先确保正确性，然后再去追求执行效率。</strong></p>
 <p><strong>volatile读插入内存指令图：</strong></p>
-<p><img src="https://segmentfault.com/img/bV7Pbg?w=500&h=306" alt="volatile读"></p>
+<p><img src="https://image-static.segmentfault.com/288/764/2887649856-5ac871c442f52_articlex" alt="volatile读"></p>
 <p><strong>上图中的LoadLoad屏障用来禁止处理器把上面的volatile读与下面的普通读重排序。LoadStore屏障用来禁止处理器把上面的volatile读与下面的普通写重排序。</strong></p>
 <p><strong>上述volatile写和volatile读的内存屏障插入策略非常保守。在实际执行时，只要不改变volatile写-读的内存语义，编译器可以根据具体情况省略不必要的屏障。下面我们通过具体的示例代码来说明：</strong></p>
 <pre class=" language-java"><code class="language-java"><span class="token keyword">class</span> <span class="token class-name">VolatileBarrierExample</span> <span class="token punctuation">{</span>
@@ -1114,7 +1114,7 @@ ctorInstance(memory);  //2. 初始化对象 </code></pre><p><strong>这样优化
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span></code></pre>
 <p><strong>针对readAndWrite()方法，编译器在生成字节码时可以做如下的优化：</strong></p>
-<p><img src="https://segmentfault.com/img/bV7Pbl?w=491&h=465" alt="readAndWrite"></p>
+<p><img src="https://image-static.segmentfault.com/178/456/1784565222-5ac871e5e6dec_articlex" alt="readAndWrite"></p>
 <p><strong>注意，最后的StoreLoad屏障不能省略。因为第二个volatile写之后，方法立即return。此时编译器可能无法准确断定后面是否会有volatile读或写，为了安全起见，编译器常常会在这里插入一个StoreLoad屏障。</strong></p>
 <h5 id="volatile汇编"><a href="#volatile汇编" class="headerlink" title="volatile汇编"></a>volatile汇编</h5><pre class=" language-java"><code class="language-java"><span class="token number">0x000000011214bb49</span><span class="token operator">:</span> mov    <span class="token operator">%</span>rdi<span class="token punctuation">,</span><span class="token operator">%</span>rax
   <span class="token number">0x000000011214bb4c</span><span class="token operator">:</span> dec    <span class="token operator">%</span>eax
