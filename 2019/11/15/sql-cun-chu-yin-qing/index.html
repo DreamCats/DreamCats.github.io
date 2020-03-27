@@ -1145,7 +1145,7 @@ ACID原子性(Atomicity)事务被视为不可分割的最小单元，事务的�
 
         var selection = window.getSelection();
         // if the selection is short let's not annoy our users.
-        if (('' + selection).length < Number.parseInt('200')) {
+        if (('' + selection).length < Number.parseInt('1000')) {
             return;
         }
 

@@ -1286,7 +1286,7 @@ mac全局Command + Shift + P / F1 显示命令面板Command + P 快速打开Comm
 
         var selection = window.getSelection();
         // if the selection is short let's not annoy our users.
-        if (('' + selection).length < Number.parseInt('200')) {
+        if (('' + selection).length < Number.parseInt('1000')) {
             return;
         }
 

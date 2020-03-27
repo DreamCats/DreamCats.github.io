@@ -781,8 +781,6 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h2 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h2><p><strong>Java的集合框架，ArrayList源码解析等…</strong></p>
-<a id="more"></a>
-
 <h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><ul>
 <li><em>ArrayList</em>实现了<em>List</em>接口，是顺序容器，即元素存放的数据与放进去的顺序相同，允许放入<code>null</code>元素，底层通过<strong>数组实现</strong>。</li>
 <li>除该类未实现同步外，其余跟<em>Vector</em>大致相同。</li>
@@ -1357,7 +1355,7 @@ Collection类关系图
 
         var selection = window.getSelection();
         // if the selection is short let's not annoy our users.
-        if (('' + selection).length < Number.parseInt('200')) {
+        if (('' + selection).length < Number.parseInt('1000')) {
             return;
         }
 

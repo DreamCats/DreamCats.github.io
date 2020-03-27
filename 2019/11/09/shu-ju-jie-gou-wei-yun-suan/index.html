@@ -1185,7 +1185,7 @@ public int binarySearch(int[] nums, int key){
 
         var selection = window.getSelection();
         // if the selection is short let's not annoy our users.
-        if (('' + selection).length < Number.parseInt('200')) {
+        if (('' + selection).length < Number.parseInt('1000')) {
             return;
         }
 

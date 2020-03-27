@@ -1266,7 +1266,7 @@ blocking IO。最容易理解、最容易实现的IO工作方式，应用程序�
 
         var selection = window.getSelection();
         // if the selection is short let's not annoy our users.
-        if (('' + selection).length < Number.parseInt('200')) {
+        if (('' + selection).length < Number.parseInt('1000')) {
             return;
         }
 
