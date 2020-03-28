@@ -781,8 +781,6 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h2 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h2><p><strong>Java的集合框架，LinkedList源码解析等…</strong></p>
-<a id="more"></a>
-
 <h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p><em>LinkedList</em>同时实现了<em>List</em>接口和<em>Deque</em>接口，也就是说它既可以看作一个顺序容器，又可以看作一个队列（<em>Queue</em>），同时又可以看作一个栈（<em>Stack</em>）。这样看来，<em>LinkedList</em>简直就是个全能冠军。当你需要使用栈或者队列时，可以考虑使用<em>LinkedList</em>，一方面是因为Java官方已经声明不建议使用<em>Stack</em>类，更遗憾的是，Java里根本没有一个叫做<em>Queue</em>的类（它是个接口名字）。关于栈或队列，现在的首选是<em>ArrayDeque</em>，它有着比<em>LinkedList</em>（当作栈或队列使用时）有着更好的性能。</p>
 <p><img src="https://www.pdai.tech/_images/collection/LinkedList_base.png" alt="LinkedList"></p>
 <p><em>LinkedList</em>的实现方式决定了所有跟下标相关的操作都是线性时间，而在首段或者末尾删除元素只需要常数时间。为追求效率<em>LinkedList</em>没有实现同步（synchronized），如果需要多个线程并发访问，可以先采用<code>Collections.synchronizedList()</code>方法对其进行包装。</p>
