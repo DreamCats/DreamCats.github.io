@@ -830,7 +830,7 @@
 <h3 id="当前类索引-父类索引与接口索引集合"><a href="#当前类索引-父类索引与接口索引集合" class="headerlink" title="当前类索引,父类索引与接口索引集合"></a>当前类索引,父类索引与接口索引集合</h3><pre class=" language-java"><code class="language-java">    u2             this_class<span class="token punctuation">;</span><span class="token comment" spellcheck="true">//当前类</span>
     u2             super_class<span class="token punctuation">;</span><span class="token comment" spellcheck="true">//父类</span>
     u2             interfaces_count<span class="token punctuation">;</span><span class="token comment" spellcheck="true">//接口</span>
-    u2             interfaces<span class="token punctuation">[</span>interfaces_count<span class="token punctuation">]</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//一个雷可以实现多个接口</span></code></pre>
+    u2             interfaces<span class="token punctuation">[</span>interfaces_count<span class="token punctuation">]</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//一个类可以实现多个接口</span></code></pre>
 <p><strong>类索引用于确定这个类的全限定名，父类索引用于确定这个类的父类的全限定名，由于 Java 语言的单继承，所以父类索引只有一个，除了 <code>java.lang.Object</code> 之外，所有的 java 类都有父类，因此除了 <code>java.lang.Object</code> 外，所有 Java 类的父类索引都不为 0。</strong></p>
 <p><strong>接口索引集合用来描述这个类实现了那些接口，这些被实现的接口将按<code>implents</code>(如果这个类本身是接口的话则是<code>extends</code>) 后的接口顺序从左到右排列在接口索引集合中。</strong></p>
 <h3 id="字段表集合"><a href="#字段表集合" class="headerlink" title="字段表集合"></a>字段表集合</h3><pre class=" language-java"><code class="language-java">    u2             fields_count<span class="token punctuation">;</span><span class="token comment" spellcheck="true">//Class 文件的字段的个数</span>
