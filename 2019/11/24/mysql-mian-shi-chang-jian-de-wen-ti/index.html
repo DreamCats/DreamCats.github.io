@@ -788,13 +788,13 @@
 <h2 id="常见问题"><a href="#常见问题" class="headerlink" title="常见问题"></a>常见问题</h2><h3 id="数据库引擎innodb与myisam的区别？"><a href="#数据库引擎innodb与myisam的区别？" class="headerlink" title="数据库引擎innodb与myisam的区别？"></a>数据库引擎innodb与myisam的区别？</h3><p><a href="http://dreamcat.ink/2019/11/15/sql-notes/1/">InnoDB和MyISAM比较</a></p>
 <h3 id="4大特性"><a href="#4大特性" class="headerlink" title="4大特性"></a>4大特性</h3><p><a href="http://dreamcat.ink/2019/11/20/sql-notes/1/">Mysql的ACID原理</a></p>
 <h3 id="并发事务带来的问题"><a href="#并发事务带来的问题" class="headerlink" title="并发事务带来的问题"></a>并发事务带来的问题</h3><h4 id="脏读"><a href="#脏读" class="headerlink" title="脏读"></a>脏读</h4><p><img src="https://www.pdai.tech/_images/pics/dd782132-d830-4c55-9884-cfac0a541b8e.png" alt=""></p>
-<h4 id="丢弃修改"><a href="#丢弃修改" class="headerlink" title="丢弃修改"></a>丢弃修改</h4><p>T1 和 T2 两个事务都对一个数据进行修改，T1 先修改，T2 随后修改，T2 的修改覆盖了 T1 的修改。例如：事务1读取某表中的数据A=20，事务2也读取A=20，事务1修改A=A-1，事务2也修改A=A-1，最 终结果A=19，事务1的修改被丢失。</p>
+<h4 id="丢弃修改"><a href="#丢弃修改" class="headerlink" title="丢弃修改"></a>丢弃修改</h4><p>T1 和 T2 两个事务都对一个数据进行修改，T1 先修改，T2 随后修改，T2 的修改覆盖了 T1 的修改。例如：事务1读取某表中的数据A=20，事务2也读取A=20，事务1修改A=A-1，事务2也修改A=A-1，最终结果A=19，事务1的修改被丢失。</p>
 <p><img src="https://www.pdai.tech/_images/pics/88ff46b3-028a-4dbb-a572-1f062b8b96d3.png" alt=""></p>
 <h3 id="不可重复读"><a href="#不可重复读" class="headerlink" title="不可重复读"></a>不可重复读</h3><p>T2 读取一个数据，T1 对该数据做了修改。如果 T2 再次读取这个数据，此时读取的结果和第一次读取的结果不同。</p>
 <p><img src="https://www.pdai.tech/_images/pics/c8d18ca9-0b09-441a-9a0c-fb063630d708.png" alt=""></p>
 <h4 id="幻读"><a href="#幻读" class="headerlink" title="幻读"></a>幻读</h4><p>T1 读取某个范围的数据，T2 在这个范围内插入新的数据，T1 再次读取这个范围的数据，此时读取的结果和和第一次读取的结果不同。</p>
 <p><img src="https://www.pdai.tech/_images/pics/72fe492e-f1cb-4cfc-92f8-412fb3ae6fec.png" alt=""></p>
-<h4 id="不可重复度和幻读区别："><a href="#不可重复度和幻读区别：" class="headerlink" title="不可重复度和幻读区别："></a>不可重复度和幻读区别：</h4><p>不可重复读的重点是修改，幻读的重点在于新增或者删除。</p>
+<h4 id="不可重复读和幻读区别："><a href="#不可重复读和幻读区别：" class="headerlink" title="不可重复读和幻读区别："></a>不可重复读和幻读区别：</h4><p>不可重复读的重点是修改，幻读的重点在于新增或者删除。</p>
 <p>例1（同样的条件, 你读取过的数据, 再次读取出来发现值不一样了 ）：事务1中的A先生读取自己的工资为 1000的操 作还没完成，事务2中的B先生就修改了A的工资为2000，导 致A再读自己的工资时工资变为 2000；这就是不可重复读。</p>
 <p>例2（同样的条件, 第1次和第2次读出来的记录数不一样 ）：假某工资单表中工资大于3000的有4人，事务1读取了所 有工资大于3000的人，共查到4条记录，这时事务2 又插入了一条工资大于3000的记录，事务1再次读取时查到的记 录就变为了5条，这样就导致了幻读。</p>
 <h3 id="数据库的隔离级别"><a href="#数据库的隔离级别" class="headerlink" title="数据库的隔离级别"></a>数据库的隔离级别</h3><ol>
