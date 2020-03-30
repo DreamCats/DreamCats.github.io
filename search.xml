@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>个人吐血系列-总结Mysql</title>
+      <link href="/2020/03/30/ge-ren-tu-xie-xi-lie-zong-jie-mysql/"/>
+      <url>/2020/03/30/ge-ren-tu-xie-xi-lie-zong-jie-mysql/</url>
+      
+        <content type="html"><![CDATA[<blockquote><p>mysql这一块的知识还是挺多的，问深度的话， 一般都是如何调优的，当然少不了mysql的基础等知识。</p></blockquote>]]></content>
+      
+      
+      <categories>
+          
+          <category> java-interview </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> db </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>个人吐血系列-总结Mybatis</title>
       <link href="/2020/03/29/ge-ren-tu-xie-xi-lie-zong-jie-mybatis/"/>
       <url>/2020/03/29/ge-ren-tu-xie-xi-lie-zong-jie-mybatis/</url>
