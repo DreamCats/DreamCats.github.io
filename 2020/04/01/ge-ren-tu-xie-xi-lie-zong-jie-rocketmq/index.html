@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="个人吐血系列-总结Dubbo, Dreamcat">
+    <meta name="keywords" content="个人吐血系列-总结RocketMQ, Dreamcat">
     <meta name="description" content="あなたが好きです">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>个人吐血系列-总结Dubbo | Dreamcat</title>
+    <title>个人吐血系列-总结RocketMQ | Dreamcat</title>
     <link rel="icon" type="image/png" href="http://media.dreamcat.ink/cat.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -606,12 +606,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/11.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/15.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">个人吐血系列-总结Dubbo</h1>
+                    <h1 class="description center-align post-title">个人吐血系列-总结RocketMQ</h1>
                 </div>
             </div>
         </div>
@@ -728,8 +728,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/dubbo/">
-                                <span class="chip bg-color">dubbo</span>
+                            <a href="/tags/MQ/">
+                                <span class="chip bg-color">MQ</span>
                             </a>
                         
                     </div>
@@ -762,7 +762,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    3.5k
+                    2.5k
                 </div>
                 
 
@@ -781,139 +781,73 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <blockquote>
-<p>微服务和分布式算是一种潮流和趋势，项目中要到了微服务还是准备准备面试的问题吧…</p>
+<p>一般面试问消息队列，都是结合自己的项目进行回答的…最好有个项目有消息队列的中间件.本项目使用了RocketMQ</p>
 </blockquote>
-<h2 id="大纲图"><a href="#大纲图" class="headerlink" title="大纲图"></a>大纲图</h2><p><img src="http://media.dreamcat.ink/uPic/Dubbo%E5%B8%B8%E8%A7%81%E9%9D%A2%E8%AF%95.png" alt="Dubbo常见面试"></p>
-<h3 id="Dubbo和SpringCloud的区别"><a href="#Dubbo和SpringCloud的区别" class="headerlink" title="Dubbo和SpringCloud的区别"></a>Dubbo和SpringCloud的区别</h3><ul>
-<li><strong>底层</strong>：<code>Dubbo</code>底层是使用Netty的NIO框架，基于TCP协议传输，使用Hession序列化完成RPC通信；<code>SpringCloud</code>是基于HTTP协议+REST接口调用远程过程的通信，HTTP请求会有更大的报文，占的带宽也会更多。但是REST相比RPC更为灵活，不存在代码级别的强依赖。</li>
-<li><strong>集成</strong>：springcloud相关组件多，有自己得注册中心网关等，集成方便，Dubbo需要自己额外去集成。</li>
-<li><strong>定位</strong>：Dubbo是SOA时代的产物，它的关注点主要在于<strong>服务的调用，流量分发、流量监控和熔断</strong>。而SpringCloud诞生于微服务架构时代，考虑的是微服务治理的方方面面，另外由于依托了Spirng、SpirngBoot 的优势之上，两个框架在开始目标就不一致，Dubbo定位服务治理、SpirngCloud是一个生态。因此可以大胆地判断，Dubbo未来会在服务治理方面更为出色，而Spring Cloud在微服务治理上面无人能敌。</li>
-</ul>
-<h3 id="什么是Dubbo？"><a href="#什么是Dubbo？" class="headerlink" title="什么是Dubbo？"></a>什么是Dubbo？</h3><p>Dubbo是一款<strong>高性能</strong>、<strong>轻量级</strong>的开源Java RPC 框架，它提供了三大核心能力：<strong>面向接口的远程方法调用</strong>，<strong>智能容错和负载均衡</strong>，以及<strong>服务自动注册和发现</strong>。简单来说 Dubbo 是一个<strong>分布式服务框架</strong>，致力于提供<strong>高性能和透明化的RPC远程服务调用方案</strong>，以及<strong>SOA服务治理方案。</strong></p>
-<h3 id="什么是RPC？原理是什么？"><a href="#什么是RPC？原理是什么？" class="headerlink" title="什么是RPC？原理是什么？"></a>什么是RPC？原理是什么？</h3><h4 id="RPC"><a href="#RPC" class="headerlink" title="RPC"></a>RPC</h4><p>RPC（Remote Procedure Call）—远程过程调用，它是一种通过网络从远程计算机程序上请求服务，而不需要了解底层网络技术的协议。比如两个不同的服务 A、B 部署在两台不同的机器上，那么服务 A 如果想要调用服务 B 中的某个方法该怎么办呢？使用 HTTP请求 当然可以，但是可能会比较慢而且一些优化做的并不好。 RPC 的出现就是为了解决这个问题。</p>
-<h4 id="RPC原理"><a href="#RPC原理" class="headerlink" title="RPC原理"></a>RPC原理</h4><p><img src="http://my-blog-to-use.oss-cn-beijing.aliyuncs.com/18-12-6/37345851.jpg" alt="RPC原理"></p>
-<ol>
-<li>服务消费方（client）调用以本地调用方式调用服务；</li>
-<li>client stub接收到调用后负责将方法、参数等组装成能够进行网络传输的消息体；</li>
-<li>client stub找到服务地址，并将消息发送到服务端；</li>
-<li>server stub收到消息后进行解码；</li>
-<li>server stub根据解码结果调用本地的服务；</li>
-<li>本地服务执行并将结果返回给server stub；</li>
-<li>server stub将返回结果打包成消息并发送至消费方；</li>
-<li>client stub接收到消息，并进行解码；</li>
-<li>服务消费方得到最终结果。</li>
-</ol>
-<p><img src="http://my-blog-to-use.oss-cn-beijing.aliyuncs.com/18-12-6/32527396.jpg" alt="RPC时序图"></p>
-<h3 id="为什么要用Dubbo"><a href="#为什么要用Dubbo" class="headerlink" title="为什么要用Dubbo?"></a>为什么要用Dubbo?</h3><p>Dubbo 的诞生和 <strong>SOA 分布式架构</strong>的流行有着莫大的关系。<strong>SOA 面向服务的架构</strong>（Service Oriented Architecture），也就是把工程按照业务逻辑拆分成<strong>服务层、表现层</strong>两个工程。<strong>服务层中包含业务逻辑，只需要对外提供服务即可</strong>。<strong>表现层只需要处理和页面的交互</strong>，业务逻辑都是调用服务层的服务来实现。SOA架构中有两个主要角色：<strong>服务提供者</strong>（Provider）<strong>和服务使用者</strong>（Consumer）。</p>
-<p>我觉得主要可以从 Dubbo 提供的下面四点特性来说为什么要用 Dubbo：</p>
-<ol>
-<li><strong>负载均衡</strong>——同一个服务部署在不同的机器时该调用那一台机器上的服务。</li>
-<li><strong>服务调用链路生成</strong>——随着系统的发展，服务越来越多，服务间依赖关系变得错踪复杂，甚至分不清哪个应用要在哪个应用之前启动，架构师都不能完整的描述应用的架构关系。Dubbo 可以为我们解决服务之间互相是如何调用的。</li>
-<li><strong>服务访问压力以及时长统计、资源调度和治理</strong>——基于访问压力实时管理集群容量，提高集群利用率。</li>
-<li><strong>服务降级</strong>——某个服务挂掉之后调用备用服务。</li>
-</ol>
-<p>另外，Dubbo 除了能够应用在分布式系统中，也可以应用在现在比较火的微服务系统中。不过，由于 Spring Cloud 在微服务中应用更加广泛，所以，我觉得一般我们提 Dubbo 的话，大部分是分布式系统的情况。</p>
-<h3 id="什么是分布式？"><a href="#什么是分布式？" class="headerlink" title="什么是分布式？"></a>什么是分布式？</h3><p>分布式或者说 SOA 分布式重要的就是<strong>面向服务</strong>，说简单的分布式就是我们把<strong>整个系统拆分成不同的服务然后将这些服务放在不同的服务器上减轻单体服务的压力提高并发量和性能</strong>。比如电商系统可以简单地拆分成订单系统、商品系统、登录系统等等，拆分之后的每个服务可以<strong>部署在不同的机器上</strong>，如果某一个服务的访问量比较大的话也可以将这个服务同时部署在多台机器上。</p>
-<h3 id="为什么要分布式？"><a href="#为什么要分布式？" class="headerlink" title="为什么要分布式？"></a>为什么要分布式？</h3><ul>
-<li>从开发角度来讲<strong>单体应用的代码都集中在一起</strong>，而<strong>分布式系统的代码根据业务被拆分</strong>。所以，每个团队可以负责一个服务的开发，这样提升了开发效率。另外，代码根据业务拆分之后更加便于维护和扩展。</li>
-<li>系统拆分成分布式之后不光便于系统扩展和维护，更能提高整个系统的性能。把整个系统拆分成不同的服务/系统，然后每个服务/系统 单独部署在一台服务器上，是不是很大程度上提高了系统性能呢？</li>
-</ul>
-<h3 id="Dubbo的架构图解"><a href="#Dubbo的架构图解" class="headerlink" title="Dubbo的架构图解"></a>Dubbo的架构图解</h3><p><img src="http://media.dreamcat.ink/uPic/dubbo%E6%9E%B6%E6%9E%84%E5%9B%BE%E8%A7%A3.png" alt="dubbo架构图解"></p>
+<h3 id="什么是消息队列？消息队列的主要作用是什么？"><a href="#什么是消息队列？消息队列的主要作用是什么？" class="headerlink" title="什么是消息队列？消息队列的主要作用是什么？"></a>什么是消息队列？消息队列的主要作用是什么？</h3><p>我们可以把消息队列比作是一个<strong>存放消息的容器</strong>，当我们需要使用消息的时候可以取出消息供自己使用。消息队列是分布式系统中重要的组件，使用消息队列主要是为了通过<strong>异步处理提高系统性能和削峰、降低系统耦合性</strong>。</p>
 <ul>
-<li><strong>Provider：</strong> 暴露服务的服务提供方</li>
-<li><strong>Consumer：</strong> 调用远程服务的服务消费方</li>
-<li><strong>Registry：</strong> 服务注册与发现的注册中心</li>
-<li><strong>Monitor：</strong> 统计服务的调用次数和调用时间的监控中心</li>
-<li><strong>Container：</strong> 服务运行容器</li>
+<li><strong>异步处理</strong>：非核心流程异步化，提高系统响应性能</li>
+<li><strong>应用解耦</strong>：<ul>
+<li>系统不是强耦合，消息接受者可以随意增加，而不需要修改消息发送者的代码。消息发送者的成功不依赖消息接受者（比如有些银行接口不稳定，但调用方并不需要依赖这些接口）</li>
+<li>消息发送者的成功不依赖消息接受者（比如有些银行接口不稳定，但调用方并不需要依赖这些接口）</li>
 </ul>
-<p><strong>调用关系说明</strong>：</p>
+</li>
+<li><strong>最终一致性</strong>：最终一致性不是消息队列的必备特性，但确实可以依靠消息队列来做最终一致性的事情。<ul>
+<li>先写消息再操作，确保操作完成后再修改消息状态。定时任务补偿机制实现消息可靠发送接收、业务操作的可靠执行，要注意消息重复与幂等设计</li>
+<li>所有不保证100%不丢消息的消息队列，理论上无法实现最终一致性。</li>
+</ul>
+</li>
+<li><strong>广播</strong>：只需要关心消息是否送达了队列，至于谁希望订阅，是下游的事情</li>
+<li><strong>流量削峰与监控</strong>：当上下游系统处理能力存在差距的时候，利用消息队列做一个通用的“漏斗”。在下游有能力处理的时候，再进行分发。</li>
+<li><strong>日志处理</strong>：将消息队列用在日志处理中，比如Kafka的应用，解决大量日志传输的问题</li>
+<li><strong>消息通讯</strong>：消息队列一般都内置了高效的通信机制，因此也可以用于单纯的消息通讯，如实现点对点消息队列或者聊天室等。</li>
+</ul>
+<h3 id="kafka、activemq、rabbitmq、rocketmq都有什么区别？"><a href="#kafka、activemq、rabbitmq、rocketmq都有什么区别？" class="headerlink" title="kafka、activemq、rabbitmq、rocketmq都有什么区别？"></a>kafka、activemq、rabbitmq、rocketmq都有什么区别？</h3><ul>
+<li>ActiveMQ 的社区算是比较成熟，但是较目前来说，ActiveMQ 的性能比较差，而且版本迭代很慢，不推荐使用。</li>
+<li>RabbitMQ 在吞吐量方面虽然稍逊于 Kafka 和 RocketMQ ，但是由于它基于 erlang 开发，所以并发能力很强，性能极其好，延时很低，达到微秒级。但是也因为 RabbitMQ 基于 erlang 开发，所以国内很少有公司有实力做erlang源码级别的研究和定制。如果业务场景对并发量要求不是太高（十万级、百万级），那这四种消息队列中，RabbitMQ 一定是你的首选。如果是大数据领域的实时计算、日志采集等场景，用 Kafka 是业内标准的，绝对没问题，社区活跃度很高，绝对不会黄，何况几乎是全世界这个领域的事实性规范。</li>
+<li>RocketMQ 阿里出品，Java 系开源项目，源代码我们可以直接阅读，然后可以定制自己公司的MQ，并且 RocketMQ 有阿里巴巴的实际业务场景的实战考验。RocketMQ 社区活跃度相对较为一般，不过也还可以，文档相对来说简单一些，然后接口这块不是按照标准 JMS 规范走的有些系统要迁移需要修改大量代码。还有就是阿里出台的技术，你得做好这个技术万一被抛弃，社区黄掉的风险，那如果你们公司有技术实力我觉得用RocketMQ 挺好的</li>
+<li>kafka 的特点其实很明显，就是仅仅提供较少的核心功能，但是提供超高的吞吐量，ms 级的延迟，极高的可用性以及可靠性，而且分布式可以任意扩展。同时 kafka 最好是支撑较少的 topic 数量即可，保证其超高吞吐量。kafka 唯一的一点劣势是有可能消息重复消费，那么对数据准确性会造成极其轻微的影响，在大数据领域中以及日志采集中，这点轻微影响可以忽略这个特性天然适合大数据实时计算以及日志收集。</li>
+</ul>
+<h3 id="MQ在高并发情况下，假设队列满了如何防止消息丢失？"><a href="#MQ在高并发情况下，假设队列满了如何防止消息丢失？" class="headerlink" title="MQ在高并发情况下，假设队列满了如何防止消息丢失？"></a>MQ在高并发情况下，假设队列满了如何防止消息丢失？</h3><p><img src="https://bbsmax.ikafan.com/static/L3Byb3h5L2h0dHBzL2ltZzIwMTguY25ibG9ncy5jb20vYmxvZy85OTgzNDIvMjAxOTAyLzk5ODM0Mi0yMDE5MDIxNjEyMTEzNzM1Mi04MzE0MzYzMDkucG5n.jpg" alt=""></p>
 <ol>
-<li>服务容器负责启动，加载，运行服务提供者。</li>
-<li>服务提供者在启动时，向注册中心注册自己提供的服务。</li>
-<li>服务消费者在启动时，向注册中心订阅自己所需的服务。</li>
-<li>注册中心返回服务提供者地址列表给消费者，如果有变更，注册中心将基于长连接推送变更数据给消费者。</li>
-<li>服务消费者，从提供者地址列表中，基于软负载均衡算法，选一台提供者进行调用，如果调用失败，再选另一台调用。</li>
-<li>服务消费者和提供者，在内存中累计调用次数和调用时间，定时每分钟发送一次统计数据到监控中心。</li>
+<li>生产者可以采用重试机制。因为消费者会不停的消费消息，可以重试将消息放入队列。</li>
+<li>死信队列，可以理解为备胎(推荐)<ul>
+<li>即在消息过期，队列满了，消息被拒绝的时候，都可以扔给死信队列。</li>
+<li>如果出现死信队列和普通队列都满的情况，此时考虑消费者消费能力不足，可以对消费者开多线程进行处理。</li>
+</ul>
+</li>
 </ol>
-<p><strong>各个组件总结</strong>：</p>
+<h3 id="谈谈死信队列"><a href="#谈谈死信队列" class="headerlink" title="谈谈死信队列"></a>谈谈死信队列</h3><p><strong>死信队列用于处理无法被正常消费的消息，即死信消息</strong>。</p>
+<p>当一条消息初次消费失败，<strong>消息队列 RocketMQ 版会自动进行消息重试</strong>；达到最大重试次数后，若消费依然失败，则表明消费者在正常情况下无法正确地消费该消息，此时，消息队列 RocketMQ 版不会立刻将消息丢弃，而是将其发送到该<strong>消费者对应的特殊队列中</strong>，该特殊队列称为<strong>死信队列</strong>。</p>
+<p><strong>死信消息的特点</strong>：</p>
 <ul>
-<li><strong>注册中心负责服务地址的注册与查找，相当于目录服务，服务提供者和消费者只在启动时与注册中心交互，注册中心不转发请求，压力较小</strong></li>
-<li><strong>监控中心负责统计各服务调用次数，调用时间等，统计先在内存汇总后每分钟一次发送到监控中心服务器，并以报表展示</strong></li>
-<li><strong>注册中心，服务提供者，服务消费者三者之间均为长连接，监控中心除外</strong></li>
-<li><strong>注册中心通过长连接感知服务提供者的存在，服务提供者宕机，注册中心将立即推送事件通知消费者</strong></li>
-<li><strong>注册中心和监控中心全部宕机，不影响已运行的提供者和消费者，消费者在本地缓存了提供者列表</strong></li>
-<li><strong>注册中心和监控中心都是可选的，服务消费者可以直连服务提供者</strong></li>
-<li><strong>服务提供者无状态，任意一台宕掉后，不影响使用</strong></li>
-<li><strong>服务提供者全部宕掉后，服务消费者应用将无法使用，并无限次重连等待服务提供者恢复</strong></li>
+<li>不会再被消费者正常消费。</li>
+<li>有效期与正常消息相同，均为 3 天，3 天后会被自动删除。因此，请在死信消息产生后的 3 天内及时处理。</li>
 </ul>
-<h3 id="Dubbo工作原理"><a href="#Dubbo工作原理" class="headerlink" title="Dubbo工作原理"></a>Dubbo工作原理</h3><p><img src="http://my-blog-to-use.oss-cn-beijing.aliyuncs.com/18-9-26/64702923.jpg" alt="参考-JavaGuide-工作原理"></p>
-<p>图中从下至上分为十层，各层均为<strong>单向依赖</strong>，右边的黑色箭头代表层之间的依赖关系，每一层都可以剥离上层被复用，其中，Service 和 Config 层为 API，其它各层均为 SPI。</p>
+<p><strong>死信队列的特点</strong>：</p>
 <ul>
-<li>第一层：<strong>service层</strong>，接口层，给服务提供者和消费者来实现的</li>
-<li>第二层：<strong>config层</strong>，配置层，主要是对dubbo进行各种配置的</li>
-<li>第三层：<strong>proxy层</strong>，服务接口透明代理，生成服务的客户端 Stub 和服务器端 Skeleton</li>
-<li>第四层：<strong>registry层</strong>，服务注册层，负责服务的注册与发现</li>
-<li>第五层：<strong>cluster层</strong>，集群层，封装多个服务提供者的路由以及负载均衡，将多个实例组合成一个服务</li>
-<li>第六层：<strong>monitor层</strong>，监控层，对rpc接口的调用次数和调用时间进行监控</li>
-<li>第七层：<strong>protocol层</strong>，远程调用层，封装rpc调用</li>
-<li>第八层：<strong>exchange层</strong>，信息交换层，封装请求响应模式，同步转异步</li>
-<li>第九层：<strong>transport层</strong>，网络传输层，抽象mina和netty为统一接口</li>
-<li>第十层：<strong>serialize层</strong>，数据序列化层，网络传输需要</li>
+<li>一个死信队列对应一个 Group ID， 而不是对应单个消费者实例。</li>
+<li>如果一个 Group ID 未产生死信消息，消息队列 RocketMQ 版不会为其创建相应的死信队列。</li>
+<li>一个死信队列包含了对应 Group ID 产生的所有死信消息，不论该消息属于哪个 Topic。</li>
 </ul>
-<h3 id="Dubbo的负载均衡"><a href="#Dubbo的负载均衡" class="headerlink" title="Dubbo的负载均衡"></a>Dubbo的负载均衡</h3><h4 id="什么是负载均衡"><a href="#什么是负载均衡" class="headerlink" title="什么是负载均衡"></a>什么是负载均衡</h4><blockquote>
-<p>负载均衡改善了跨多个计算资源（例如计算机，计算机集群，网络链接，中央处理单元或磁盘驱动的的工作负载分布。负载平衡旨在优化资源使用，最大化吞吐量，最小化响应时间，并避免任何单个资源的过载。使用具有负载平衡而不是单个组件的多个组件可以通过冗余提高可靠性和可用性。负载平衡通常涉及专用软件或硬件。—— 够强硬</p>
-</blockquote>
-<p>比如我们的系统中的某个服务的<strong>访问量特别大</strong>，我们将这个服务部署在了<strong>多台服务器</strong>上，当客户端发起请求的时候，<strong>多台服务器都可以处理这个请求</strong>。那么，如何正确选择处理该请求的服务器就很关键。假如，你就要一台服务器来处理该服务的请求，那该服务部署在多台服务器的意义就不复存在了。负载均衡就是为了避免单个服务器响应同一请求，容易造成服务器宕机、崩溃等问题，我们从负载均衡的这四个字就能明显感受到它的意义。</p>
-<h4 id="Dubbo的负载均衡-1"><a href="#Dubbo的负载均衡-1" class="headerlink" title="Dubbo的负载均衡"></a>Dubbo的负载均衡</h4><p>在集群负载均衡时，Dubbo 提供了多种均衡策略，默认为 <code>random</code> 随机调用。可以自行扩展负载均衡策略</p>
-<h5 id="Random-LoadBalance-默认，基于权重的随机负载均衡机制"><a href="#Random-LoadBalance-默认，基于权重的随机负载均衡机制" class="headerlink" title="Random LoadBalance(默认，基于权重的随机负载均衡机制)"></a>Random LoadBalance(默认，基于权重的随机负载均衡机制)</h5><ul>
-<li><strong>随机，按权重设置随机概率。</strong></li>
-<li>在一个截面上碰撞的概率高，但调用量越大分布越均匀，而且按概率使用权重后也比较均匀，有利于动态调整提供者权重。</li>
+<p>消息队列 RocketMQ 版控制台提供对死信消息的查询、导出和重发的功能。</p>
+<h3 id="消费者消费消息，如何保证MQ幂等性？"><a href="#消费者消费消息，如何保证MQ幂等性？" class="headerlink" title="消费者消费消息，如何保证MQ幂等性？"></a>消费者消费消息，如何保证MQ幂等性？</h3><h4 id="幂等性"><a href="#幂等性" class="headerlink" title="幂等性"></a>幂等性</h4><p>消费者在消费mq中的消息时，mq已把消息发送给消费者，消费者在给mq返回ack时网络中断，故mq未收到确认信息，该条消息会重新发给其他的消费者，或者在网络重连后再次发送给该消费者，但实际上该消费者已成功消费了该条消息，造成消费者消费了重复的消息；</p>
+<h4 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h4><ul>
+<li>MQ消费者的幂等行的解决一般使用全局ID 或者写个唯一标识比如时间戳 或者UUID 或者订单</li>
+<li>也可利用mq的该id来判断，或者可按自己的规则生成一个全局唯一id，每次消费消息时用该id先判断该消息是否已消费过。</li>
+<li>给消息分配一个全局id，只要消费过该消息，将 &lt; id,message&gt;以K-V形式写入redis。那消费者开始消费前，先去redis中查询有没消费记录即可。</li>
 </ul>
-<p><img src="http://my-blog-to-use.oss-cn-beijing.aliyuncs.com/18-12-7/77722327.jpg" alt="参考-JavaGuide-Random LoadBalance"></p>
-<h5 id="RoundRobin-LoadBalance-不推荐，基于权重的轮询负载均衡机制"><a href="#RoundRobin-LoadBalance-不推荐，基于权重的轮询负载均衡机制" class="headerlink" title="RoundRobin LoadBalance(不推荐，基于权重的轮询负载均衡机制)"></a>RoundRobin LoadBalance(不推荐，基于权重的轮询负载均衡机制)</h5><ul>
-<li>轮循，按公约后的权重设置轮循比率。</li>
-<li>存在慢的提供者累积请求的问题，比如：第二台机器很慢，但没挂，当请求调到第二台时就卡在那，久而久之，所有请求都卡在调到第二台上。</li>
-</ul>
-<p><img src="http://my-blog-to-use.oss-cn-beijing.aliyuncs.com/18-12-7/97933247.jpg" alt="参考-JavaGuide-RoundRobin"></p>
-<h5 id="LeastAcive-LoadBalace"><a href="#LeastAcive-LoadBalace" class="headerlink" title="LeastAcive LoadBalace"></a>LeastAcive LoadBalace</h5><ul>
-<li>最少活跃调用数，相同活跃数的随机，活跃数指调用前后计数差。</li>
-<li>使慢的提供者收到更少请求，因为越慢的提供者的调用前后计数差会越大。</li>
-</ul>
-<h5 id="ConsistentHash-LodaBalance"><a href="#ConsistentHash-LodaBalance" class="headerlink" title="ConsistentHash LodaBalance"></a>ConsistentHash LodaBalance</h5><ul>
-<li><strong>一致性 Hash，相同参数的请求总是发到同一提供者。(如果你需要的不是随机负载均衡，是要一类请求都到一个节点，那就走这个一致性hash策略。)</strong></li>
-<li>当某一台提供者挂时，原本发往该提供者的请求，基于虚拟节点，平摊到其它提供者，不会引起剧烈变动。</li>
-</ul>
-<h3 id="Dubbo配置方式"><a href="#Dubbo配置方式" class="headerlink" title="Dubbo配置方式"></a>Dubbo配置方式</h3><h4 id="xml配置方式"><a href="#xml配置方式" class="headerlink" title="xml配置方式"></a>xml配置方式</h4><p><strong>服务端服务级别</strong>：</p>
-<pre class=" language-xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token namespace">dubbo:</span>service</span> <span class="token attr-name">interface</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>...<span class="token punctuation">"</span></span> <span class="token attr-name">loadbalance</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>roundrobin<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
-</code></pre>
-<p><strong>客户端服务级别</strong>：</p>
-<pre class=" language-xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token namespace">dubbo:</span>reference</span> <span class="token attr-name">interface</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>...<span class="token punctuation">"</span></span> <span class="token attr-name">loadbalance</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>roundrobin<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
-</code></pre>
-<p><strong>服务端方法级别</strong>：</p>
-<pre class=" language-xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token namespace">dubbo:</span>service</span> <span class="token attr-name">interface</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>...<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token namespace">dubbo:</span>method</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>...<span class="token punctuation">"</span></span> <span class="token attr-name">loadbalance</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>roundrobin<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span><span class="token namespace">dubbo:</span>service</span><span class="token punctuation">></span></span>
-</code></pre>
-<p><strong>客户端方法级别</strong>：</p>
-<pre class=" language-xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token namespace">dubbo:</span>reference</span> <span class="token attr-name">interface</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>...<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token namespace">dubbo:</span>method</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>...<span class="token punctuation">"</span></span> <span class="token attr-name">loadbalance</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>roundrobin<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span><span class="token namespace">dubbo:</span>reference</span><span class="token punctuation">></span></span></code></pre>
-<h4 id="注解配置方式："><a href="#注解配置方式：" class="headerlink" title="注解配置方式："></a>注解配置方式：</h4><p>服务级别配置：</p>
-<pre class=" language-java"><code class="language-java"><span class="token annotation punctuation">@Service</span>
-<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span></code></pre>
-<p>消费注解配置：</p>
-<pre class=" language-java"><code class="language-java"><span class="token annotation punctuation">@Reference</span><span class="token punctuation">(</span>loadbalance <span class="token operator">=</span> <span class="token string">"roundrobin"</span><span class="token punctuation">)</span></code></pre>
-<h3 id="zookeeper宕机与dubbo直连的情况"><a href="#zookeeper宕机与dubbo直连的情况" class="headerlink" title="zookeeper宕机与dubbo直连的情况"></a>zookeeper宕机与dubbo直连的情况</h3><p>在实际生产中，假如zookeeper注册中心宕掉，一段时间内服务消费方还是能够调用提供方的服务的，实际上它使用的本地缓存进行通讯，这只是dubbo健壮性的一种体现。</p>
-<p><strong>dubbo的健壮性表现：</strong></p>
-<ol>
-<li>监控中心宕掉不影响使用，只是丢失部分采样数据</li>
-<li>数据库宕掉后，注册中心仍能通过缓存提供服务列表查询，但不能注册新服务</li>
-<li>注册中心对等集群，任意一台宕掉后，将自动切换到另一台</li>
-<li>注册中心全部宕掉后，服务提供者和服务消费者仍能通过本地缓存通讯</li>
-<li>服务提供者无状态，任意一台宕掉后，不影响使用</li>
-<li>服务提供者全部宕掉后，服务消费者应用将无法使用，并无限次重连等待服务提供者恢复</li>
+<h3 id="使用异步消息时如何保证数据的一致性"><a href="#使用异步消息时如何保证数据的一致性" class="headerlink" title="使用异步消息时如何保证数据的一致性"></a>使用异步消息时如何保证数据的一致性</h3><ol>
+<li><strong>借助数据库的事务</strong>：使用异步消息怎么还能借助到数据库事务？这需要在数据库中创建一个<strong>本地消息表</strong>，这样可以通过<strong>一个事务来控制本地业务逻辑更新</strong>和本<strong>地消息表的写入在同一个事务中</strong>，一旦消息落库失败，则直接全部回滚。如果消息落库成功，后续就可以根据情况基于本地数据库中的消息数据对消息进行重投了。关于本地消息表和消息队列中状态如何保持一致，可以采用 2PC 的方式。在发消息之前落库，然后发消息，在得到同步结果或者消息回调的时候更新本地数据库表中消息状态。然后只需要通过<strong>定时轮询</strong>的方式对状态未已记录但是未发送的消息重新投递就行了。但是这种方案有个前提，就是要求消息的消费者<strong>做好幂等控制</strong>，这个其实异步消息的消费者一般都需要考虑的。</li>
+<li>除了使用数据库以外，还可以使用 <strong>Redis</strong> 等缓存。这样就是无法利用关系型数据库自带的事务回滚了。</li>
 </ol>
-<p>我们前面提到过：注册中心负责服务地址的注册与查找，相当于目录服务，服务提供者和消费者只在启动时与注册中心交互，注册中心不转发请求，压力较小。所以，我们可以完全可以绕过注册中心——采用 <strong>dubbo 直连</strong> ，即在服务消费方配置服务提供方的位置信息。</p>
+<h3 id="RockMQ不适用Zookeeper作为注册中心的原因，以及自制的NameServer优缺点？"><a href="#RockMQ不适用Zookeeper作为注册中心的原因，以及自制的NameServer优缺点？" class="headerlink" title="RockMQ不适用Zookeeper作为注册中心的原因，以及自制的NameServer优缺点？"></a>RockMQ不适用Zookeeper作为注册中心的原因，以及自制的NameServer优缺点？</h3><ol>
+<li>ZooKeeper 作为支持<strong>顺序一致性</strong>的中间件，在某些情况下，它为了满足一致性，会丢失一定时间内的<strong>可用性</strong>，RocketMQ 需要注册中心只是为了<strong>发现组件地址</strong>，在某些情况下，RocketMQ 的注册中心可以出现数据不一致性，这同时也是 <strong>NameServer 的缺点，因为 NameServer 集群间互不通信，它们之间的注册信息可能会不一致</strong>。</li>
+<li>另外，当有新的服务器加入时，<strong>NameServer 并不会立马通知到 Produer</strong>，而是由 <strong>Produer 定时去请求 NameServer 获取最新的 Broker/Consumer 信息</strong>（这种情况是通过 Producer 发送消息时，负载均衡解决）</li>
+<li>包括组件通信间使用 Netty 的自定义协议</li>
+<li>消息重试负载均衡策略（具体参考 Dubbo 负载均衡策略）</li>
+<li>消息过滤器（Producer 发送消息到 Broker，Broker 存储消息信息，Consumer 消费时请求 Broker 端从磁盘文件查询消息文件时,在 Broker 端就使用过滤服务器进行过滤）</li>
+<li>Broker 同步双写和异步双写中 Master 和 Slave 的交互</li>
+</ol>
 
             </div>
             <hr/>
@@ -939,7 +873,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://dreamcat.ink/2020/04/01/ge-ren-tu-xie-xi-lie-zong-jie-dubbo/">http://dreamcat.ink/2020/04/01/ge-ren-tu-xie-xi-lie-zong-jie-dubbo/</a>
+                    <a href="http://dreamcat.ink/2020/04/01/ge-ren-tu-xie-xi-lie-zong-jie-rocketmq/">http://dreamcat.ink/2020/04/01/ge-ren-tu-xie-xi-lie-zong-jie-rocketmq/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -977,8 +911,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/dubbo/">
-                                    <span class="chip bg-color">dubbo</span>
+                                <a href="/tags/MQ/">
+                                    <span class="chip bg-color">MQ</span>
                                 </a>
                             
                         </div>
@@ -1144,9 +1078,10 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
+                <i class="far fa-dot-circle"></i>&nbsp;Current
+            </div>
             <div class="card">
                 <a href="/2020/04/01/ge-ren-tu-xie-xi-lie-zong-jie-rocketmq/">
                     <div class="card-image">
@@ -1167,9 +1102,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-04-01
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-04-01
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -1182,6 +1117,7 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -1200,28 +1136,29 @@
                 Next&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/03/31/ge-ren-tu-xie-xi-lie-zong-jie-redis/">
+                <a href="/2020/04/01/ge-ren-tu-xie-xi-lie-zong-jie-dubbo/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="个人吐血系列-总结Redis">
+                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="个人吐血系列-总结Dubbo">
                         
-                        <span class="card-title">个人吐血系列-总结Redis</span>
+                        <span class="card-title">个人吐血系列-总结Dubbo</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
                             
-毕竟Redis还是挺热门的缓存中间件，得好好学习一下子，在高并发的场景当中，也用的比较多，面试也是常问的点。
+微服务和分布式算是一种潮流和趋势，项目中要到了微服务还是准备准备面试的问题吧…
 
 大纲图
-Redis是什么简单来说redis就是一个数据库，不过与传统数据库不同的是redis的数据库是存在内存中，所以读写速度
+Dubbo和SpringCloud的区别
+底层：Dubbo底层是使用Netty的NIO框架，基于TCP协议传输，使用Hession序列化完成RPC通
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-03-31
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-04-01
                             </span>
                         <span class="publish-author">
                             
@@ -1238,8 +1175,8 @@ Redis是什么简单来说redis就是一个数据库，不过与传统数据库�
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/redis/">
-                        <span class="chip bg-color">redis</span>
+                    <a href="/tags/dubbo/">
+                        <span class="chip bg-color">dubbo</span>
                     </a>
                     
                 </div>
