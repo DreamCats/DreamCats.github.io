@@ -1176,7 +1176,7 @@
 <li>Server使用自己的私钥，获取Client发来的随机数（Premaster secret）。</li>
 <li>Client和Server根据约定的加密方法，使用前面的三个随机数，生成”对话密钥”（session key），用来加密接下来的整个对话过程。</li>
 </ol>
-<p><img src="https://raw.githubusercontent.com/DreamCats/PicBed/master/20191121192634.png" alt=""></p>
+<p><img src="http://media.dreamcat.ink/uPic/rsa%E5%8E%9F%E7%90%86.png" alt="rsa原理"></p>
 <h3 id="认证"><a href="#认证" class="headerlink" title="认证"></a>认证</h3><p>通过使用  <strong>证书</strong> 来对通信方进行认证。</p>
 <p>数字证书认证机构（CA，Certificate Authority）是客户端与服务器双方都可信赖的第三方机构。</p>
 <p>服务器的运营人员向 CA 提出公开密钥的申请，CA 在判明提出申请者的身份之后，会对已申请的公开密钥做数字签名，然后分配这个已签名的公开密钥，并将该公开密钥放入公开密钥证书后绑定在一起。</p>
