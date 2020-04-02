@@ -762,7 +762,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    8.2k
+                    8.5k
                 </div>
                 
 
@@ -1063,6 +1063,25 @@
 </ul>
 <h5 id="为什么要有2MSL等待延迟？"><a href="#为什么要有2MSL等待延迟？" class="headerlink" title="为什么要有2MSL等待延迟？"></a>为什么要有2MSL等待延迟？</h5><p>对应这样一种情况，最后客户端发送的ACK = 1给服务端的<strong>过程中丢失</strong>了，服务端没收到，服务端怎么认为的？我已经发送完数据了，怎么客户端没回应我？是不是中途丢失了？然后服务端再次发起断开连接的请求，一个来回就是2MSL。</p>
 <p>客户端给服务端发送的ACK = 1丢失，<strong>服务端等待 1MSL没收到</strong>，<strong>然后重新发送消息需要1MSL</strong>。如果再次接收到服务端的消息，则<strong>重启2MSL计时器</strong>，<strong>发送确认请求</strong>。客户端只需等待2MSL，如果没有再次收到服务端的消息，就说明服务端已经接收到自己确认消息；此时双方都关闭的连接，TCP 四次分手完毕</p>
+<h4 id="TCP粘包"><a href="#TCP粘包" class="headerlink" title="TCP粘包"></a>TCP粘包</h4><p><strong>TCP粘包</strong>是指发送方发送的若干包数据到接收方接收时粘成一包，从接收缓冲区看，后一包数据的头紧接着前一包数据的尾。</p>
+<ul>
+<li>由TCP<strong>连接复用</strong>造成的粘包问题。</li>
+<li>因为TCP默认会使用<strong>Nagle算法</strong>，此算法会导致粘包问题。<ul>
+<li>只有上一个分组得到确认，才会发送下一个分组；</li>
+<li>收集多个小分组，在一个确认到来时一起发送。</li>
+</ul>
+</li>
+<li><strong>数据包过大</strong>造成的粘包问题。</li>
+<li>流量控制，<strong>拥塞控制</strong>也可能导致粘包。</li>
+<li><strong>接收方不及时接收缓冲区的包，造成多个包接收</strong></li>
+</ul>
+<p><strong>解决</strong>：</p>
+<ol>
+<li><strong>Nagle算法</strong>问题导致的，需要结合应用场景适当关闭该算法</li>
+<li>尾部标记序列。通过特殊标识符表示数据包的边界，例如\n\r，\t，或者一些隐藏字符。</li>
+<li>头部标记分步接收。在TCP报文的头部加上表示数据长度。</li>
+<li>应用层发送数据时<strong>定长</strong>发送。</li>
+</ol>
 <h4 id="UDP"><a href="#UDP" class="headerlink" title="UDP"></a>UDP</h4><p>提供<strong>无连接</strong>的，尽最大努力的数据传输服务（<strong>不保证数据传输的可靠性</strong>）。</p>
 <h5 id="UDP的特点"><a href="#UDP的特点" class="headerlink" title="UDP的特点"></a>UDP的特点</h5><ul>
 <li>UDP是<strong>无连接的</strong>；</li>
