@@ -762,7 +762,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    5.7k
+                    7.4k
                 </div>
                 
 
@@ -1015,7 +1015,52 @@
 <li>因为需要进行加密解密等过程，因此速度会更慢；</li>
 <li>需要支付证书授权的高额费用。</li>
 </ul>
-<h3 id="TCP-IP"><a href="#TCP-IP" class="headerlink" title="TCP/IP"></a>TCP/IP</h3>
+<h3 id="TCP-UDP"><a href="#TCP-UDP" class="headerlink" title="TCP/UDP"></a>TCP/UDP</h3><h4 id="TCP"><a href="#TCP" class="headerlink" title="TCP"></a>TCP</h4><h5 id="TCP是什么？"><a href="#TCP是什么？" class="headerlink" title="TCP是什么？"></a>TCP是什么？</h5><p><code>TCP（Transmission Control Protocol 传输控制协议）</code>是一种面向连接的、可靠的、基于字节流的传输层通信协议。</p>
+<h5 id="TCP头部报文"><a href="#TCP头部报文" class="headerlink" title="TCP头部报文"></a>TCP头部报文</h5><h6 id="source-port-和-destination-port"><a href="#source-port-和-destination-port" class="headerlink" title="source port 和 destination port"></a>source port 和 destination port</h6><blockquote>
+<p>两者分别为「源端口号」和「目的端口号」。源端口号就是指本地端口，目的端口就是远程端口。</p>
+</blockquote>
+<p>可以这么理解，我们有很多软件，每个软件都对应一个端口，假如，你想和我数据交互，咱们得互相知道你我的端口号。</p>
+<p>再来一个很官方的：</p>
+<blockquote>
+<p>扩展：应用程序的端口号和应用程序所在主机的 IP 地址统称为 socket（套接字），IP:端口号, 在互联网上 socket 唯一标识每一个应用程序，源端口+源IP+目的端口+目的IP称为”套接字对“，一对套接字就是一个连接，一个客户端与服务器之间的连接。</p>
+</blockquote>
+<h6 id="Sequence-Number"><a href="#Sequence-Number" class="headerlink" title="Sequence Number"></a>Sequence Number</h6><blockquote>
+<p>称为「序列号」。用于 TCP 通信过程中某一传输方向上字节流的每个字节的编号，为了确保数据通信的有序性，避免网络中乱序的问题。接收端根据这个编号进行确认，保证分割的数据段在原始数据包的位置。初始序列号由自己定，而后绪的序列号由对端的 ACK 决定：SN_x = ACK_y (x 的序列号 = y 发给 x 的 ACK)。</p>
+</blockquote>
+<p>说白了，类似于身份证一样，而且还得发送此时此刻的所在的位置，就相当于身份证上的地址一样。</p>
+<h6 id="Acknowledge-Number"><a href="#Acknowledge-Number" class="headerlink" title="Acknowledge Number"></a>Acknowledge Number</h6><blockquote>
+<p>称为「确认序列号」。确认序列号是接收确认端所期望收到的下一序列号。确认序号应当是上次已成功收到数据字节序号加1，只有当标志位中的 ACK 标志为 1 时该确认序列号的字段才有效。主要用来解决不丢包的问题。</p>
+</blockquote>
+<h6 id="TCP-Flag"><a href="#TCP-Flag" class="headerlink" title="TCP Flag"></a>TCP Flag</h6><p><code>TCP</code> 首部中有 6 个标志比特，它们中的多个可同时被设置为 <code>1</code>，主要是用于操控 <code>TCP</code> 的状态机的，依次为<code>URG，ACK，PSH，RST，SYN，FIN</code>。</p>
+<p>当然只介绍三个：</p>
+<ol>
+<li><strong>ACK</strong>：这个标识可以理解为发送端发送数据到接收端，发送的时候 ACK 为 0，标识接收端还未应答，一旦接收端接收数据之后，就将 ACK 置为 1，发送端接收到之后，就知道了接收端已经接收了数据。</li>
+<li><strong>SYN</strong>：表示「同步序列号」，是 TCP 握手的发送的第一个数据包。用来建立 TCP 的连接。SYN 标志位和 ACK 标志位搭配使用，当连接请求的时候，SYN=1，ACK=0连接被响应的时候，SYN=1，ACK=1；这个标志的数据包经常被用来进行端口扫描。扫描者发送一个只有 SYN 的数据包，如果对方主机响应了一个数据包回来 ，就表明这台主机存在这个端口。</li>
+<li><strong>FIN</strong>：表示发送端已经达到数据末尾，也就是说双方的数据传送完成，没有数据可以传送了，发送FIN标志位的 TCP 数据包后，连接将被断开。这个标志的数据包也经常被用于进行端口扫描。发送端只剩最后的一段数据了，同时要告诉接收端后边没有数据可以接受了，所以用FIN标识一下，接收端看到这个FIN之后，哦！这是接受的最后的数据，接受完就关闭了；<strong>TCP四次分手必然问</strong>。</li>
+</ol>
+<h6 id="Window-size"><a href="#Window-size" class="headerlink" title="Window size"></a>Window size</h6><blockquote>
+<p>称为滑动窗口大小。所说的滑动窗口，用来进行流量控制。</p>
+</blockquote>
+<h4 id="TCP三次握手"><a href="#TCP三次握手" class="headerlink" title="TCP三次握手"></a>TCP三次握手</h4><p><img src="http://media.dreamcat.ink/uPic/TCP%E4%B8%89%E6%AC%A1%E6%8F%A1%E6%89%8B.svg" alt="TCP三次握手"></p>
+<ul>
+<li><strong>初始状态</strong>：客户端处于 <code>closed(关闭)</code>状态，服务器处于 <code>listen(监听)</code> 状态。</li>
+<li><strong>第一次握手</strong>：客户端发送请求报文将 <code>SYN = 1</code>同步序列号和初始化序列号<code>seq = x</code>发送给服务端，发送完之后客户端处于<code>SYN_Send</code>状态。（验证了客户端的发送能力和服务端的接收能力）</li>
+<li><strong>第二次握手</strong>：服务端受到 <code>SYN</code> 请求报文之后，如果同意连接，会以自己的同步序列号<code>SYN(服务端) = 1</code>、初始化序列号 <code>seq = y</code>和确认序列号（期望下次收到的数据包）<code>ack = x+ 1</code> 以及确认号<code>ACK = 1</code>报文作为应答，服务器为<code>SYN_Receive</code>状态。（验证客户端的接收能力和服务端的发送能力，问题来了，两次握手之后，站在客户端角度上思考：我发送和接收都ok，服务端的发送和接收也都ok。但是站在服务端的角度思考：哎呀，我服务端接收ok，但是我不清楚我的发送ok不ok呀，而且我还不知道你接受能力如何呢？所以老哥，你需要给我三次握手来传个话告诉我一声。）</li>
+<li><strong>第三次握手</strong>： 客户端接收到服务端的 <code>SYN + ACK</code>之后，知道可以下次可以发送了下一序列的数据包了，然后发送同步序列号 <code>ack = y + 1</code>和数据包的序列号 <code>seq = x + 1</code>以及确认号<code>ACK = 1</code>确认包作为应答，客户端转为<code>established</code>状态。（分别站在双方的角度上思考，各自ok）</li>
+</ul>
+<h4 id="TCP四次分手"><a href="#TCP四次分手" class="headerlink" title="TCP四次分手"></a>TCP四次分手</h4><p><img src="http://media.dreamcat.ink/uPic/TCP%E5%9B%9B%E6%AC%A1%E5%88%86%E6%89%8B.png" alt="TCP四次分手"></p>
+<ul>
+<li><strong>初始化状态</strong>：客户端和服务端都在连接状态，接下来开始进行四次分手断开连接操作。</li>
+<li><strong>第一次分手</strong>：第一次分手无论是客户端还是服务端都可以发起，因为 TCP 是全双工的。</li>
+</ul>
+<blockquote>
+<p>假如客户端发送的数据已经发送完毕，发送FIN = 1 告诉服务端，客户端所有数据已经全发完了，服务端你可以关闭接收了，但是如果你们服务端有数据要发给客户端，客户端照样可以接收的。此时客户端处于FIN = 1等待服务端确认释放连接状态。</p>
+</blockquote>
+<ul>
+<li><strong>第二次分手</strong>：服务端接收到客户端的释放请求连接之后，知道客户端没有数据要发给自己了，然后服务端发送ACK = 1告诉客户端受到你发给我的信息，此时服务端处于 CLOSE_WAIT 等待关闭状态。（针对服务端，事情太突然，数据还没传送完毕，但是先回复客户端，毕竟人家要求你收到赶紧回应我一声。）</li>
+<li><strong>第三次分手</strong>：此时服务端向客户端把所有的数据发送完了，然后发送一个FIN = 1，用于告诉客户端，服务端的所有数据发送完毕，客户端你也可以关闭接受数据连接了。此时服务端状态处于LAST_ACK状态，来等待确认客户端是否收到了自己的请求。</li>
+</ul>
+
             </div>
             <hr/>
 
