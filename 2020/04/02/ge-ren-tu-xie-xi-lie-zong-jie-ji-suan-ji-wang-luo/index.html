@@ -1061,7 +1061,7 @@
 <ul>
 <li><strong>初始状态</strong>：客户端处于 <code>closed(关闭)</code>状态，服务器处于 <code>listen(监听)</code> 状态。</li>
 <li><strong>第一次握手</strong>：客户端发送请求报文将 <code>SYN = 1</code>同步序列号和初始化序列号<code>seq = x</code>发送给服务端，发送完之后客户端处于<code>SYN_Send</code>状态。（验证了客户端的发送能力和服务端的接收能力）</li>
-<li><strong>第二次握手</strong>：服务端受到 <code>SYN</code> 请求报文之后，如果同意连接，会以自己的同步序列号<code>SYN(服务端) = 1</code>、初始化序列号 <code>seq = y</code>和确认序列号（期望下次收到的数据包）<code>ack = x+ 1</code> 以及确认号<code>ACK = 1</code>报文作为应答，服务器为<code>SYN_Receive</code>状态。（验证客户端的接收能力和服务端的发送能力，问题来了，两次握手之后，站在客户端角度上思考：我发送和接收都ok，服务端的发送和接收也都ok。但是站在服务端的角度思考：哎呀，我服务端接收ok，但是我不清楚我的发送ok不ok呀，而且我还不知道你接受能力如何呢？所以老哥，你需要给我三次握手来传个话告诉我一声。）</li>
+<li><strong>第二次握手</strong>：服务端受到 <code>SYN</code> 请求报文之后，如果同意连接，会以自己的同步序列号<code>SYN(服务端) = 1</code>、初始化序列号 <code>seq = y</code>和确认序列号（期望下次收到的数据包）<code>ack = x+ 1</code> 以及确认号<code>ACK = 1</code>报文作为应答，服务器为<code>SYN_Receive</code>状态。（问题来了，两次握手之后，站在客户端角度上思考：我发送和接收都ok，服务端的发送和接收也都ok。但是站在服务端的角度思考：哎呀，我服务端接收ok，但是我不清楚我的发送ok不ok呀，而且我还不知道你接受能力如何呢？所以老哥，你需要给我三次握手来传个话告诉我一声。你要是不告诉我，万一我认为你跑了，然后我可能出于安全性的考虑继续给你发一次，看看你回不回我。）</li>
 <li><strong>第三次握手</strong>： 客户端接收到服务端的 <code>SYN + ACK</code>之后，知道可以下次可以发送了下一序列的数据包了，然后发送同步序列号 <code>ack = y + 1</code>和数据包的序列号 <code>seq = x + 1</code>以及确认号<code>ACK = 1</code>确认包作为应答，客户端转为<code>established</code>状态。（分别站在双方的角度上思考，各自ok）</li>
 </ul>
 <h4 id="TCP四次分手"><a href="#TCP四次分手" class="headerlink" title="TCP四次分手"></a>TCP四次分手</h4><p><img src="http://media.dreamcat.ink/uPic/TCP%E5%9B%9B%E6%AC%A1%E5%88%86%E6%89%8B.png" alt="TCP四次分手"></p>
