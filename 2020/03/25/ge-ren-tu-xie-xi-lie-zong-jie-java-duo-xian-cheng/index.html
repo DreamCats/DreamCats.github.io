@@ -781,28 +781,26 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h2 id="大纲图"><a href="#大纲图" class="headerlink" title="大纲图"></a>大纲图</h2><p><img src="http://media.dreamcat.ink/uPic/%E5%A4%9A%E7%BA%BF%E7%A8%8B.png" alt="多线程"></p>
-<h4 id="什么是线程和进程？"><a href="#什么是线程和进程？" class="headerlink" title="什么是线程和进程？"></a>什么是线程和进程？</h4><h5 id="进程"><a href="#进程" class="headerlink" title="进程"></a>进程</h5><p>进程是程序的一次执行过程，是系统运行程序的基本单位，因此进程是动态的。系统运行一个程序即是一个进程从创建，运行到消亡的过程。</p>
+<h3 id="什么是线程和进程？"><a href="#什么是线程和进程？" class="headerlink" title="什么是线程和进程？"></a>什么是线程和进程？</h3><h4 id="进程"><a href="#进程" class="headerlink" title="进程"></a>进程</h4><p>进程是程序的一次执行过程，是系统运行程序的基本单位，因此进程是动态的。系统运行一个程序即是一个进程从创建，运行到消亡的过程。</p>
 <p>比如：当我们启动 main 函数时其实就是启动了一个 JVM 的进程，而 main 函数所在的线程就是这个进程中的一个线程，也称主线程。</p>
-<h5 id="线程"><a href="#线程" class="headerlink" title="线程"></a>线程</h5><ul>
+<h4 id="线程"><a href="#线程" class="headerlink" title="线程"></a>线程</h4><ul>
 <li>线程是一个比进程更小的执行单位</li>
 <li>一个进程在其执行的过程中可以产生<strong>多个线程</strong></li>
 <li>与进程不同的是同类的多个线程共享进程的<strong>堆</strong>和<strong>方法区</strong>资源，但每个线程有自己的<strong>程序计数器</strong>、<strong>虚拟机栈</strong>和<strong>本地方法栈</strong>，所以系统在产生一个线程，或是在各个线程之间作切换工作时，负担要比进程小得多，也正因为如此，线程也被称为轻量级进程</li>
 </ul>
-<h4 id="并发和并行的区别？"><a href="#并发和并行的区别？" class="headerlink" title="并发和并行的区别？"></a>并发和并行的区别？</h4><p><strong>并发：同一时间段，多个任务都在执行 (单位时间内不一定同时执行)；</strong></p>
-<p><strong>并行：单位时间内，多个任务同时执行。</strong></p>
-<h4 id="为什么使用多线程？"><a href="#为什么使用多线程？" class="headerlink" title="为什么使用多线程？"></a>为什么使用多线程？</h4><ul>
+<h3 id="并发和并行的区别？"><a href="#并发和并行的区别？" class="headerlink" title="并发和并行的区别？"></a>并发和并行的区别？</h3><h4 id="并发：同一时间段，多个任务都在执行-单位时间内不一定同时执行-；"><a href="#并发：同一时间段，多个任务都在执行-单位时间内不一定同时执行-；" class="headerlink" title="并发：同一时间段，多个任务都在执行 (单位时间内不一定同时执行)；"></a><strong>并发：同一时间段，多个任务都在执行 (单位时间内不一定同时执行)；</strong></h4><h4 id="并行：单位时间内，多个任务同时执行。"><a href="#并行：单位时间内，多个任务同时执行。" class="headerlink" title="并行：单位时间内，多个任务同时执行。"></a><strong>并行：单位时间内，多个任务同时执行。</strong></h4><h3 id="为什么使用多线程？"><a href="#为什么使用多线程？" class="headerlink" title="为什么使用多线程？"></a>为什么使用多线程？</h3><ul>
 <li><strong>从计算机底层来说：</strong> 线程可以比作是轻量级的进程，是程序执行的最小单位,线程间的切换和调度的成本远远小于进程。另外，多核 CPU 时代意味着多个线程可以同时运行，这减少了线程上下文切换的开销。</li>
 <li><strong>从当代互联网发展趋势来说：</strong>现在的系统动不动就要求百万级甚至千万级的并发量，而多线程并发编程正是开发高并发系统的基础，利用好多线程机制可以大大提高系统整体的并发能力以及性能。</li>
 </ul>
-<h4 id="使用多线程可能会带来什么问题？"><a href="#使用多线程可能会带来什么问题？" class="headerlink" title="使用多线程可能会带来什么问题？"></a>使用多线程可能会带来什么问题？</h4><p>可能会带来<strong>内存泄漏</strong>、<strong>上下文切换</strong>、<strong>死锁</strong>有受限于硬件和软件的资源闲置问题。</p>
-<h4 id="说说线程的生命周期？"><a href="#说说线程的生命周期？" class="headerlink" title="说说线程的生命周期？"></a>说说线程的生命周期？</h4><p><img src="https://www.pdai.tech/_images/pics/ace830df-9919-48ca-91b5-60b193f593d2.png" alt=""></p>
+<h3 id="使用多线程可能会带来什么问题？"><a href="#使用多线程可能会带来什么问题？" class="headerlink" title="使用多线程可能会带来什么问题？"></a>使用多线程可能会带来什么问题？</h3><p>可能会带来<strong>内存泄漏</strong>、<strong>上下文切换</strong>、<strong>死锁</strong>有受限于硬件和软件的资源闲置问题。</p>
+<h3 id="说说线程的生命周期？"><a href="#说说线程的生命周期？" class="headerlink" title="说说线程的生命周期？"></a>说说线程的生命周期？</h3><p><img src="https://www.pdai.tech/_images/pics/ace830df-9919-48ca-91b5-60b193f593d2.png" alt=""></p>
 <p>线程创建之后它将处于<code>New</code>（新建）状态，调用 <code>start()</code> 方法后开始运行，线程这时候处于 <code>READY</code>（可运行） 状态。可运行状态的线程获得了 CPU 时间片（timeslice）后就处于 <code>RUNNING</code>（运行） 状态。</p>
 <p>当线程执行 <code>wait()</code>方法之后，线程进入 <code>WAITING</code>（等待） 状态。进入等待状态的线程需要依靠其他线程的通知才能够返回到运行状态，而 <code>TIME_WAITING</code>(超时等待) 状态相当于在等待状态的基础上增加了超时限制，比如通过 <code>sleep（long millis）</code>方法或 <code>wait（long millis）</code>方法可以将 Java 线程置于 <code>TIMED WAITING</code> 状态。当超时时间到达后 Java 线程将会返回到 RUNNABLE 状态。当线程调用同步方法时，在没有获取到锁的情况下，线程将会进入到 <code>BLOCKED</code>（阻塞）状态。线程在执行 Runnable 的<code>run()</code>方法之后将会进入到 <code>TERMINATED</code>（终止） 状态。</p>
-<h4 id="什么是上下文切换？"><a href="#什么是上下文切换？" class="headerlink" title="什么是上下文切换？"></a>什么是上下文切换？</h4><p>多线程编程中一般<strong>线程的个数都大于 CPU 核心的个数</strong>，而一个 CPU 核心在任意时刻只能被一个线程使用，为了让这些线程都能得到有效执行，CPU 采取的策略是为每个线程分配<strong>时间片并轮转</strong>的形式。当一个线程的时间片用完的时候就会重新处于就绪状态让给其他线程使用，这个过程就属于一次上下文切换。</p>
+<h3 id="什么是上下文切换？"><a href="#什么是上下文切换？" class="headerlink" title="什么是上下文切换？"></a>什么是上下文切换？</h3><p>多线程编程中一般<strong>线程的个数都大于 CPU 核心的个数</strong>，而一个 CPU 核心在任意时刻只能被一个线程使用，为了让这些线程都能得到有效执行，CPU 采取的策略是为每个线程分配<strong>时间片并轮转</strong>的形式。当一个线程的时间片用完的时候就会重新处于就绪状态让给其他线程使用，这个过程就属于一次上下文切换。</p>
 <p>实际上就是<strong>任务从保存到再加载的过程就是一次上下文切换</strong>。</p>
 <p>上下文切换通常是计算密集型的。也就是说，它需要相当可观的处理器时间，在每秒几十上百次的切换中，每次切换都需要纳秒量级的时间。所以，上下文切换对系统来说意味着消耗大量的 CPU 时间，事实上，可能是操作系统中时间消耗最大的操作。</p>
 <p>Linux 相比与其他操作系统（包括其他类 Unix 系统）有很多的优点，其中有一项就是，其上下文切换和模式切换的时间消耗非常少。</p>
-<h4 id="什么是死锁？如何避免死锁？"><a href="#什么是死锁？如何避免死锁？" class="headerlink" title="什么是死锁？如何避免死锁？"></a>什么是死锁？如何避免死锁？</h4><p>如下图所示，线程 A 持有资源 2，线程 B 持有资源 1，他们同时都想申请对方的资源，所以这两个线程就会互相等待而进入死锁状态。</p>
+<h3 id="什么是死锁？如何避免死锁？"><a href="#什么是死锁？如何避免死锁？" class="headerlink" title="什么是死锁？如何避免死锁？"></a>什么是死锁？如何避免死锁？</h3><p>如下图所示，线程 A 持有资源 2，线程 B 持有资源 1，他们同时都想申请对方的资源，所以这两个线程就会互相等待而进入死锁状态。</p>
 <p><img src="https://my-blog-to-use.oss-cn-beijing.aliyuncs.com/2019-4/2019-4%E6%AD%BB%E9%94%811.png" alt="线程死锁示意图 "></p>
 <p>学过操作系统的朋友都知道产生死锁必须具备以下四个条件：</p>
 <ul>
@@ -852,19 +850,19 @@ Thread<span class="token punctuation">[</span>线程 <span class="token number">
 Thread<span class="token punctuation">[</span>线程 <span class="token number">1</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">,</span>main<span class="token punctuation">]</span>waiting get resource2
 Thread<span class="token punctuation">[</span>线程 <span class="token number">2</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">,</span>main<span class="token punctuation">]</span>waiting get resource1</code></pre>
 <p>线程 A 通过 <code>synchronized (resource1)</code> 获得 resource1 的监视器锁，然后通过<code>Thread.sleep(1000);</code>让线程 A 休眠 1s 为的是让线程 B 得到执行然后获取到 resource2 的监视器锁。线程 A 和线程 B 休眠结束了都开始企图请求获取对方的资源，然后这两个线程就会陷入互相等待的状态，这也就产生了死锁。上面的例子符合产生死锁的四个必要条件。</p>
-<h5 id="如何找到死锁"><a href="#如何找到死锁" class="headerlink" title="如何找到死锁"></a>如何找到死锁</h5><p><strong>通过jdk常用的命令jsp和jstack，jsp查看java程序的id，jstack查看方法的栈信息等。</strong></p>
-<h4 id="说说Sleep和Wait方法的区别"><a href="#说说Sleep和Wait方法的区别" class="headerlink" title="说说Sleep和Wait方法的区别"></a>说说Sleep和Wait方法的区别</h4><ul>
+<h4 id="如何找到死锁"><a href="#如何找到死锁" class="headerlink" title="如何找到死锁"></a>如何找到死锁</h4><p><strong>通过jdk常用的命令jsp和jstack，jsp查看java程序的id，jstack查看方法的栈信息等。</strong></p>
+<h3 id="说说Sleep和Wait方法的区别"><a href="#说说Sleep和Wait方法的区别" class="headerlink" title="说说Sleep和Wait方法的区别"></a>说说Sleep和Wait方法的区别</h3><ul>
 <li>两者最主要的区别在于：<strong>sleep 方法没有释放锁，而 wait 方法释放了锁</strong> 。</li>
 <li>两者都可以暂停线程的执行。</li>
 <li>Wait 通常被用于线程间交互/通信，sleep 通常被用于暂停执行。</li>
 <li>wait() 方法被调用后，线程不会自动苏醒，需要别的线程调用同一个对象上的 notify() 或者 notifyAll() 方法。sleep() 方法执行完成后，线程会自动苏醒。或者可以使用wait(long timeout)超时后线程会自动苏醒。</li>
 </ul>
-<h4 id="Synchronzed"><a href="#Synchronzed" class="headerlink" title="Synchronzed"></a>Synchronzed</h4><h5 id="使用方式"><a href="#使用方式" class="headerlink" title="使用方式"></a>使用方式</h5><ul>
+<h3 id="Synchronzed"><a href="#Synchronzed" class="headerlink" title="Synchronzed"></a>Synchronzed</h3><h4 id="使用方式"><a href="#使用方式" class="headerlink" title="使用方式"></a>使用方式</h4><ul>
 <li><strong>修饰实例方法，作用于当前对象实例加锁，进入同步代码前要获得当前对象实例的锁</strong></li>
 <li><strong>修饰静态方法，作用于当前类对象加锁，进入同步代码前要获得当前类对象的锁</strong> 。</li>
 <li><strong>修饰代码块，指定加锁对象，对给定对象加锁，进入同步代码库前要获得给定对象的锁。</strong></li>
 </ul>
-<h5 id="单例"><a href="#单例" class="headerlink" title="单例"></a>单例</h5><pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Singleton</span> <span class="token punctuation">{</span>
+<h4 id="单例"><a href="#单例" class="headerlink" title="单例"></a>单例</h4><pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Singleton</span> <span class="token punctuation">{</span>
 
     <span class="token keyword">private</span> <span class="token keyword">volatile</span> <span class="token keyword">static</span> Singleton uniqueInstance<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 第一步</span>
 
@@ -892,7 +890,7 @@ Thread<span class="token punctuation">[</span>线程 <span class="token number">
 <li>将 uniqueInstance 指向分配的内存地址</li>
 </ol>
 <p>但是由于 JVM 具有指令重排的特性，执行顺序有可能变成 1-&gt;3-&gt;2。指令重排在单线程环境下不会出现问题，但是在多线程环境下会导致一个线程获得还没有初始化的实例。例如，线程 T1 执行了 1 和 3，此时 T2 调用 getUniqueInstance() 后发现 uniqueInstance 不为空，因此返回 uniqueInstance，但此时 uniqueInstance 还未被初始化。</p>
-<h5 id="Synchronized-和-ReenTrantLock-的对比"><a href="#Synchronized-和-ReenTrantLock-的对比" class="headerlink" title="Synchronized 和 ReenTrantLock 的对比"></a>Synchronized 和 ReenTrantLock 的对比</h5><ol>
+<h4 id="Synchronized-和-ReenTrantLock-的对比"><a href="#Synchronized-和-ReenTrantLock-的对比" class="headerlink" title="Synchronized 和 ReenTrantLock 的对比"></a>Synchronized 和 ReenTrantLock 的对比</h4><ol>
 <li><strong>两者都是可重入锁</strong>:两者都是可重入锁。“可重入锁”概念是：自己可以再次获取自己的内部锁。比如一个线程获得了某个对象的锁，此时这个对象锁还没有释放，当其再次想要获取这个对象的锁的时候还是可以获取的，如果不可锁重入的话，就会造成死锁。同一个线程每次获取锁，锁的计数器都自增1，所以要等到锁的计数器下降为0时才能释放锁。</li>
 <li><strong>Synchronized 依赖于 JVM 而 ReenTrantLock 依赖于 API</strong>:synchronized 是依赖于 JVM 实现的，前面我们也讲到了 虚拟机团队在 JDK1.6 为 synchronized 关键字进行了很多优化，但是这些优化都是在虚拟机层面实现的，并没有直接暴露给我们。ReenTrantLock 是 JDK 层面实现的（也就是 API 层面，需要 lock() 和 unlock 方法配合 try/finally 语句块来完成），所以我们可以通过查看它的源代码，来看它是如何实现的。</li>
 <li><strong>ReenTrantLock 比 Synchronized 增加了一些高级功能</strong><ol>
@@ -903,7 +901,7 @@ Thread<span class="token punctuation">[</span>线程 <span class="token number">
 </ol>
 </li>
 </ol>
-<h5 id="底层原理"><a href="#底层原理" class="headerlink" title="底层原理"></a>底层原理</h5><p><strong>synchronized 关键字底层原理属于 JVM 层面。</strong></p>
+<h4 id="底层原理"><a href="#底层原理" class="headerlink" title="底层原理"></a>底层原理</h4><p><strong>synchronized 关键字底层原理属于 JVM 层面。</strong></p>
 <ol>
 <li><p><strong>synchronized 同步语句块的情况</strong></p>
 <p><strong>synchronized 同步语句块的实现使用的是 monitorenter 和 monitorexit 指令，其中 monitorenter 指令指向同步代码块的开始位置，monitorexit 指令则指明同步代码块的结束位置。</strong> 当执行 monitorenter 指令时，线程试图获取锁也就是获取 monitor(monitor对象存在于每个Java对象的对象头中，synchronized 锁便是通过这种方式获取锁的，也是为什么Java中任意对象可以作为锁的原因) 的持有权.当计数器为0则可以成功获取，获取后将锁计数器设为1也就是加1。相应的在执行 monitorexit 指令后，将锁计数器设为0，表明锁被释放。如果获取对象锁失败，那当前线程就要阻塞等待，直到锁被另外一个线程释放为止。</p>
@@ -912,7 +910,7 @@ Thread<span class="token punctuation">[</span>线程 <span class="token number">
 <p>synchronized 修饰的方法并没有 monitorenter 指令和 monitorexit 指令，取得代之的确实是 ACC_SYNCHRONIZED 标识，该标识指明了该方法是一个同步方法，JVM 通过该 ACC_SYNCHRONIZED 访问标志来辨别一个方法是否声明为同步方法，从而执行相应的同步调用。</p>
 </li>
 </ol>
-<h5 id="1-6版本的优化"><a href="#1-6版本的优化" class="headerlink" title="1.6版本的优化"></a>1.6版本的优化</h5><p>在 Java 早期版本中，synchronized 属于重量级锁，效率低下，因为监视器锁（monitor）是依赖于底层的操作系统的 <strong>Mutex Lock</strong> 来实现的，Java 的线程是映射到操作系统的原生线程之上的。如果要挂起或者唤醒一个线程，都需要操作系统帮忙完成，而操作系统实现线程之间的切换时需要从用户态转换到内核态，这个状态之间的转换需要相对比较长的时间，时间成本相对较高，这也是为什么早期的 synchronized 效率低的原因。庆幸的是在 Java 6 之后 Java 官方对从 JVM 层面对synchronized 较大优化，所以现在的 synchronized 锁效率也优化得很不错了。JDK1.6对锁的实现引入了大量的优化，如自旋锁、适应性自旋锁、锁消除、锁粗化、偏向锁、轻量级锁等技术来减少锁操作的开销。</p>
+<h4 id="1-6版本的优化"><a href="#1-6版本的优化" class="headerlink" title="1.6版本的优化"></a>1.6版本的优化</h4><p>在 Java 早期版本中，synchronized 属于重量级锁，效率低下，因为监视器锁（monitor）是依赖于底层的操作系统的 <strong>Mutex Lock</strong> 来实现的，Java 的线程是映射到操作系统的原生线程之上的。如果要挂起或者唤醒一个线程，都需要操作系统帮忙完成，而操作系统实现线程之间的切换时需要从用户态转换到内核态，这个状态之间的转换需要相对比较长的时间，时间成本相对较高，这也是为什么早期的 synchronized 效率低的原因。庆幸的是在 Java 6 之后 Java 官方对从 JVM 层面对synchronized 较大优化，所以现在的 synchronized 锁效率也优化得很不错了。JDK1.6对锁的实现引入了大量的优化，如自旋锁、适应性自旋锁、锁消除、锁粗化、偏向锁、轻量级锁等技术来减少锁操作的开销。</p>
 <p>锁主要存在四中状态，依次是：<strong>无锁状态、偏向锁状态、轻量级锁状态、重量级锁状态</strong>，他们会随着竞争的激烈而逐渐升级。注意锁可以升级不可降级，这种策略是为了提高获得锁和释放锁的效率。</p>
 <ol>
 <li><p><strong>偏向锁</strong></p>
@@ -962,7 +960,7 @@ Thread<span class="token punctuation">[</span>线程 <span class="token number">
 </ol>
 </li>
 </ol>
-<h4 id="Volatile"><a href="#Volatile" class="headerlink" title="Volatile"></a>Volatile</h4><h5 id="Volatile的特性"><a href="#Volatile的特性" class="headerlink" title="Volatile的特性"></a>Volatile的特性</h5><ol>
+<h3 id="Volatile"><a href="#Volatile" class="headerlink" title="Volatile"></a>Volatile</h3><h4 id="Volatile的特性"><a href="#Volatile的特性" class="headerlink" title="Volatile的特性"></a>Volatile的特性</h4><ol>
 <li><p><strong>可见性</strong></p>
 <p><strong>volatile的可见性是指当一个变量被volatile修饰后，这个变量就对所有线程均可见。白话点就是说当一个线程修改了一个volatile修饰的变量后，其他线程可以立刻得知这个变量的修改，拿到最这个变量最新的值。</strong></p>
 <pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">VolatileVisibleDemo</span> <span class="token punctuation">{</span>
@@ -1116,7 +1114,7 @@ ctorInstance(memory);  //2. 初始化对象 </code></pre><p><strong>这样优化
 <p><strong>针对readAndWrite()方法，编译器在生成字节码时可以做如下的优化：</strong></p>
 <p><img src="https://image-static.segmentfault.com/178/456/1784565222-5ac871e5e6dec_articlex" alt="readAndWrite"></p>
 <p><strong>注意，最后的StoreLoad屏障不能省略。因为第二个volatile写之后，方法立即return。此时编译器可能无法准确断定后面是否会有volatile读或写，为了安全起见，编译器常常会在这里插入一个StoreLoad屏障。</strong></p>
-<h5 id="volatile汇编"><a href="#volatile汇编" class="headerlink" title="volatile汇编"></a>volatile汇编</h5><pre class=" language-java"><code class="language-java"><span class="token number">0x000000011214bb49</span><span class="token operator">:</span> mov    <span class="token operator">%</span>rdi<span class="token punctuation">,</span><span class="token operator">%</span>rax
+<h4 id="volatile汇编"><a href="#volatile汇编" class="headerlink" title="volatile汇编"></a>volatile汇编</h4><pre class=" language-java"><code class="language-java"><span class="token number">0x000000011214bb49</span><span class="token operator">:</span> mov    <span class="token operator">%</span>rdi<span class="token punctuation">,</span><span class="token operator">%</span>rax
   <span class="token number">0x000000011214bb4c</span><span class="token operator">:</span> dec    <span class="token operator">%</span>eax
   <span class="token number">0x000000011214bb4e</span><span class="token operator">:</span> mov    <span class="token operator">%</span>eax<span class="token punctuation">,</span><span class="token function">0x10</span><span class="token punctuation">(</span><span class="token operator">%</span>rsi<span class="token punctuation">)</span>
   <span class="token number">0x000000011214bb51</span><span class="token operator">:</span> lock addl $<span class="token number">0x0</span><span class="token punctuation">,</span><span class="token punctuation">(</span><span class="token operator">%</span>rsp<span class="token punctuation">)</span>     <span class="token punctuation">;</span><span class="token operator">*</span>putfield v1
@@ -1135,7 +1133,7 @@ v2 <span class="token operator">=</span> j <span class="token operator">*</span>
 <li>任何读必须在写完成之后再执行</li>
 <li>使其它线程这个值的栈缓存失效</li>
 </ul>
-<h4 id="CAS"><a href="#CAS" class="headerlink" title="CAS"></a>CAS</h4><p><strong>我们在读Concurrent包下的类的源码时，发现无论是</strong>ReenterLock内部的AQS，还是各种Atomic开头的原子类，内部都应用到了<code>CAS</code></p>
+<h3 id="CAS"><a href="#CAS" class="headerlink" title="CAS"></a>CAS</h3><p><strong>我们在读Concurrent包下的类的源码时，发现无论是</strong>ReenterLock内部的AQS，还是各种Atomic开头的原子类，内部都应用到了<code>CAS</code></p>
 <pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Test</span> <span class="token punctuation">{</span>
 
     <span class="token keyword">public</span> AtomicInteger i<span class="token punctuation">;</span>
@@ -1158,14 +1156,14 @@ v2 <span class="token operator">=</span> j <span class="token operator">*</span>
     <span class="token keyword">return</span> var5<span class="token punctuation">;</span>
 <span class="token punctuation">}</span></code></pre>
 <p><strong>现在重点来了，<code>compareAndSwapInt（var1, var2, var5, var5 + var4）</code>其实换成<code>compareAndSwapInt（obj, offset, expect, update）</code>比较清楚，意思就是如果<code>obj</code>内的<code>value</code>和<code>expect</code>相等，就证明没有其他线程改变过这个变量，那么就更新它为<code>update</code>，如果这一步的<code>CAS</code>没有成功，那就采用自旋的方式继续进行<code>CAS</code>操作，取出乍一看这也是两个步骤了啊，其实在<code>JNI</code>里是借助于一个<code>CPU</code>指令完成的。所以还是原子操作。</strong></p>
-<h5 id="CAS底层"><a href="#CAS底层" class="headerlink" title="CAS底层"></a>CAS底层</h5><pre class=" language-c"><code class="language-c"><span class="token function">UNSAFE_ENTRY</span><span class="token punctuation">(</span>jboolean<span class="token punctuation">,</span> <span class="token function">Unsafe_CompareAndSwapInt</span><span class="token punctuation">(</span>JNIEnv <span class="token operator">*</span>env<span class="token punctuation">,</span> jobject unsafe<span class="token punctuation">,</span> jobject obj<span class="token punctuation">,</span> jlong offset<span class="token punctuation">,</span> jint e<span class="token punctuation">,</span> jint x<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<h4 id="CAS底层"><a href="#CAS底层" class="headerlink" title="CAS底层"></a>CAS底层</h4><pre class=" language-c"><code class="language-c"><span class="token function">UNSAFE_ENTRY</span><span class="token punctuation">(</span>jboolean<span class="token punctuation">,</span> <span class="token function">Unsafe_CompareAndSwapInt</span><span class="token punctuation">(</span>JNIEnv <span class="token operator">*</span>env<span class="token punctuation">,</span> jobject unsafe<span class="token punctuation">,</span> jobject obj<span class="token punctuation">,</span> jlong offset<span class="token punctuation">,</span> jint e<span class="token punctuation">,</span> jint x<span class="token punctuation">)</span><span class="token punctuation">)</span>
   <span class="token function">UnsafeWrapper</span><span class="token punctuation">(</span><span class="token string">"Unsafe_CompareAndSwapInt"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
   oop p <span class="token operator">=</span> JNIHandles<span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token function">resolve</span><span class="token punctuation">(</span>obj<span class="token punctuation">)</span><span class="token punctuation">;</span>
   jint<span class="token operator">*</span> addr <span class="token operator">=</span> <span class="token punctuation">(</span>jint <span class="token operator">*</span><span class="token punctuation">)</span> <span class="token function">index_oop_from_field_offset_long</span><span class="token punctuation">(</span>p<span class="token punctuation">,</span> offset<span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token keyword">return</span> <span class="token punctuation">(</span>jint<span class="token punctuation">)</span><span class="token punctuation">(</span>Atomic<span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token function">cmpxchg</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span> addr<span class="token punctuation">,</span> e<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">==</span> e<span class="token punctuation">;</span>
 UNSAFE_END</code></pre>
 <p><strong>p是取出的对象，addr是p中offset处的地址，最后调用了<code>Atomic::cmpxchg(x, addr, e)</code>, 其中参数x是即将更新的值，参数e是原内存的值。代码中能看到cmpxchg有基于各个平台的实现。</strong></p>
-<h5 id="ABA问题"><a href="#ABA问题" class="headerlink" title="ABA问题"></a>ABA问题</h5><p>描述: 第一个线程取到了变量 x 的值 A，然后巴拉巴拉干别的事，总之就是只拿到了变量 x 的值 A。这段时间内第二个线程也取到了变量 x 的值 A，然后把变量 x 的值改为 B，然后巴拉巴拉干别的事，最后又把变量 x 的值变为 A （相当于还原了）。在这之后第一个线程终于进行了变量 x 的操作，但是此时变量 x 的值还是 A，所以 compareAndSet 操作是成功。</p>
+<h4 id="ABA问题"><a href="#ABA问题" class="headerlink" title="ABA问题"></a>ABA问题</h4><p>描述: 第一个线程取到了变量 x 的值 A，然后巴拉巴拉干别的事，总之就是只拿到了变量 x 的值 A。这段时间内第二个线程也取到了变量 x 的值 A，然后把变量 x 的值改为 B，然后巴拉巴拉干别的事，最后又把变量 x 的值变为 A （相当于还原了）。在这之后第一个线程终于进行了变量 x 的操作，但是此时变量 x 的值还是 A，所以 compareAndSet 操作是成功。</p>
 <p><strong>目前在JDK的atomic包里提供了一个类<code>AtomicStampedReference</code>来解决ABA问题。</strong></p>
 <pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">ABADemo</span> <span class="token punctuation">{</span>
     <span class="token keyword">static</span> AtomicInteger atomicInteger <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">AtomicInteger</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -1207,8 +1205,8 @@ UNSAFE_END</code></pre>
 
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span></code></pre>
-<h4 id="ThreadLocal"><a href="#ThreadLocal" class="headerlink" title="ThreadLocal"></a>ThreadLocal</h4><p><strong>如果想实现每一个线程都有自己的专属本地变量该如何解决呢？</strong> JDK中提供的<code>ThreadLocal</code>类正是为了解决这样的问题。 <strong><code>ThreadLocal</code>类主要解决的就是让每个线程绑定自己的值，可以将<code>ThreadLocal</code>类形象的比喻成存放数据的盒子，盒子中可以存储每个线程的私有数据。**</strong>如果你创建了一个<code>ThreadLocal</code>变量，那么访问这个变量的每个线程都会有这个变量的本地副本，这也是<code>ThreadLocal</code>变量名的由来。他们可以使用 <code>get（）</code> 和 <code>set（）</code> 方法来获取默认值或将其值更改为当前线程所存的副本的值，从而避免了线程安全问题。**</p>
-<h5 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h5><pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Thread</span> <span class="token keyword">implements</span> <span class="token class-name">Runnable</span> <span class="token punctuation">{</span>
+<h3 id="ThreadLocal"><a href="#ThreadLocal" class="headerlink" title="ThreadLocal"></a>ThreadLocal</h3><p><strong>如果想实现每一个线程都有自己的专属本地变量该如何解决呢？</strong> JDK中提供的<code>ThreadLocal</code>类正是为了解决这样的问题。 <strong><code>ThreadLocal</code>类主要解决的就是让每个线程绑定自己的值，可以将<code>ThreadLocal</code>类形象的比喻成存放数据的盒子，盒子中可以存储每个线程的私有数据。**</strong>如果你创建了一个<code>ThreadLocal</code>变量，那么访问这个变量的每个线程都会有这个变量的本地副本，这也是<code>ThreadLocal</code>变量名的由来。他们可以使用 <code>get（）</code> 和 <code>set（）</code> 方法来获取默认值或将其值更改为当前线程所存的副本的值，从而避免了线程安全问题。**</p>
+<h4 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h4><pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Thread</span> <span class="token keyword">implements</span> <span class="token class-name">Runnable</span> <span class="token punctuation">{</span>
  <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
 <span class="token comment" spellcheck="true">//与此线程有关的ThreadLocal值。由ThreadLocal类维护</span>
 ThreadLocal<span class="token punctuation">.</span>ThreadLocalMap threadLocals <span class="token operator">=</span> null<span class="token punctuation">;</span>
@@ -1232,8 +1230,8 @@ ThreadLocal<span class="token punctuation">.</span>ThreadLocalMap inheritableThr
     <span class="token punctuation">}</span></code></pre>
 <p><strong>最终的变量是放在了当前线程的 <code>ThreadLocalMap</code> 中，并不是存在 <code>ThreadLocal</code> 上，ThreadLocal 可以理解为只是ThreadLocalMap的封装，传递了变量值。</strong></p>
 <p><strong>每个Thread中都具备一个ThreadLocalMap，而ThreadLocalMap可以存储以ThreadLocal为key的键值对。</strong> 比如我们在同一个线程中声明了两个 <code>ThreadLocal</code> 对象的话，会使用 <code>Thread</code>内部都是使用仅有那个<code>ThreadLocalMap</code> 存放数据的，<code>ThreadLocalMap</code>的 key 就是 <code>ThreadLocal</code>对象，value 就是 <code>ThreadLocal</code> 对象调用<code>set</code>方法设置的值。<code>ThreadLocal</code> 是 map结构是为了让每个线程可以关联多个 <code>ThreadLocal</code>变量。这也就解释了ThreadLocal声明的变量为什么在每一个线程都有自己的专属本地变量。</p>
-<h5 id="内存泄露"><a href="#内存泄露" class="headerlink" title="内存泄露"></a>内存泄露</h5><p><code>ThreadLocalMap</code> 中使用的 key 为 <code>ThreadLocal</code> 的弱引用,而 value 是强引用。所以，如果 <code>ThreadLocal</code> 没有被外部强引用的情况下，在垃圾回收的时候会 key 会被清理掉，而 value 不会被清理掉。这样一来，<code>ThreadLocalMap</code> 中就会出现key为null的Entry。假如我们不做任何措施的话，value 永远无法被GC 回收，这个时候就可能会产生内存泄露。ThreadLocalMap实现中已经考虑了这种情况，在调用 <code>set()</code>、<code>get()</code>、<code>remove()</code> 方法的时候，会清理掉 key 为 null 的记录。使用完 <code>ThreadLocal</code>方法后 最好手动调用<code>remove()</code>方法</p>
-<h4 id="并发集合容器"><a href="#并发集合容器" class="headerlink" title="并发集合容器"></a>并发集合容器</h4><h5 id="为什么说ArrayList线程不安全？"><a href="#为什么说ArrayList线程不安全？" class="headerlink" title="为什么说ArrayList线程不安全？"></a>为什么说ArrayList线程不安全？</h5><p><strong>看add方法的源码</strong></p>
+<h4 id="内存泄露"><a href="#内存泄露" class="headerlink" title="内存泄露"></a>内存泄露</h4><p><code>ThreadLocalMap</code> 中使用的 key 为 <code>ThreadLocal</code> 的弱引用,而 value 是强引用。所以，如果 <code>ThreadLocal</code> 没有被外部强引用的情况下，在垃圾回收的时候会 key 会被清理掉，而 value 不会被清理掉。这样一来，<code>ThreadLocalMap</code> 中就会出现key为null的Entry。假如我们不做任何措施的话，value 永远无法被GC 回收，这个时候就可能会产生内存泄露。ThreadLocalMap实现中已经考虑了这种情况，在调用 <code>set()</code>、<code>get()</code>、<code>remove()</code> 方法的时候，会清理掉 key 为 null 的记录。使用完 <code>ThreadLocal</code>方法后 最好手动调用<code>remove()</code>方法</p>
+<h3 id="并发集合容器"><a href="#并发集合容器" class="headerlink" title="并发集合容器"></a>并发集合容器</h3><h4 id="为什么说ArrayList线程不安全？"><a href="#为什么说ArrayList线程不安全？" class="headerlink" title="为什么说ArrayList线程不安全？"></a>为什么说ArrayList线程不安全？</h4><p><strong>看add方法的源码</strong></p>
 <pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">boolean</span> <span class="token function">add</span><span class="token punctuation">(</span>E e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
 
     <span class="token comment" spellcheck="true">/**
@@ -1270,10 +1268,10 @@ ThreadLocal<span class="token punctuation">.</span>ThreadLocalMap inheritableThr
 <li>线程B开始将size的值增加为2</li>
 </ol>
 <p><strong>这样线程AB执行完毕后，理想中情况为size为2，elementData下标0的位置为A，下标1的位置为B。而实际情况变成了size为2，elementData下标为0的位置变成了B，下标1的位置上什么都没有。并且后续除非使用set方法修改此位置的值，否则将一直为null，因为size为2，添加元素时会从下标为2的位置上开始。</strong></p>
-<h5 id="解决非安全集合的并发都有哪些？"><a href="#解决非安全集合的并发都有哪些？" class="headerlink" title="解决非安全集合的并发都有哪些？"></a>解决非安全集合的并发都有哪些？</h5><p><a href="https://github.com/DreamCats/JavaBooks/blob/master/Multithread/src/com/juc/collectiontest/ContainerNotSafeDemo.java" target="_blank" rel="noopener">ArrayList-&gt;Vector-&gt;SynchronizedList-&gt;CopyOnWriteArrayList</a></p>
+<h4 id="解决非安全集合的并发都有哪些？"><a href="#解决非安全集合的并发都有哪些？" class="headerlink" title="解决非安全集合的并发都有哪些？"></a>解决非安全集合的并发都有哪些？</h4><p><a href="https://github.com/DreamCats/JavaBooks/blob/master/Multithread/src/com/juc/collectiontest/ContainerNotSafeDemo.java" target="_blank" rel="noopener">ArrayList-&gt;Vector-&gt;SynchronizedList-&gt;CopyOnWriteArrayList</a></p>
 <p><a href="https://github.com/DreamCats/JavaBooks/blob/master/Multithread/src/com/juc/collectiontest/HashSetTest.java" target="_blank" rel="noopener">ArraySet-&gt;SynchronizedSet-&gt;CopyOnWriteArraySet</a></p>
 <p><a href="https://github.com/DreamCats/JavaBooks/blob/master/Multithread/src/com/juc/collectiontest/MapSafe.java" target="_blank" rel="noopener">HashMap-&gt;SynchronizedMap-&gt;ConcurrentHashMap</a></p>
-<h4 id="并发同步容器"><a href="#并发同步容器" class="headerlink" title="并发同步容器"></a>并发同步容器</h4><h5 id="AQS原理"><a href="#AQS原理" class="headerlink" title="AQS原理"></a>AQS原理</h5><p>AQS 使用一个 int 成员变量来表示同步状态，通过内置的 FIFO 队列来完成获取资源线程的排队工作。AQS 使用 CAS 对该同步状态进行原子操作实现对其值的修改。</p>
+<h3 id="并发同步容器"><a href="#并发同步容器" class="headerlink" title="并发同步容器"></a>并发同步容器</h3><h4 id="AQS原理"><a href="#AQS原理" class="headerlink" title="AQS原理"></a>AQS原理</h4><p>AQS 使用一个 int 成员变量来表示同步状态，通过内置的 FIFO 队列来完成获取资源线程的排队工作。AQS 使用 CAS 对该同步状态进行原子操作实现对其值的修改。</p>
 <pre class=" language-java"><code class="language-java"><span class="token keyword">private</span> <span class="token keyword">volatile</span> <span class="token keyword">int</span> state<span class="token punctuation">;</span><span class="token comment" spellcheck="true">//共享变量，使用volatile修饰保证线程可见性</span></code></pre>
 <p>状态信息通过 protected 类型的<code>getState</code>，<code>setState</code>，<code>compareAndSetState</code>进行操作</p>
 <pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">//返回同步状态的当前值</span>
@@ -1306,7 +1304,7 @@ ThreadLocal<span class="token punctuation">.</span>ThreadLocalMap inheritableThr
 <span class="token function">tryRelease</span><span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">)</span><span class="token comment" spellcheck="true">//独占方式。尝试释放资源，成功则返回true，失败则返回false。</span>
 <span class="token function">tryAcquireShared</span><span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">)</span><span class="token comment" spellcheck="true">//共享方式。尝试获取资源。负数表示失败；0表示成功，但没有剩余可用资源；正数表示成功，且有剩余资源。</span>
 <span class="token function">tryReleaseShared</span><span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">)</span><span class="token comment" spellcheck="true">//共享方式。尝试释放资源，成功则返回true，失败则返回false。</span></code></pre>
-<h5 id="CountDownLatch"><a href="#CountDownLatch" class="headerlink" title="CountDownLatch"></a>CountDownLatch</h5><p>CountDownLatch是共享锁的一种实现,它默认构造 AQS 的 state 值为 count。当线程使用countDown方法时,其实使用了<code>tryReleaseShared</code>方法以CAS的操作来减少state,直至state为0就代表所有的线程都调用了countDown方法。当调用await方法的时候，如果state不为0，就代表仍然有线程没有调用countDown方法，那么就把已经调用过countDown的线程都放入阻塞队列Park,并自旋CAS判断state == 0，直至最后一个线程调用了countDown，使得state == 0，于是阻塞的线程便判断成功，全部往下执行。</p>
+<h4 id="CountDownLatch"><a href="#CountDownLatch" class="headerlink" title="CountDownLatch"></a>CountDownLatch</h4><p>CountDownLatch是共享锁的一种实现,它默认构造 AQS 的 state 值为 count。当线程使用countDown方法时,其实使用了<code>tryReleaseShared</code>方法以CAS的操作来减少state,直至state为0就代表所有的线程都调用了countDown方法。当调用await方法的时候，如果state不为0，就代表仍然有线程没有调用countDown方法，那么就把已经调用过countDown的线程都放入阻塞队列Park,并自旋CAS判断state == 0，直至最后一个线程调用了countDown，使得state == 0，于是阻塞的线程便判断成功，全部往下执行。</p>
 <p>三种用法：</p>
 <ol>
 <li>某一线程在开始运行前等待 n 个线程执行完毕。将 CountDownLatch 的计数器初始化为 n ：<code>new CountDownLatch(n)</code>，每当一个任务线程执行完毕，就将计数器减 1 <code>countdownlatch.countDown()</code>，当计数器的值变为 0 时，在<code>CountDownLatch上 await()</code> 的线程就会被唤醒。一个典型应用场景就是启动一个服务时，主线程需要等待多个组件加载完毕，之后再继续执行。</li>
@@ -1344,7 +1342,7 @@ ThreadLocal<span class="token punctuation">.</span>ThreadLocalMap inheritableThr
         System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>Thread<span class="token punctuation">.</span><span class="token function">currentThread</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">" ====班长最后走人"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span></code></pre>
-<h5 id="CyclicBarrier"><a href="#CyclicBarrier" class="headerlink" title="CyclicBarrier"></a>CyclicBarrier</h5><p>CyclicBarrier 的字面意思是可循环使用（Cyclic）的屏障（Barrier）。它要做的事情是，让一组线程到达一个屏障（也可以叫同步点）时被阻塞，直到最后一个线程到达屏障时，屏障才会开门，所有被屏障拦截的线程才会继续干活。CyclicBarrier 默认的构造方法是 <code>CyclicBarrier(int parties)</code>，其参数表示屏障拦截的线程数量，每个线程调用<code>await</code>方法告诉 CyclicBarrier 我已经到达了屏障，然后当前线程被阻塞。</p>
+<h4 id="CyclicBarrier"><a href="#CyclicBarrier" class="headerlink" title="CyclicBarrier"></a>CyclicBarrier</h4><p>CyclicBarrier 的字面意思是可循环使用（Cyclic）的屏障（Barrier）。它要做的事情是，让一组线程到达一个屏障（也可以叫同步点）时被阻塞，直到最后一个线程到达屏障时，屏障才会开门，所有被屏障拦截的线程才会继续干活。CyclicBarrier 默认的构造方法是 <code>CyclicBarrier(int parties)</code>，其参数表示屏障拦截的线程数量，每个线程调用<code>await</code>方法告诉 CyclicBarrier 我已经到达了屏障，然后当前线程被阻塞。</p>
 <pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">CyclicBarrierDemo</span> <span class="token punctuation">{</span>
     <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
         <span class="token function">cyclicBarrierTest</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -1449,7 +1447,7 @@ ThreadLocal<span class="token punctuation">.</span>ThreadLocalMap inheritableThr
     <span class="token punctuation">}</span>
 </code></pre>
 <p>总结：<code>CyclicBarrier</code> 内部通过一个 count 变量作为计数器，cout 的初始值为 parties 属性的初始化值，每当一个线程到了栅栏这里了，那么就将计数器减一。如果 count 值为 0 了，表示这是这一代最后一个线程到达栅栏，就尝试执行我们构造方法中输入的任务。</p>
-<h5 id="Semaphore"><a href="#Semaphore" class="headerlink" title="Semaphore"></a>Semaphore</h5><p><strong>synchronized 和 ReentrantLock 都是一次只允许一个线程访问某个资源，Semaphore(信号量)可以指定多个线程同时访问某个资源。</strong></p>
+<h4 id="Semaphore"><a href="#Semaphore" class="headerlink" title="Semaphore"></a>Semaphore</h4><p><strong>synchronized 和 ReentrantLock 都是一次只允许一个线程访问某个资源，Semaphore(信号量)可以指定多个线程同时访问某个资源。</strong></p>
 <pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">SemaphoreDemo</span> <span class="token punctuation">{</span>
     <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
         Semaphore semaphore <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Semaphore</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">// 模拟三个停车位</span>
@@ -1470,7 +1468,7 @@ ThreadLocal<span class="token punctuation">.</span>ThreadLocalMap inheritableThr
         <span class="token punctuation">}</span>
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span></code></pre>
-<h4 id="阻塞队列"><a href="#阻塞队列" class="headerlink" title="阻塞队列"></a>阻塞队列</h4><ul>
+<h3 id="阻塞队列"><a href="#阻塞队列" class="headerlink" title="阻塞队列"></a>阻塞队列</h3><ul>
 <li>ArrayBlockingQueue:由数组结构组成的有界阻塞队列.</li>
 <li>LinkedBlockingQueue:由链表结构组成的有界(但大小默认值Integer&gt;MAX_VALUE)阻塞队列.</li>
 <li>PriorityBlockingQueue:支持优先级排序的无界阻塞队列.</li>
@@ -1665,12 +1663,12 @@ ThreadLocal<span class="token punctuation">.</span>ThreadLocalMap inheritableThr
         prodConsumerBlockingQueue<span class="token punctuation">.</span><span class="token function">stop</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span></code></pre>
-<h4 id="线程池"><a href="#线程池" class="headerlink" title="线程池"></a>线程池</h4><h5 id="线程池的好处"><a href="#线程池的好处" class="headerlink" title="线程池的好处"></a>线程池的好处</h5><ul>
+<h3 id="线程池"><a href="#线程池" class="headerlink" title="线程池"></a>线程池</h3><h4 id="线程池的好处"><a href="#线程池的好处" class="headerlink" title="线程池的好处"></a>线程池的好处</h4><ul>
 <li><strong>降低资源消耗</strong>。通过重复利用已创建的线程降低线程创建和销毁造成的消耗。</li>
 <li><strong>提高响应速度</strong>。当任务到达时，任务可以不需要的等到线程创建就能立即执行。</li>
 <li><strong>提高线程的可管理性</strong>。线程是稀缺资源，如果无限制的创建，不仅会消耗系统资源，还会降低系统的稳定性，使用线程池可以进行统一的分配，调优和监控。</li>
 </ul>
-<h5 id="FixedThreadPool"><a href="#FixedThreadPool" class="headerlink" title="FixedThreadPool"></a>FixedThreadPool</h5><p><code>FixedThreadPool</code> 被称为可重用固定线程数的线程池。通过 Executors 类中的相关源代码来看一下相关实现：</p>
+<h4 id="FixedThreadPool"><a href="#FixedThreadPool" class="headerlink" title="FixedThreadPool"></a>FixedThreadPool</h4><p><code>FixedThreadPool</code> 被称为可重用固定线程数的线程池。通过 Executors 类中的相关源代码来看一下相关实现：</p>
 <pre class=" language-java"><code class="language-java">   <span class="token comment" spellcheck="true">/**
      * 创建一个可重用固定数量线程的线程池
      */</span>
@@ -1694,7 +1692,7 @@ ThreadLocal<span class="token punctuation">.</span>ThreadLocalMap inheritableThr
 <li>由于 1 和 2，使用无界队列时 <code>keepAliveTime</code> 将是一个无效参数；</li>
 <li>运行中的 <code>FixedThreadPool</code>（未执行 <code>shutdown()</code>或 <code>shutdownNow()</code>）不会拒绝任务，在任务比较多的时候会导致 OOM（内存溢出）。</li>
 </ol>
-<h5 id="SingleThreadExecutor"><a href="#SingleThreadExecutor" class="headerlink" title="SingleThreadExecutor"></a>SingleThreadExecutor</h5><pre class=" language-java"><code class="language-java">   <span class="token comment" spellcheck="true">/**
+<h4 id="SingleThreadExecutor"><a href="#SingleThreadExecutor" class="headerlink" title="SingleThreadExecutor"></a>SingleThreadExecutor</h4><pre class=" language-java"><code class="language-java">   <span class="token comment" spellcheck="true">/**
      *返回只有一个线程的线程池
      */</span>
     <span class="token keyword">public</span> <span class="token keyword">static</span> ExecutorService <span class="token function">newSingleThreadExecutor</span><span class="token punctuation">(</span>ThreadFactory threadFactory<span class="token punctuation">)</span> <span class="token punctuation">{</span>
@@ -1705,7 +1703,7 @@ ThreadLocal<span class="token punctuation">.</span>ThreadLocalMap inheritableThr
                                     threadFactory<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span></code></pre>
 <p>和上面一个差不多，只不过core和max都被设置为1</p>
-<h5 id="CachedThreadPool"><a href="#CachedThreadPool" class="headerlink" title="CachedThreadPool"></a>CachedThreadPool</h5><pre class=" language-java"><code class="language-java">    <span class="token comment" spellcheck="true">/**
+<h4 id="CachedThreadPool"><a href="#CachedThreadPool" class="headerlink" title="CachedThreadPool"></a>CachedThreadPool</h4><pre class=" language-java"><code class="language-java">    <span class="token comment" spellcheck="true">/**
      * 创建一个线程池，根据需要创建新线程，但会在先前构建的线程可用时重用它。
      */</span>
     <span class="token keyword">public</span> <span class="token keyword">static</span> ExecutorService <span class="token function">newCachedThreadPool</span><span class="token punctuation">(</span>ThreadFactory threadFactory<span class="token punctuation">)</span> <span class="token punctuation">{</span>
@@ -1719,7 +1717,7 @@ ThreadLocal<span class="token punctuation">.</span>ThreadLocalMap inheritableThr
 <li>首先执行 <code>SynchronousQueue.offer(Runnable task)</code> 提交任务到任务队列。如果当前 <code>maximumPool</code> 中有闲线程正在执行 <code>SynchronousQueue.poll(keepAliveTime,TimeUnit.NANOSECONDS)</code>，那么主线程执行 offer 操作与空闲线程执行的 <code>poll</code> 操作配对成功，主线程把任务交给空闲线程执行，<code>execute()</code>方法执行完成，否则执行下面的步骤 2；</li>
 <li>当初始 <code>maximumPool</code> 为空，或者 <code>maximumPool</code> 中没有空闲线程时，将没有线程执行 <code>SynchronousQueue.poll(keepAliveTime,TimeUnit.NANOSECONDS)</code>。这种情况下，步骤 1 将失败，此时 <code>CachedThreadPool</code> 会创建新线程执行任务，execute 方法执行完成；</li>
 </ol>
-<h5 id="ScheduledThreadPoolExecutor省略，基本不会用"><a href="#ScheduledThreadPoolExecutor省略，基本不会用" class="headerlink" title="ScheduledThreadPoolExecutor省略，基本不会用"></a>ScheduledThreadPoolExecutor省略，基本不会用</h5><h5 id="ThreadPoolExecutor（重点）"><a href="#ThreadPoolExecutor（重点）" class="headerlink" title="ThreadPoolExecutor（重点）"></a>ThreadPoolExecutor（重点）</h5><pre class=" language-java"><code class="language-java">    <span class="token comment" spellcheck="true">/**
+<h4 id="ScheduledThreadPoolExecutor省略，基本不会用"><a href="#ScheduledThreadPoolExecutor省略，基本不会用" class="headerlink" title="ScheduledThreadPoolExecutor省略，基本不会用"></a>ScheduledThreadPoolExecutor省略，基本不会用</h4><h4 id="ThreadPoolExecutor（重点）"><a href="#ThreadPoolExecutor（重点）" class="headerlink" title="ThreadPoolExecutor（重点）"></a>ThreadPoolExecutor（重点）</h4><pre class=" language-java"><code class="language-java">    <span class="token comment" spellcheck="true">/**
      * 用给定的初始参数创建一个新的ThreadPoolExecutor。
      */</span>
     <span class="token keyword">public</span> <span class="token function">ThreadPoolExecutor</span><span class="token punctuation">(</span><span class="token keyword">int</span> corePoolSize<span class="token punctuation">,</span><span class="token comment" spellcheck="true">//线程池的核心线程数量</span>
@@ -1802,8 +1800,8 @@ ThreadLocal<span class="token punctuation">.</span>ThreadLocalMap inheritableThr
         <span class="token punctuation">}</span>
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span></code></pre>
-<h4 id="Java锁机制"><a href="#Java锁机制" class="headerlink" title="Java锁机制"></a>Java锁机制</h4><h5 id="公平锁-非公平锁"><a href="#公平锁-非公平锁" class="headerlink" title="公平锁/非公平锁"></a>公平锁/非公平锁</h5><p><strong>公平锁指多个线程按照申请锁的顺序来获取锁。非公平锁指多个线程获取锁的顺序并不是按照申请锁的顺序，有可能后申请的线程比先申请的线程优先获取锁。有可能，会造成优先级反转或者饥饿现象（很长时间都没获取到锁-非洲人…），ReentrantLock，了解一下。</strong></p>
-<h5 id="可重入锁"><a href="#可重入锁" class="headerlink" title="可重入锁"></a>可重入锁</h5><p><strong>可重入锁又名递归锁，是指在同一个线程在外层方法获取锁的时候，在进入内层方法会自动获取锁，典型的synchronized，了解一下</strong></p>
+<h3 id="Java锁机制"><a href="#Java锁机制" class="headerlink" title="Java锁机制"></a>Java锁机制</h3><h4 id="公平锁-非公平锁"><a href="#公平锁-非公平锁" class="headerlink" title="公平锁/非公平锁"></a>公平锁/非公平锁</h4><p><strong>公平锁指多个线程按照申请锁的顺序来获取锁。非公平锁指多个线程获取锁的顺序并不是按照申请锁的顺序，有可能后申请的线程比先申请的线程优先获取锁。有可能，会造成优先级反转或者饥饿现象（很长时间都没获取到锁-非洲人…），ReentrantLock，了解一下。</strong></p>
+<h4 id="可重入锁"><a href="#可重入锁" class="headerlink" title="可重入锁"></a>可重入锁</h4><p><strong>可重入锁又名递归锁，是指在同一个线程在外层方法获取锁的时候，在进入内层方法会自动获取锁，典型的synchronized，了解一下</strong></p>
 <pre class=" language-java"><code class="language-java"><span class="token keyword">synchronized</span> <span class="token keyword">void</span> <span class="token function">setA</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">throws</span> Exception <span class="token punctuation">{</span>
       Thread<span class="token punctuation">.</span><span class="token function">sleep</span><span class="token punctuation">(</span><span class="token number">1000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
       <span class="token function">setB</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 因为获取了setA()的锁，此时调用setB()将会自动获取setB()的锁，如果不自动获取的话方法B将不会执行</span>
@@ -1811,37 +1809,37 @@ ThreadLocal<span class="token punctuation">.</span>ThreadLocalMap inheritableThr
 <span class="token keyword">synchronized</span> <span class="token keyword">void</span> <span class="token function">setB</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">throws</span> Exception <span class="token punctuation">{</span>
       Thread<span class="token punctuation">.</span><span class="token function">sleep</span><span class="token punctuation">(</span><span class="token number">1000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span></code></pre>
-<h5 id="独享锁-共享锁"><a href="#独享锁-共享锁" class="headerlink" title="独享锁/共享锁"></a>独享锁/共享锁</h5><ul>
+<h4 id="独享锁-共享锁"><a href="#独享锁-共享锁" class="headerlink" title="独享锁/共享锁"></a>独享锁/共享锁</h4><ul>
 <li>独享锁：是指该锁一次只能被一个线程所持有。</li>
 <li>共享锁：是该锁可被多个线程所持有。</li>
 </ul>
-<h5 id="互斥锁-读写锁"><a href="#互斥锁-读写锁" class="headerlink" title="互斥锁/读写锁"></a>互斥锁/读写锁</h5><p><strong>上面讲的独享锁/共享锁就是一种广义的说法，互斥锁/读写锁就是其具体的实现</strong></p>
-<h5 id="乐观锁-悲观锁"><a href="#乐观锁-悲观锁" class="headerlink" title="乐观锁/悲观锁"></a>乐观锁/悲观锁</h5><ol>
+<h4 id="互斥锁-读写锁"><a href="#互斥锁-读写锁" class="headerlink" title="互斥锁/读写锁"></a>互斥锁/读写锁</h4><p><strong>上面讲的独享锁/共享锁就是一种广义的说法，互斥锁/读写锁就是其具体的实现</strong></p>
+<h4 id="乐观锁-悲观锁"><a href="#乐观锁-悲观锁" class="headerlink" title="乐观锁/悲观锁"></a>乐观锁/悲观锁</h4><ol>
 <li><strong>乐观锁与悲观锁不是指具体的什么类型的锁，而是指看待兵法同步的角度。</strong></li>
 <li><strong>悲观锁认为对于同一个人数据的并发操作，一定是会发生修改的，哪怕没有修改，也会认为修改。因此对于同一个数据的并发操作，悲观锁采取加锁的形式。悲观的认为，不加锁的并发操作一定会出现问题。</strong></li>
 <li><strong>乐观锁则认为对于同一个数据的并发操作，是不会发生修改的。在更新数据的时候，会采用尝试更新，不断重新的方式更新数据。乐观的认为，不加锁的并发操作时没有事情的。</strong></li>
 <li><strong>悲观锁适合写操作非常多的场景，乐观锁适合读操作非常多的场景，不加锁带来大量的性能提升。</strong></li>
 <li><strong>悲观锁在Java中的使用，就是利用各种锁。乐观锁在Java中的使用，是无锁编程，常常采用的是CAS算法，典型的例子就是原子类，通过CAS自旋实现原子类操作的更新。重量级锁是悲观锁的一种，自旋锁、轻量级锁与偏向锁属于乐观锁</strong></li>
 </ol>
-<h5 id="分段锁"><a href="#分段锁" class="headerlink" title="分段锁"></a>分段锁</h5><ol>
+<h4 id="分段锁"><a href="#分段锁" class="headerlink" title="分段锁"></a>分段锁</h4><ol>
 <li><strong>分段锁其实是一种锁的设计，并不是具体的一种锁，对于ConcurrentHashMap而言，其并发的实现就是通过分段锁的形式来哦实现高效的并发操作。</strong></li>
 <li>** 以ConcurrentHashMap来说一下分段锁的含义以及设计思想，ConcurrentHashMap中的分段锁称为Segment，它即类似于HashMap（JDK7与JDK8中HashMap的实现）的结构，即内部拥有一个Entry数组，数组中的每个元素又是一个链表；同时又是ReentrantLock（Segment继承了ReentrantLock）**</li>
 <li><strong>当需要put元素的时候，并不是对整个hashmap进行加锁，而是先通过hashcode来知道他要放在那一个分段中，然后对这个分段进行加锁，所以当多线程put的时候，只要不是放在一个分段中，就实现了真正的并行的插入。但是，在统计size的时候，可就是获取hashmap全局信息的时候，就需要获取所有的分段锁才能统计。</strong></li>
 <li><strong>分段锁的设计目的是细化锁的粒度，当操作不需要更新整个数组的时候，就仅仅针对数组中的一项进行加锁操作。</strong></li>
 </ol>
-<h5 id="偏向锁-轻量级锁-重量级锁"><a href="#偏向锁-轻量级锁-重量级锁" class="headerlink" title="偏向锁/轻量级锁/重量级锁"></a>偏向锁/轻量级锁/重量级锁</h5><ol>
+<h4 id="偏向锁-轻量级锁-重量级锁"><a href="#偏向锁-轻量级锁-重量级锁" class="headerlink" title="偏向锁/轻量级锁/重量级锁"></a>偏向锁/轻量级锁/重量级锁</h4><ol>
 <li><strong>这三种锁是锁的状态，并且是针对Synchronized。在Java5通过引入锁升级的机制来实现高效Synchronized。这三种锁的状态是通过对象监视器在对象头中的字段来表明的。偏向锁是指一段同步代码一直被一个线程所访问，那么该线程会自动获取锁。降低获取锁的代价。</strong></li>
 <li><strong>偏向锁的适用场景：始终只有一个线程在执行代码块，在它没有执行完释放锁之前，没有其它线程去执行同步快，在锁无竞争的情况下使用，一旦有了竞争就升级为轻量级锁，升级为轻量级锁的时候需要撤销偏向锁，撤销偏向锁的时候会导致stop the word操作；在有锁竞争时，偏向锁会多做很多额外操作，尤其是撤销偏向锁的时候会导致进入安全点，安全点会导致stw，导致性能下降，这种情况下应当禁用。</strong></li>
 <li><strong>轻量级锁是指当锁是偏向锁的时候，被另一个线程锁访问，偏向锁就会升级为轻量级锁，其他线程会通过自选的形式尝试获取锁，不会阻塞，提高性能。</strong></li>
 <li><strong>重量级锁是指当锁为轻量级锁的时候，另一个线程虽然是自旋，但自旋不会一直持续下去，当自旋一定次数的时候，还没有获取到锁，就会进入阻塞，该锁膨胀为重量级锁。重量级锁会让其他申请的线程进入阻塞，性能降低。</strong></li>
 </ol>
-<h5 id="自旋锁"><a href="#自旋锁" class="headerlink" title="自旋锁"></a>自旋锁</h5><ol>
+<h4 id="自旋锁"><a href="#自旋锁" class="headerlink" title="自旋锁"></a>自旋锁</h4><ol>
 <li><strong>在Java中，自旋锁是指尝试获取锁的线程不会立即阻塞，而是采用循环的方式去尝试获取锁，这样的好处是减少线程上下文切换的消耗，缺点是循环会消耗CPU。</strong></li>
 <li><strong>自旋锁原理非常简单，如果持有锁的线程能在很短时间内释放锁资源，那么那些等待竞争锁的线程就不需要做内核态和用户态之间的切换进入阻塞挂起状态，它们只需要等一等（自旋），等持有锁的线程释放锁后即可立即获取锁，这样就避免用户线程和内核的切换的消耗。</strong></li>
 <li><strong>自旋锁尽可能的减少线程的阻塞，适用于锁的竞争不激烈，且占用锁时间非常短的代码来说性能能大幅度的提升，因为自旋的消耗会小于线程阻塞挂起再唤醒的操作的消耗。</strong></li>
 <li><strong>但是如果锁的竞争激烈，或者持有锁的线程需要长时间占用锁执行同步块，这时候就不适用使用自旋锁了，因为自旋锁在获取锁前一直都是占用cpu做无用功，同时有大量线程在竞争一个锁，会导致获取锁的时间很长，线程自旋的消耗大于线程阻塞挂起操作的消耗，其它需要cpu的线程又不能获取到cpu，造成cpu的浪费。</strong></li>
 </ol>
-<h5 id="Java锁总结"><a href="#Java锁总结" class="headerlink" title="Java锁总结"></a>Java锁总结</h5><p><strong>Java锁机制可归为Sychornized锁和Lock锁两类。Synchronized是基于JVM来保证数据同步的，而Lock则是硬件层面，依赖特殊的CPU指令来实现数据同步的。</strong></p>
+<h4 id="Java锁总结"><a href="#Java锁总结" class="headerlink" title="Java锁总结"></a>Java锁总结</h4><p><strong>Java锁机制可归为Sychornized锁和Lock锁两类。Synchronized是基于JVM来保证数据同步的，而Lock则是硬件层面，依赖特殊的CPU指令来实现数据同步的。</strong></p>
 <ul>
 <li>Synchronized是一个非公平、悲观、独享、互斥、可重入的重量级锁。</li>
 <li>ReentrantLock是一个默认非公平但可实现公平的、悲观、独享、互斥、可重入、重量级锁。</li>
