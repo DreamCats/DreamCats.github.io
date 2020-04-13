@@ -781,29 +781,29 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <blockquote>
-<p>mysql这一块的知识还是挺多的，问深度的话， 一般都是如何调优的，当然少不了mysql的基础等知识。</p>
+<p>MySQL这一块的知识还是挺多的，问深度的话， 一般都是如何调优的，当然少不了MySQL的基础等知识。</p>
 </blockquote>
-<p><img src="http://media.dreamcat.ink/uPic/Mysql%E9%9D%A2%E8%AF%95%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98.png" alt="Mysql面试常见问题"></p>
+<p><img src="http://media.dreamcat.ink/uPic/Mysql%E9%9D%A2%E8%AF%95%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98.png" alt="MySQL面试常见问题"></p>
 <h3 id="数据库引擎innodb与myisam的区别"><a href="#数据库引擎innodb与myisam的区别" class="headerlink" title="数据库引擎innodb与myisam的区别"></a>数据库引擎innodb与myisam的区别</h3><h4 id="InnoDB"><a href="#InnoDB" class="headerlink" title="InnoDB"></a>InnoDB</h4><p>是 MySQL 默认的<strong>事务型</strong>存储引擎，只有在需要它不支持的特性时，才考虑使用其它存储引擎。</p>
 <p>实现了四个标准的隔离级别，默认级别是<strong>可重复读</strong>(REPEATABLE READ)。在可重复读隔离级别下，<strong>通过多版本并发控制(MVCC)+ 间隙锁(Next-Key Locking)防止幻影读。</strong></p>
-<p>主索引是聚簇索引，在索引中保存了数据，从而避免直接读取磁盘，因此对查询性能有很大的提升。</p>
-<p>内部做了很多优化，包括从磁盘读取数据时采用的可预测性读、能够加快读操作并且自动创建的自适应哈希索引、能够加速插入操作的插入缓冲区等。</p>
-<p>支持真正的在线热备份。其它存储引擎不支持在线热备份，要获取一致性视图需要停止对所有表的写入，而在读写混合场景中，停止写入可能也意味着停止读取。</p>
-<h4 id="MyISAM"><a href="#MyISAM" class="headerlink" title="MyISAM"></a>MyISAM</h4><p>设计简单，数据以紧密格式存储。对于只读数据，或者表比较小、可以容忍修复操作，则依然可以使用它。</p>
-<p>提供了大量的特性，包括压缩表、空间数据索引等。</p>
-<p>不支持事务。</p>
-<p>不支持行级锁，只能对整张表加锁，读取时会对需要读到的所有表加共享锁，写入时则对表加排它锁。但在表有读取操作的同时，也可以往表中插入新的记录，这被称为并发插入(CONCURRENT INSERT)。</p>
+<p>主索引是<strong>聚簇索引</strong>，在索引中保存了数据，从而避免直接读取磁盘，因此对查询性能有很大的提升。</p>
+<p>内部做了很多优化，包括从磁盘读取数据时采用的<strong>可预测性读</strong>、能够加快读操作并且自动创建的<strong>自适应哈希索引</strong>、能够加速插入操作的插入缓冲区等。</p>
+<p>支持真正的<strong>在线热备份</strong>。其它存储引擎不支持在线热备份，要获取一致性视图需要停止对所有表的写入，而在读写混合场景中，停止写入可能也意味着停止读取。</p>
+<h4 id="MyISAM"><a href="#MyISAM" class="headerlink" title="MyISAM"></a>MyISAM</h4><p>设计简单，数据以<strong>紧密格式存储</strong>。对于只读数据，或者表比较小、可以容忍修复操作，则依然可以使用它。</p>
+<p>提供了大量的特性，包括<strong>压缩表</strong>、<strong>空间数据索引</strong>等。</p>
+<p><strong>不支持事务</strong>。</p>
+<p><strong>不支持行级锁</strong>，只能对整张表加锁，读取时会对需要读到的所有表加共享锁，写入时则对表加排它锁。但在表有读取操作的同时，也可以往表中插入新的记录，这被称为并发插入(CONCURRENT INSERT)。</p>
 <p>可以手工或者自动执行检查和修复操作，但是和事务恢复以及崩溃恢复不同，可能导致一些数据丢失，而且修复操作是非常慢的。</p>
 <p>如果指定了 DELAY_KEY_WRITE 选项，在每次修改执行完成时，不会立即将修改的索引数据写入磁盘，而是会写到内存中的键缓冲区，只有在清理键缓冲区或者关闭表的时候才会将对应的索引块写入磁盘。这种方式可以极大的提升写入性能，但是在数据库或者主机崩溃时会造成索引损坏，需要执行修复操作。</p>
 <h4 id="比较"><a href="#比较" class="headerlink" title="比较"></a>比较</h4><ul>
-<li>事务: InnoDB 是事务型的，可以使用 Commit 和 Rollback 语句。</li>
-<li>并发: MyISAM 只支持表级锁，而 InnoDB 还支持行级锁。</li>
-<li>外键: InnoDB 支持外键。</li>
-<li>备份: InnoDB 支持在线热备份。</li>
-<li>崩溃恢复: MyISAM 崩溃后发生损坏的概率比 InnoDB 高很多，而且恢复的速度也更慢。</li>
-<li>其它特性: MyISAM 支持压缩表和空间数据索引。</li>
+<li><strong>事务</strong>: InnoDB 是事务型的，可以使用 Commit 和 Rollback 语句。</li>
+<li><strong>并发</strong>: MyISAM 只支持表级锁，而 InnoDB 还支持行级锁。</li>
+<li><strong>外键</strong>: InnoDB 支持外键。</li>
+<li><strong>备份</strong>: InnoDB 支持在线热备份。</li>
+<li><strong>崩溃恢复</strong>: MyISAM 崩溃后发生损坏的概率比 InnoDB 高很多，而且恢复的速度也更慢。</li>
+<li><strong>其它特性</strong>: MyISAM 支持压缩表和空间数据索引。</li>
 </ul>
-<h3 id="mysql是如何执行一条sql的"><a href="#mysql是如何执行一条sql的" class="headerlink" title="mysql是如何执行一条sql的"></a>mysql是如何执行一条sql的</h3><p><img src="http://media.dreamcat.ink/uPic/SQL%E6%89%A7%E8%A1%8C%E7%9A%84%E5%85%A8%E9%83%A8%E8%BF%87%E7%A8%8B.png" alt="SQL执行的全部过程"></p>
+<h3 id="MySQL是如何执行一条SQL的"><a href="#MySQL是如何执行一条SQL的" class="headerlink" title="MySQL是如何执行一条SQL的"></a>MySQL是如何执行一条SQL的</h3><p><img src="http://media.dreamcat.ink/uPic/SQL%E6%89%A7%E8%A1%8C%E7%9A%84%E5%85%A8%E9%83%A8%E8%BF%87%E7%A8%8B.png" alt="SQL执行的全部过程"></p>
 <p><strong>MySQL内部可以分为服务层和存储引擎层两部分：</strong></p>
 <ol>
 <li><strong>服务层包括连接器、查询缓存、分析器、优化器、执行器等</strong>，涵盖MySQL的大多数核心服务功能，以及所有的内置函数（如日期、时间、数学和加密函数等），所有跨存储引擎的功能都在这一层实现，比如存储过程、触发器、视图等。</li>
@@ -813,37 +813,37 @@
 <p>客户端请求-&gt;连接器（验证用户身份，给予权限） -&gt; 查询缓存（存在缓存则直接返回，不存在则执行后续操作）-&gt;分析器（对SQL进行词法分析和语法分析操作） -&gt; 优化器（主要对执行的sql优化选择最优的执行方案方法） -&gt; 执行器（执行时会先看用户是否有执行权限，有才去使用这个引擎提供的接口）-&gt;去引擎层获取数据返回（如果开启查询缓存则会缓存查询结果）</p>
 <p><strong>简单概括</strong>：</p>
 <ul>
-<li><strong>连接器：</strong>管理连接、权限验证；</li>
-<li><strong>查询缓存：</strong>命中缓存则直接返回结果；</li>
-<li><strong>分析器：</strong>对SQL进行词法分析、语法分析；（判断查询的SQL字段是否存在也是在这步）</li>
-<li><strong>优化器：</strong>执行计划生成、选择索引；</li>
-<li><strong>执行器：</strong>操作引擎、返回结果；</li>
-<li><strong>存储引擎：</strong>存储数据、提供读写接口。</li>
+<li><strong>连接器</strong>：管理连接、权限验证；</li>
+<li><strong>查询缓存</strong>：命中缓存则直接返回结果；</li>
+<li><strong>分析器</strong>：对SQL进行词法分析、语法分析；（判断查询的SQL字段是否存在也是在这步）</li>
+<li><strong>优化器</strong>：执行计划生成、选择索引；</li>
+<li><strong>执行器</strong>：操作引擎、返回结果；</li>
+<li><strong>存储引擎</strong>：存储数据、提供读写接口。</li>
 </ul>
 <h3 id="mysql的acid原理"><a href="#mysql的acid原理" class="headerlink" title="mysql的acid原理"></a>mysql的acid原理</h3><p><strong>ACID嘛，原子性(Atomicity)、一致性(Consistency)、隔离性(Isolation)、持久性(Durability)！</strong></p>
 <p>我们以从A账户转账50元到B账户为例进行说明一下ACID，四大特性。</p>
 <h4 id="原子性"><a href="#原子性" class="headerlink" title="原子性"></a>原子性</h4><p>根据定义，原子性是指一个事务是一个不可分割的工作单位，其中的操作要么都做，要么都不做。即要么转账成功，要么转账失败，是不存在中间的状态！</p>
 <p><strong>如果无法保证原子性会怎么样？</strong></p>
 <p>OK，就会出现<strong>数据不一致</strong>的情形，A账户减去50元，而B账户增加50元操作失败。系统将无故丢失50元~</p>
-<h4 id="隔离性"><a href="#隔离性" class="headerlink" title="隔离性"></a>隔离性</h4><p>根据定义，隔离性是指多个事务并发执行的时候，事务内部的操作与其他事务是隔离的，并发执行的各个事务之间不能互相干扰。</p>
+<h4 id="隔离性"><a href="#隔离性" class="headerlink" title="隔离性"></a>隔离性</h4><p>根据定义，隔离性是指多个事务并发执行的时候，<strong>事务内部的操作与其他事务是隔离的</strong>，并发执行的各个事务之间不能互相干扰。</p>
 <p><strong>如果无法保证隔离性会怎么样？</strong></p>
 <p>OK，假设A账户有200元，B账户0元。A账户往B账户转账两次，金额为50元，分别在两个事务中执行。如果无法保证隔离性，会出现下面的情形</p>
 <p><img src="http://media.dreamcat.ink/uPic/%E4%BA%8B%E5%8A%A1%E9%9A%94%E7%A6%BB%E6%80%A7.png" alt="事务隔离性"></p>
 <p>如图所示，如果不保证隔离性，A扣款两次，而B只加款一次，凭空消失了50元，依然出现了<strong>数据不一致</strong>的情形！</p>
-<h4 id="持久性"><a href="#持久性" class="headerlink" title="持久性"></a>持久性</h4><p>根据定义，持久性是指事务一旦提交，它对数据库的改变就应该是永久性的。接下来的其他操作或故障不应该对其有任何影响。</p>
+<h4 id="持久性"><a href="#持久性" class="headerlink" title="持久性"></a>持久性</h4><p>根据定义，<strong>持久性是指事务一旦提交，它对数据库的改变就应该是永久性的</strong>。接下来的其他操作或故障不应该对其有任何影响。</p>
 <p><strong>如果无法保证持久性会怎么样？</strong></p>
-<p>在Mysql中，为了解决CPU和磁盘速度不一致问题，Mysql是将磁盘上的数据加载到内存，对内存进行操作，然后再回写磁盘。好，假设此时宕机了，在内存中修改的数据全部丢失了，持久性就无法保证。</p>
+<p>在MySQL中，为了解决CPU和磁盘速度不一致问题，MySQL是将磁盘上的数据加载到内存，对内存进行操作，然后再回写磁盘。好，假设此时宕机了，在内存中修改的数据全部丢失了，持久性就无法保证。</p>
 <p>设想一下，系统提示你转账成功。但是你发现金额没有发生任何改变，此时数据出现了不合法的数据状态，我们将这种状态认为是<strong>数据不一致</strong>的情形。</p>
-<h4 id="一致性"><a href="#一致性" class="headerlink" title="一致性"></a>一致性</h4><p>根据定义，一致性是指事务执行前后，数据处于一种合法的状态，这种状态是语义上的而不是语法上的。 那什么是合法的数据状态呢？ oK，这个状态是满足预定的约束就叫做合法的状态，再通俗一点，这状态是由你自己来定义的。满足这个状态，数据就是一致的，不满足这个状态，数据就是不一致的！</p>
+<h4 id="一致性"><a href="#一致性" class="headerlink" title="一致性"></a>一致性</h4><p>根据定义，一致性是指事务执行前后，数据处于一种合法的状态，这种状态是语义上的而不是语法上的。 那什么是合法的数据状态呢？ oK，这个状态是满足预定的约束就叫做合法的状态，再通俗一点，这状态是由你自己来定义的。<strong>满足这个状态，数据就是一致的，不满足这个状态，数据就是不一致的</strong>！</p>
 <p><strong>如果无法保证一致性会怎么样？</strong></p>
 <ul>
 <li>例一:A账户有200元，转账300元出去，此时A账户余额为-100元。你自然就发现了此时数据是不一致的，为什么呢？因为你定义了一个状态，余额这列必须大于0。</li>
 <li>例二:A账户200元，转账50元给B账户，A账户的钱扣了，但是B账户因为各种意外，余额并没有增加。你也知道此时数据是不一致的，为什么呢？因为你定义了一个状态，要求A+B的余额必须不变。</li>
 </ul>
-<h4 id="mysql怎么保证一致性？"><a href="#mysql怎么保证一致性？" class="headerlink" title="mysql怎么保证一致性？"></a>mysql怎么保证一致性？</h4><p>OK，这个问题分为两个层面来说。 从数据库层面，数据库通过原子性、隔离性、持久性来保证一致性。也就是说ACID四大特性之中，C(一致性)是目的，A(原子性)、I(隔离性)、D(持久性)是手段，是为了保证一致性，数据库提供的手段。数据库必须要实现AID三大特性，才有可能实现一致性。例如，原子性无法保证，显然一致性也无法保证。</p>
+<h4 id="mysql怎么保证一致性？"><a href="#mysql怎么保证一致性？" class="headerlink" title="mysql怎么保证一致性？"></a>mysql怎么保证一致性？</h4><p>OK，这个问题分为两个层面来说。 <strong>从数据库层面</strong>，数据库通过原子性、隔离性、持久性来保证一致性。也就是说ACID四大特性之中，C(一致性)是目的，A(原子性)、I(隔离性)、D(持久性)是手段，是为了保证一致性，数据库提供的手段。数据库必须要实现AID三大特性，才有可能实现一致性。例如，原子性无法保证，显然一致性也无法保证。</p>
 <p>但是，如果你在事务里故意写出违反约束的代码，一致性还是无法保证的。例如，你在转账的例子中，你的代码里故意不给B账户加钱，那一致性还是无法保证。因此，还必须从应用层角度考虑。</p>
-<p>从应用层面，通过代码判断数据库数据是否有效，然后决定回滚还是提交数据！</p>
-<h4 id="mysql怎么保证原子性"><a href="#mysql怎么保证原子性" class="headerlink" title="mysql怎么保证原子性"></a>mysql怎么保证原子性</h4><p>OK，是利用Innodb的<code>undo log</code>。 <code>undo log</code>名为回滚日志，是实现原子性的关键，当事务回滚时能够撤销所有已经成功执行的sql语句，他需要记录你要回滚的相应日志信息。 例如</p>
+<p><strong>从应用层面</strong>，通过代码判断数据库数据是否有效，然后决定回滚还是提交数据！</p>
+<h4 id="mysql怎么保证原子性"><a href="#mysql怎么保证原子性" class="headerlink" title="mysql怎么保证原子性"></a>mysql怎么保证原子性</h4><p>OK，是利用Innodb的<code>undo log</code>。 <code>undo log</code>名为回滚日志，是实现原子性的关键，当事务回滚时能够<strong>撤销所有已经成功执行的sql语句</strong>，他需要记录你要回滚的相应日志信息。 例如</p>
 <ul>
 <li>(1)当你delete一条数据的时候，就需要记录这条数据的信息，回滚的时候，insert这条旧数据</li>
 <li>(2)当你update一条数据的时候，就需要记录之前的旧值，回滚的时候，根据旧值执行update操作</li>
@@ -864,13 +864,13 @@
 </ul>
 <h4 id="mysql怎么保证隔离性"><a href="#mysql怎么保证隔离性" class="headerlink" title="mysql怎么保证隔离性"></a>mysql怎么保证隔离性</h4><p>利用的是锁和MVCC机制。</p>
 <h3 id="并发事务带来的问题"><a href="#并发事务带来的问题" class="headerlink" title="并发事务带来的问题"></a>并发事务带来的问题</h3><h4 id="脏读"><a href="#脏读" class="headerlink" title="脏读"></a>脏读</h4><p><img src="https://www.pdai.tech/_images/pics/dd782132-d830-4c55-9884-cfac0a541b8e.png" alt="脏读"></p>
-<h4 id="丢弃修改"><a href="#丢弃修改" class="headerlink" title="丢弃修改"></a>丢弃修改</h4><p>T1 和 T2 两个事务都对一个数据进行修改，T1 先修改，T2 随后修改，T2 的修改覆盖了 T1 的修改。例如：事务1读取某表中的数据A=20，事务2也读取A=20，事务1修改A=A-1，事务2也修改A=A-1，最终结果A=19，事务1的修改被丢失。</p>
+<h4 id="丢弃修改"><a href="#丢弃修改" class="headerlink" title="丢弃修改"></a>丢弃修改</h4><p>T1 和 T2 两个事务都对一个数据进行修改，<strong>T1 先修改，T2 随后修改，T2 的修改覆盖了 T1 的修改</strong>。例如：事务1读取某表中的数据A=20，事务2也读取A=20，事务1修改A=A-1，事务2也修改A=A-1，最终结果A=19，事务1的修改被丢失。</p>
 <p><img src="https://www.pdai.tech/_images/pics/88ff46b3-028a-4dbb-a572-1f062b8b96d3.png" alt="丢弃修改"></p>
-<h4 id="不可重复读"><a href="#不可重复读" class="headerlink" title="不可重复读"></a>不可重复读</h4><p>T2 读取一个数据，T1 对该数据做了修改。如果 T2 再次读取这个数据，此时读取的结果和第一次读取的结果不同。</p>
+<h4 id="不可重复读"><a href="#不可重复读" class="headerlink" title="不可重复读"></a>不可重复读</h4><p><strong>T2 读取一个数据，T1 对该数据做了修改。如果 T2 再次读取这个数据，此时读取的结果和第一次读取的结果不同</strong>。</p>
 <p><img src="https://www.pdai.tech/_images/pics/c8d18ca9-0b09-441a-9a0c-fb063630d708.png" alt="不可重复读"></p>
-<h4 id="幻读"><a href="#幻读" class="headerlink" title="幻读"></a>幻读</h4><p>T1 读取某个范围的数据，T2 在这个范围内插入新的数据，T1 再次读取这个范围的数据，此时读取的结果和和第一次读取的结果不同。</p>
+<h4 id="幻读"><a href="#幻读" class="headerlink" title="幻读"></a>幻读</h4><p><strong>T1 读取某个范围的数据，T2 在这个范围内插入新的数据，T1 再次读取这个范围的数据，此时读取的结果和和第一次读取的结果不同</strong>。</p>
 <p><img src="https://www.pdai.tech/_images/pics/72fe492e-f1cb-4cfc-92f8-412fb3ae6fec.png" alt="幻读"></p>
-<h4 id="不可重复读和幻读区别"><a href="#不可重复读和幻读区别" class="headerlink" title="不可重复读和幻读区别"></a>不可重复读和幻读区别</h4><p>不可重复读的重点是修改，幻读的重点在于新增或者删除。</p>
+<h4 id="不可重复读和幻读区别"><a href="#不可重复读和幻读区别" class="headerlink" title="不可重复读和幻读区别"></a>不可重复读和幻读区别</h4><p><strong>不可重复读的重点是修改，幻读的重点在于新增或者删除</strong>。</p>
 <p>例1（同样的条件, 你读取过的数据, 再次读取出来发现值不一样了 ）：事务1中的A先生读取自己的工资为 1000的操 作还没完成，事务2中的B先生就修改了A的工资为2000，导 致A再读自己的工资时工资变为 2000；这就是不可重复读。</p>
 <p>例2（同样的条件, 第1次和第2次读出来的记录数不一样 ）：假某工资单表中工资大于3000的有4人，事务1读取了所 有工资大于3000的人，共查到4条记录，这时事务2 又插入了一条工资大于3000的记录，事务1再次读取时查到的记 录就变为了5条，这样就导致了幻读。</p>
 <h3 id="数据库的隔离级别"><a href="#数据库的隔离级别" class="headerlink" title="数据库的隔离级别"></a>数据库的隔离级别</h3><ol>
@@ -914,20 +914,20 @@
 </tr>
 </tbody></table>
 <p>MySQL InnoDB 存储引擎的默认支持的隔离级别是 REPEATABLE-READ（可重读）。</p>
-<p>这里需要注意的是：与 SQL 标准不同的地方在于InnoDB 存储引擎在 REPEATABLE-READ（可重读）事务隔离级别 下使用的是<strong>Next-Key Lock 锁</strong>算法，因此可以避免幻读的产生，这与其他数据库系统(如 SQL Server)是不同的。所以 说InnoDB 存储引擎的默认支持的隔离级别是 REPEATABLE-READ（可重读） 已经可以完全保证事务的隔离性要 求，即达到了 SQL标准的SERIALIZABLE(可串行化)隔离级别。</p>
-<p>因为隔离级别越低，事务请求的锁越少，所以大部分数据库系统的隔离级别都是READ-COMMITTED(读取提交内 容):，但是你要知道的是InnoDB 存储引擎默认使用 REPEATABLE-READ（可重读）并不会有任何性能损失。</p>
-<p>InnoDB 存储引擎在 分布式事务 的情况下一般会用到SERIALIZABLE(可串行化)隔离级别。</p>
+<p><strong>这里需要注意的是</strong>：与 SQL 标准不同的地方在于InnoDB 存储引擎在 REPEATABLE-READ（可重读）事务隔离级别 下使用的是<strong>Next-Key Lock 锁</strong>算法，因此可以避免幻读的产生，这与其他数据库系统(如 SQL Server)是不同的。所以 说InnoDB 存储引擎的默认支持的隔离级别是 REPEATABLE-READ（可重读） 已经可以完全保证事务的隔离性要 求，即达到了 SQL标准的SERIALIZABLE(可串行化)隔离级别。</p>
+<p>因为隔离级别越低，事务请求的锁越少，所以大部分数据库系统的隔离级别都是READ-COMMITTED(读取提交内 容):，但是你要知道的是InnoDB 存储引擎默认使用 <strong>REPEATABLE-READ（可重读）并不会有任何性能损失</strong>。</p>
+<p>InnoDB 存储引擎在分布式事务 的情况下一般会用到SERIALIZABLE(可串行化)隔离级别。</p>
 <h3 id="为什么使用索引"><a href="#为什么使用索引" class="headerlink" title="为什么使用索引"></a>为什么使用索引</h3><ul>
-<li>通过创建唯一性索引，可以保证数据库表中每一行数据的唯一性。</li>
-<li>可以大大加快数据的检索速度，这也是创建索引的最主要的原因。</li>
-<li>帮助服务器避免排序和临时表</li>
-<li>将随机IO变为顺序IO</li>
-<li>可以加速表和表之间的连接，特别是在实现数据的参考完整性方面特别有意义。</li>
+<li>通过创建<strong>唯一性索引</strong>，可以保证数据库表中每一行数据的唯一性。</li>
+<li>可以大大<strong>加快数据的检索速度</strong>，这也是创建索引的最主要的原因。</li>
+<li>帮助服务器<strong>避免排序和临时表</strong></li>
+<li>将<strong>随机IO变为顺序IO</strong>。</li>
+<li>可以加速<strong>表和表之间的连接</strong>，特别是在实现数据的参考完整性方面特别有意义。</li>
 </ul>
 <h3 id="索引这么多优点，为什么不对表总的每一列创建一个索引"><a href="#索引这么多优点，为什么不对表总的每一列创建一个索引" class="headerlink" title="索引这么多优点，为什么不对表总的每一列创建一个索引"></a>索引这么多优点，为什么不对表总的每一列创建一个索引</h3><ul>
-<li>当对表中的数据进行增加、删除和修改的时候，索引也要动态的维护，这样就降低了数据的维护速度。</li>
-<li>索引需要占物理空间，除了数据表占数据空间之外，每一个索引还要占一定的物理空间，如果要建立簇索引，那么需要的空间就会更大。</li>
-<li>创建索引和维护索引要耗费时间，这种时间随着数据量的增加而增加</li>
+<li>当对表中的数据进行增加、删除和修改的时候，<strong>索引也要动态的维护</strong>，这样就降低了数据的维护速度。</li>
+<li><strong>索引需要占物理空间</strong>，除了数据表占数据空间之外，每一个索引还要占一定的物理空间，如果要建立簇索引，那么需要的空间就会更大。</li>
+<li><strong>创建索引和维护索引要耗费时间</strong>，这种时间随着数据量的增加而增加</li>
 </ul>
 <h3 id="索引如何提高查询速度的"><a href="#索引如何提高查询速度的" class="headerlink" title="索引如何提高查询速度的"></a>索引如何提高查询速度的</h3><p>将无序的数据变成相对有序的数据（就像查有目的一样）</p>
 <h3 id="使用索引的注意事项"><a href="#使用索引的注意事项" class="headerlink" title="使用索引的注意事项"></a>使用索引的注意事项</h3><ul>
@@ -942,20 +942,20 @@
 <li>删除长期未使用的索引，不用的索引的存在会造成不必要的性能损耗</li>
 <li>在使用limit offset查询缓存时，可以借助索引来提高性能。</li>
 </ul>
-<h3 id="mysql索引主要使用的两种数据结构"><a href="#mysql索引主要使用的两种数据结构" class="headerlink" title="mysql索引主要使用的两种数据结构"></a>mysql索引主要使用的两种数据结构</h3><ul>
-<li>哈希索引，对于哈希索引来说，底层的数据结构肯定是哈希表，因此在绝大多数需求为单条记录查询的时候，可以选择哈希索引，查询性能最快；其余大部分场景，建议选择BTree索引</li>
-<li>BTree索引，Mysql的BTree索引使用的是B树中的B+Tree但对于主要的两种存储引擎（MyISAM和InnoDB）的实现方式是不同的。</li>
+<h3 id="MySQL索引主要使用的两种数据结构"><a href="#MySQL索引主要使用的两种数据结构" class="headerlink" title="MySQL索引主要使用的两种数据结构"></a>MySQL索引主要使用的两种数据结构</h3><ul>
+<li><strong>哈希索引</strong>，对于哈希索引来说，底层的数据结构肯定是哈希表，因此在绝大多数需求为单条记录查询的时候，可以选择哈希索引，查询性能最快；其余大部分场景，建议选择BTree索引</li>
+<li><strong>BTree索引</strong>，Mysql的BTree索引使用的是B树中的B+Tree但对于主要的两种存储引擎（MyISAM和InnoDB）的实现方式是不同的。</li>
 </ul>
 <h3 id="myisam和innodb实现btree索引方式的区别"><a href="#myisam和innodb实现btree索引方式的区别" class="headerlink" title="myisam和innodb实现btree索引方式的区别"></a>myisam和innodb实现btree索引方式的区别</h3><ul>
-<li>MyISAM，B+Tree叶节点的data域存放的是数据记录的地址，在索引检索的时候，首先按照B+Tree搜索算法搜索索引，如果指定的key存在，则取出其data域的值，然后以data域的值为地址读区相应的数据记录，这被称为“非聚簇索引”</li>
-<li>InnoDB，其数据文件本身就是索引文件，相比MyISAM，索引文件和数据文件是分离的，其表数据文件本身就是按B+Tree组织的一个索引结构，树的节点data域保存了完整的数据记录，这个索引的key是数据表的主键，因此InnoDB表数据文件本身就是主索引。这被称为“聚簇索引”或者聚集索引，而其余的索引都作为辅助索引，辅助索引的data域存储相应记录主键的值而不是地址，这也是和MyISAM不同的地方，在根据主索引搜索时，直接找到key所在的节点即可取出数据；在根据辅助索引查找时，则需要先取出主键的值，在走一遍主索引。因此，在设计表的时候，不建议使用过长的字段为主键，也不建议使用非单调的字段作为主键，这样会造成主索引频繁分裂。</li>
+<li>MyISAM，<strong>B+Tree叶节点的data域存放的是数据记录的地址</strong>，在索引检索的时候，首先按照B+Tree搜索算法搜索索引，如果指定的key存在，则取出其data域的值，然后以data域的值为地址读区相应的数据记录，这被称为“非聚簇索引”</li>
+<li>InnoDB，其数据文件本身就是索引文件，相比MyISAM，<strong>索引文件和数据文件是分离的</strong>，<strong>其表数据文件本身就是按B+Tree组织的一个索引结构，树的节点data域保存了完整的数据记录</strong>，这个索引的key是数据表的主键，因此InnoDB表数据文件本身就是主索引。这被称为“聚簇索引”或者聚集索引，而其余的索引都作为辅助索引，辅助索引的data域存储相应记录主键的值而不是地址，这也是和MyISAM不同的地方，在根据主索引搜索时，直接找到key所在的节点即可取出数据；在根据辅助索引查找时，则需要先取出主键的值，在走一遍主索引。因此，在设计表的时候，不建议使用过长的字段为主键，也不建议使用非单调的字段作为主键，这样会造成主索引频繁分裂。</li>
 </ul>
 <h3 id="数据库结构优化"><a href="#数据库结构优化" class="headerlink" title="数据库结构优化"></a>数据库结构优化</h3><ul>
-<li>范式优化： 比如消除冗余（节省空间。。）</li>
-<li>反范式优化：比如适当加冗余等（减少join）</li>
-<li>限定数据的范围： 务必禁止不带任何限制数据范围条件的查询语句。比如：我们当用户在查询订单历史的时候，我们可以控制在一个月的范围内。</li>
-<li>读/写分离： 经典的数据库拆分方案，主库负责写，从库负责读；</li>
-<li>拆分表：分区将数据在物理上分隔开，不同分区的数据可以制定保存在处于不同磁盘上的数据文件里。这样，当对这个表进行查询时，只需要在表分区中进行扫描，而不必进行全表扫描，明显缩短了查询时间，另外处于不同磁盘的分区也将对这个表的数据传输分散在不同的磁盘I/O，一个精心设置的分区可以将数据传输对磁盘I/O竞争均匀地分散开。对数据量大的时时表可采取此方法。可按月自动建表分区。</li>
+<li><strong>范式优化</strong>： 比如消除冗余（节省空间。。）</li>
+<li><strong>反范式优化</strong>：比如适当加冗余等（减少join）</li>
+<li><strong>限定数据的范围</strong>： 务必禁止不带任何限制数据范围条件的查询语句。比如：我们当用户在查询订单历史的时候，我们可以控制在一个月的范围内。</li>
+<li><strong>读/写分离</strong>： 经典的数据库拆分方案，主库负责写，从库负责读；</li>
+<li><strong>拆分表</strong>：分区将数据在物理上分隔开，不同分区的数据可以制定保存在处于不同磁盘上的数据文件里。这样，当对这个表进行查询时，只需要在表分区中进行扫描，而不必进行全表扫描，明显缩短了查询时间，另外处于不同磁盘的分区也将对这个表的数据传输分散在不同的磁盘I/O，一个精心设置的分区可以将数据传输对磁盘I/O竞争均匀地分散开。对数据量大的时时表可采取此方法。可按月自动建表分区。</li>
 </ul>
 <p><strong>拆分其实又分垂直拆分和水平拆分：</strong></p>
 <ul>
@@ -977,10 +977,16 @@
 </li>
 <li>方案：<strong>用户表</strong> 通过性别拆分为男用户表和女用户表，<strong>订单表</strong> 通过已完成和完成中拆分为已完成订单和未完成订单，<strong>产品表</strong> 未完成订单放一个server上，已完成订单表盒男用户表放一个server上，女用户表放一个server上(女的爱购物 哈哈)。</li>
 </ul>
-<h3 id="主键超键候选键外键是什么"><a href="#主键超键候选键外键是什么" class="headerlink" title="主键超键候选键外键是什么"></a>主键超键候选键外键是什么</h3><p>超键：在关系中能唯一标识<strong>元组的属性集</strong>称为关系模式的超键</p>
-<p>候选键：不含有<strong>多余属性的超键</strong>称为候选键。也就是在候选键中，若再删除属性，就不是键了！</p>
-<p>主键：<strong>用户选作元组标识的一个候选键程序主键</strong></p>
-<p>外键：如果关系模式<strong>R中属性K是其它模式的主键</strong>，那么<strong>k在模式R中称为外键</strong>。</p>
+<h3 id="主键超键候选键外键是什么"><a href="#主键超键候选键外键是什么" class="headerlink" title="主键超键候选键外键是什么"></a>主键超键候选键外键是什么</h3><ul>
+<li><p><strong>超键</strong>：在关系中能唯一标识<strong>元组的属性集</strong>称为关系模式的超键</p>
+</li>
+<li><p><strong>候选键</strong>：不含有<strong>多余属性的超键</strong>称为候选键。也就是在候选键中，若再删除属性，就不是键了！</p>
+</li>
+<li><p><strong>主键</strong>：<strong>用户选作元组标识的一个候选键程序主键</strong></p>
+</li>
+<li><p><strong>外键</strong>：如果关系模式<strong>R中属性K是其它模式的主键</strong>，那么<strong>k在模式R中称为外键</strong>。</p>
+</li>
+</ul>
 <p><strong>举例</strong>：</p>
 <table>
 <thead>
@@ -1049,7 +1055,11 @@
 <li>外键是相对于主键的，比如在学生记录里，主键为学号，在成绩单表中也有学号字段，因此学号为成绩单表的外键，为学生表的主键。</li>
 </ol>
 <p><strong>主键为候选键的子集，候选键为超键的子集，而外键的确定是相对于主键的。</strong></p>
-<h3 id="drop-delete与truncate的区别"><a href="#drop-delete与truncate的区别" class="headerlink" title="drop,delete与truncate的区别"></a>drop,delete与truncate的区别</h3><p>drop直接删掉表;truncate删除表中数据，再插入时自增长id又从1开始 ;delete删除表中数据，可以加where字句。</p>
+<h3 id="drop-delete与truncate的区别"><a href="#drop-delete与truncate的区别" class="headerlink" title="drop,delete与truncate的区别"></a>drop,delete与truncate的区别</h3><ul>
+<li>drop直接删掉表;</li>
+<li>truncate删除表中数据，再插入时自增长id又从1开始 ;</li>
+<li>delete删除表中数据，可以加where字句。</li>
+</ul>
 <ol>
 <li>DELETE语句执行删除的过程是每次从表中删除一行，并且同时将该行的删除操作作为事务记录在日志中保存以便进行进行回滚操作。TRUNCATE TABLE 则一次性地从表中删除所有的数据并不把单独的删除操作记录记入日志保存，删除行是不能恢复的。并且在删除的过程中不会激活与表有关的删除触发器。执行速度快。</li>
 <li>表和索引所占空间。当表被TRUNCATE 后，这个表和索引所占用的空间会恢复到初始大小，而DELETE操作不会减少表或索引所占用的空间。drop语句将表所占用的空间全释放掉。</li>
@@ -1074,6 +1084,9 @@
 <h3 id="什么是覆盖索引"><a href="#什么是覆盖索引" class="headerlink" title="什么是覆盖索引"></a>什么是覆盖索引</h3><p>如果一个索引包含（或者说覆盖）所有需要查询的字段的值，我们就称 之为“覆盖索引”。我们知道在InnoDB存储引 擎中，如果不是主键索引，叶子节点存储的是主键+列值。最终还是要“回表”，也就是要通过主键再查找一次,这样就 会比较慢。覆盖索引就是把要查询出的列和索引是对应的，不做回表操作！</p>
 <h3 id="各种树"><a href="#各种树" class="headerlink" title="各种树"></a>各种树</h3><blockquote>
 <p>这里就不多介绍了，有兴趣可以在这里看<a href="http://dreamcat.ink/2019/11/08/shu-ju-jie-gou-shu-ji-chu/">各种树</a></p>
+</blockquote>
+<blockquote>
+<p>创作不易哇，觉得有帮助的话，给个小小的star呗。github地址😁😁😁</p>
 </blockquote>
 
             </div>
