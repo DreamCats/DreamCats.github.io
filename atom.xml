@@ -3,11 +3,11 @@
   <title>Dreamcat</title>
   
   <subtitle>ドリームキャット</subtitle>
-  <link href="/atom.xml" rel="self"/>
+  <link href="/blog/atom.xml" rel="self"/>
   
-  <link href="http://dreamcat.ink/blog/"/>
+  <link href="http://dreamcat.ink/"/>
   <updated>2020-07-21T13:14:19.992Z</updated>
-  <id>http://dreamcat.ink/blog/</id>
+  <id>http://dreamcat.ink/</id>
   
   <author>
     <name>买斯基</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>个人吐血系列-总结计算机网络</title>
-    <link href="http://dreamcat.ink/blog/2020/04/02/ge-ren-tu-xie-xi-lie-zong-jie-ji-suan-ji-wang-luo/"/>
-    <id>http://dreamcat.ink/blog/2020/04/02/ge-ren-tu-xie-xi-lie-zong-jie-ji-suan-ji-wang-luo/</id>
+    <link href="http://dreamcat.ink/2020/04/02/ge-ren-tu-xie-xi-lie-zong-jie-ji-suan-ji-wang-luo/"/>
+    <id>http://dreamcat.ink/2020/04/02/ge-ren-tu-xie-xi-lie-zong-jie-ji-suan-ji-wang-luo/</id>
     <published>2020-04-01T17:42:22.000Z</published>
     <updated>2020-07-21T13:14:19.992Z</updated>
     
@@ -35,17 +35,17 @@
     </summary>
     
     
-      <category term="java-interview" scheme="http://dreamcat.ink/blog/categories/java-interview/"/>
+      <category term="java-interview" scheme="http://dreamcat.ink/categories/java-interview/"/>
     
     
-      <category term="计算机网络" scheme="http://dreamcat.ink/blog/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
+      <category term="计算机网络" scheme="http://dreamcat.ink/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
     
   </entry>
   
   <entry>
     <title>个人吐血系列-总结RocketMQ</title>
-    <link href="http://dreamcat.ink/blog/2020/04/01/ge-ren-tu-xie-xi-lie-zong-jie-rocketmq/"/>
-    <id>http://dreamcat.ink/blog/2020/04/01/ge-ren-tu-xie-xi-lie-zong-jie-rocketmq/</id>
+    <link href="http://dreamcat.ink/2020/04/01/ge-ren-tu-xie-xi-lie-zong-jie-rocketmq/"/>
+    <id>http://dreamcat.ink/2020/04/01/ge-ren-tu-xie-xi-lie-zong-jie-rocketmq/</id>
     <published>2020-04-01T04:42:56.000Z</published>
     <updated>2020-04-01T16:24:12.533Z</updated>
     
@@ -64,17 +64,17 @@
     </summary>
     
     
-      <category term="java-interview" scheme="http://dreamcat.ink/blog/categories/java-interview/"/>
+      <category term="java-interview" scheme="http://dreamcat.ink/categories/java-interview/"/>
     
     
-      <category term="MQ" scheme="http://dreamcat.ink/blog/tags/MQ/"/>
+      <category term="MQ" scheme="http://dreamcat.ink/tags/MQ/"/>
     
   </entry>
   
   <entry>
     <title>个人吐血系列-总结Dubbo</title>
-    <link href="http://dreamcat.ink/blog/2020/04/01/ge-ren-tu-xie-xi-lie-zong-jie-dubbo/"/>
-    <id>http://dreamcat.ink/blog/2020/04/01/ge-ren-tu-xie-xi-lie-zong-jie-dubbo/</id>
+    <link href="http://dreamcat.ink/2020/04/01/ge-ren-tu-xie-xi-lie-zong-jie-dubbo/"/>
+    <id>http://dreamcat.ink/2020/04/01/ge-ren-tu-xie-xi-lie-zong-jie-dubbo/</id>
     <published>2020-03-31T16:04:46.000Z</published>
     <updated>2020-03-31T16:52:57.389Z</updated>
     
@@ -93,17 +93,17 @@
     </summary>
     
     
-      <category term="java-interview" scheme="http://dreamcat.ink/blog/categories/java-interview/"/>
+      <category term="java-interview" scheme="http://dreamcat.ink/categories/java-interview/"/>
     
     
-      <category term="dubbo" scheme="http://dreamcat.ink/blog/tags/dubbo/"/>
+      <category term="dubbo" scheme="http://dreamcat.ink/tags/dubbo/"/>
     
   </entry>
   
   <entry>
     <title>个人吐血系列-总结Redis</title>
-    <link href="http://dreamcat.ink/blog/2020/03/31/ge-ren-tu-xie-xi-lie-zong-jie-redis/"/>
-    <id>http://dreamcat.ink/blog/2020/03/31/ge-ren-tu-xie-xi-lie-zong-jie-redis/</id>
+    <link href="http://dreamcat.ink/2020/03/31/ge-ren-tu-xie-xi-lie-zong-jie-redis/"/>
+    <id>http://dreamcat.ink/2020/03/31/ge-ren-tu-xie-xi-lie-zong-jie-redis/</id>
     <published>2020-03-31T13:59:25.000Z</published>
     <updated>2020-03-31T15:47:44.613Z</updated>
     
@@ -122,17 +122,17 @@
     </summary>
     
     
-      <category term="java-interview" scheme="http://dreamcat.ink/blog/categories/java-interview/"/>
+      <category term="java-interview" scheme="http://dreamcat.ink/categories/java-interview/"/>
     
     
-      <category term="redis" scheme="http://dreamcat.ink/blog/tags/redis/"/>
+      <category term="redis" scheme="http://dreamcat.ink/tags/redis/"/>
     
   </entry>
   
   <entry>
     <title>个人吐血系列-总结Mysql</title>
-    <link href="http://dreamcat.ink/blog/2020/03/30/ge-ren-tu-xie-xi-lie-zong-jie-mysql/"/>
-    <id>http://dreamcat.ink/blog/2020/03/30/ge-ren-tu-xie-xi-lie-zong-jie-mysql/</id>
+    <link href="http://dreamcat.ink/2020/03/30/ge-ren-tu-xie-xi-lie-zong-jie-mysql/"/>
+    <id>http://dreamcat.ink/2020/03/30/ge-ren-tu-xie-xi-lie-zong-jie-mysql/</id>
     <published>2020-03-30T07:13:08.000Z</published>
     <updated>2020-04-13T07:17:27.591Z</updated>
     
@@ -151,17 +151,17 @@
     </summary>
     
     
-      <category term="java-interview" scheme="http://dreamcat.ink/blog/categories/java-interview/"/>
+      <category term="java-interview" scheme="http://dreamcat.ink/categories/java-interview/"/>
     
     
-      <category term="db" scheme="http://dreamcat.ink/blog/tags/db/"/>
+      <category term="db" scheme="http://dreamcat.ink/tags/db/"/>
     
   </entry>
   
   <entry>
     <title>个人吐血系列-总结Mybatis</title>
-    <link href="http://dreamcat.ink/blog/2020/03/29/ge-ren-tu-xie-xi-lie-zong-jie-mybatis/"/>
-    <id>http://dreamcat.ink/blog/2020/03/29/ge-ren-tu-xie-xi-lie-zong-jie-mybatis/</id>
+    <link href="http://dreamcat.ink/2020/03/29/ge-ren-tu-xie-xi-lie-zong-jie-mybatis/"/>
+    <id>http://dreamcat.ink/2020/03/29/ge-ren-tu-xie-xi-lie-zong-jie-mybatis/</id>
     <published>2020-03-29T12:15:48.000Z</published>
     <updated>2020-04-04T14:48:36.061Z</updated>
     
@@ -180,17 +180,17 @@
     </summary>
     
     
-      <category term="java-interview" scheme="http://dreamcat.ink/blog/categories/java-interview/"/>
+      <category term="java-interview" scheme="http://dreamcat.ink/categories/java-interview/"/>
     
     
-      <category term="mybatis" scheme="http://dreamcat.ink/blog/tags/mybatis/"/>
+      <category term="mybatis" scheme="http://dreamcat.ink/tags/mybatis/"/>
     
   </entry>
   
   <entry>
     <title>个人吐血系列-总结Spring</title>
-    <link href="http://dreamcat.ink/blog/2020/03/29/ge-ren-tu-xie-xi-lie-zong-jie-spring/"/>
-    <id>http://dreamcat.ink/blog/2020/03/29/ge-ren-tu-xie-xi-lie-zong-jie-spring/</id>
+    <link href="http://dreamcat.ink/2020/03/29/ge-ren-tu-xie-xi-lie-zong-jie-spring/"/>
+    <id>http://dreamcat.ink/2020/03/29/ge-ren-tu-xie-xi-lie-zong-jie-spring/</id>
     <published>2020-03-29T07:45:57.000Z</published>
     <updated>2020-04-01T10:26:58.883Z</updated>
     
@@ -209,17 +209,17 @@
     </summary>
     
     
-      <category term="java-interview" scheme="http://dreamcat.ink/blog/categories/java-interview/"/>
+      <category term="java-interview" scheme="http://dreamcat.ink/categories/java-interview/"/>
     
     
-      <category term="spring" scheme="http://dreamcat.ink/blog/tags/spring/"/>
+      <category term="spring" scheme="http://dreamcat.ink/tags/spring/"/>
     
   </entry>
   
   <entry>
     <title>个人吐血系列-总结JVM</title>
-    <link href="http://dreamcat.ink/blog/2020/03/28/ge-ren-tu-xie-xi-lie-zong-jie-jvm/"/>
-    <id>http://dreamcat.ink/blog/2020/03/28/ge-ren-tu-xie-xi-lie-zong-jie-jvm/</id>
+    <link href="http://dreamcat.ink/2020/03/28/ge-ren-tu-xie-xi-lie-zong-jie-jvm/"/>
+    <id>http://dreamcat.ink/2020/03/28/ge-ren-tu-xie-xi-lie-zong-jie-jvm/</id>
     <published>2020-03-28T15:42:45.000Z</published>
     <updated>2020-03-29T07:46:57.876Z</updated>
     
@@ -238,17 +238,17 @@
     </summary>
     
     
-      <category term="java-interview" scheme="http://dreamcat.ink/blog/categories/java-interview/"/>
+      <category term="java-interview" scheme="http://dreamcat.ink/categories/java-interview/"/>
     
     
-      <category term="jvm" scheme="http://dreamcat.ink/blog/tags/jvm/"/>
+      <category term="jvm" scheme="http://dreamcat.ink/tags/jvm/"/>
     
   </entry>
   
   <entry>
     <title>个人吐血系列-总结Java集合</title>
-    <link href="http://dreamcat.ink/blog/2020/03/28/ge-ren-tu-xie-xi-lie-zong-jie-java-ji-he/"/>
-    <id>http://dreamcat.ink/blog/2020/03/28/ge-ren-tu-xie-xi-lie-zong-jie-java-ji-he/</id>
+    <link href="http://dreamcat.ink/2020/03/28/ge-ren-tu-xie-xi-lie-zong-jie-java-ji-he/"/>
+    <id>http://dreamcat.ink/2020/03/28/ge-ren-tu-xie-xi-lie-zong-jie-java-ji-he/</id>
     <published>2020-03-27T16:22:40.000Z</published>
     <updated>2020-04-14T07:21:21.922Z</updated>
     
@@ -266,17 +266,17 @@
     </summary>
     
     
-      <category term="java-interview" scheme="http://dreamcat.ink/blog/categories/java-interview/"/>
+      <category term="java-interview" scheme="http://dreamcat.ink/categories/java-interview/"/>
     
     
-      <category term="java集合" scheme="http://dreamcat.ink/blog/tags/java%E9%9B%86%E5%90%88/"/>
+      <category term="java集合" scheme="http://dreamcat.ink/tags/java%E9%9B%86%E5%90%88/"/>
     
   </entry>
   
   <entry>
     <title>个人吐血系列-总结Java基础</title>
-    <link href="http://dreamcat.ink/blog/2020/03/27/ge-ren-tu-xie-xi-lie-zong-jie-java-ji-chu/"/>
-    <id>http://dreamcat.ink/blog/2020/03/27/ge-ren-tu-xie-xi-lie-zong-jie-java-ji-chu/</id>
+    <link href="http://dreamcat.ink/2020/03/27/ge-ren-tu-xie-xi-lie-zong-jie-java-ji-chu/"/>
+    <id>http://dreamcat.ink/2020/03/27/ge-ren-tu-xie-xi-lie-zong-jie-java-ji-chu/</id>
     <published>2020-03-27T07:07:33.000Z</published>
     <updated>2020-03-27T16:50:09.840Z</updated>
     
@@ -292,17 +292,17 @@
     </summary>
     
     
-      <category term="java-interview" scheme="http://dreamcat.ink/blog/categories/java-interview/"/>
+      <category term="java-interview" scheme="http://dreamcat.ink/categories/java-interview/"/>
     
     
-      <category term="java基础" scheme="http://dreamcat.ink/blog/tags/java%E5%9F%BA%E7%A1%80/"/>
+      <category term="java基础" scheme="http://dreamcat.ink/tags/java%E5%9F%BA%E7%A1%80/"/>
     
   </entry>
   
   <entry>
     <title>个人吐血系列-总结Java多线程</title>
-    <link href="http://dreamcat.ink/blog/2020/03/25/ge-ren-tu-xie-xi-lie-zong-jie-java-duo-xian-cheng/"/>
-    <id>http://dreamcat.ink/blog/2020/03/25/ge-ren-tu-xie-xi-lie-zong-jie-java-duo-xian-cheng/</id>
+    <link href="http://dreamcat.ink/2020/03/25/ge-ren-tu-xie-xi-lie-zong-jie-java-duo-xian-cheng/"/>
+    <id>http://dreamcat.ink/2020/03/25/ge-ren-tu-xie-xi-lie-zong-jie-java-duo-xian-cheng/</id>
     <published>2020-03-25T15:07:33.000Z</published>
     <updated>2020-04-08T06:51:39.631Z</updated>
     
@@ -318,17 +318,17 @@
     </summary>
     
     
-      <category term="java-interview" scheme="http://dreamcat.ink/blog/categories/java-interview/"/>
+      <category term="java-interview" scheme="http://dreamcat.ink/categories/java-interview/"/>
     
     
-      <category term="多线程" scheme="http://dreamcat.ink/blog/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/"/>
+      <category term="多线程" scheme="http://dreamcat.ink/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/"/>
     
   </entry>
   
   <entry>
     <title>Centos7安装RocketMQ及配置</title>
-    <link href="http://dreamcat.ink/blog/2020/02/21/centos7-an-zhuang-rocketmq-ji-pei-zhi/"/>
-    <id>http://dreamcat.ink/blog/2020/02/21/centos7-an-zhuang-rocketmq-ji-pei-zhi/</id>
+    <link href="http://dreamcat.ink/2020/02/21/centos7-an-zhuang-rocketmq-ji-pei-zhi/"/>
+    <id>http://dreamcat.ink/2020/02/21/centos7-an-zhuang-rocketmq-ji-pei-zhi/</id>
     <published>2020-02-21T12:33:02.000Z</published>
     <updated>2020-03-25T18:34:38.562Z</updated>
     
@@ -343,17 +343,17 @@
     </summary>
     
     
-      <category term="tools" scheme="http://dreamcat.ink/blog/categories/tools/"/>
+      <category term="tools" scheme="http://dreamcat.ink/categories/tools/"/>
     
     
-      <category term="MQ" scheme="http://dreamcat.ink/blog/tags/MQ/"/>
+      <category term="MQ" scheme="http://dreamcat.ink/tags/MQ/"/>
     
   </entry>
   
   <entry>
     <title>Spring-MyBatis框架面试常见问题</title>
-    <link href="http://dreamcat.ink/blog/2020/02/19/spring-mybatis-kuang-jia-mian-shi-chang-jian-wen-ti/"/>
-    <id>http://dreamcat.ink/blog/2020/02/19/spring-mybatis-kuang-jia-mian-shi-chang-jian-wen-ti/</id>
+    <link href="http://dreamcat.ink/2020/02/19/spring-mybatis-kuang-jia-mian-shi-chang-jian-wen-ti/"/>
+    <id>http://dreamcat.ink/2020/02/19/spring-mybatis-kuang-jia-mian-shi-chang-jian-wen-ti/</id>
     <published>2020-02-19T06:25:38.000Z</published>
     <updated>2020-03-25T19:29:02.081Z</updated>
     
@@ -368,17 +368,17 @@
     </summary>
     
     
-      <category term="java-spring" scheme="http://dreamcat.ink/blog/categories/java-spring/"/>
+      <category term="java-spring" scheme="http://dreamcat.ink/categories/java-spring/"/>
     
     
-      <category term="mybatis" scheme="http://dreamcat.ink/blog/tags/mybatis/"/>
+      <category term="mybatis" scheme="http://dreamcat.ink/tags/mybatis/"/>
     
   </entry>
   
   <entry>
     <title>为什么说ArrayList是线程不安全的?</title>
-    <link href="http://dreamcat.ink/blog/2020/02/14/wei-shi-me-shuo-arraylist-shi-xian-cheng-bu-an-quan-de/"/>
-    <id>http://dreamcat.ink/blog/2020/02/14/wei-shi-me-shuo-arraylist-shi-xian-cheng-bu-an-quan-de/</id>
+    <link href="http://dreamcat.ink/2020/02/14/wei-shi-me-shuo-arraylist-shi-xian-cheng-bu-an-quan-de/"/>
+    <id>http://dreamcat.ink/2020/02/14/wei-shi-me-shuo-arraylist-shi-xian-cheng-bu-an-quan-de/</id>
     <published>2020-02-14T08:41:53.000Z</published>
     <updated>2020-04-01T17:46:40.189Z</updated>
     
@@ -393,17 +393,17 @@
     </summary>
     
     
-      <category term="java-coll" scheme="http://dreamcat.ink/blog/categories/java-coll/"/>
+      <category term="java-coll" scheme="http://dreamcat.ink/categories/java-coll/"/>
     
     
-      <category term="java集合" scheme="http://dreamcat.ink/blog/tags/java%E9%9B%86%E5%90%88/"/>
+      <category term="java集合" scheme="http://dreamcat.ink/tags/java%E9%9B%86%E5%90%88/"/>
     
   </entry>
   
   <entry>
     <title>Java多线程 CAS原理剖析</title>
-    <link href="http://dreamcat.ink/blog/2020/02/14/java-duo-xian-cheng-cas-yuan-li-pou-xi/"/>
-    <id>http://dreamcat.ink/blog/2020/02/14/java-duo-xian-cheng-cas-yuan-li-pou-xi/</id>
+    <link href="http://dreamcat.ink/2020/02/14/java-duo-xian-cheng-cas-yuan-li-pou-xi/"/>
+    <id>http://dreamcat.ink/2020/02/14/java-duo-xian-cheng-cas-yuan-li-pou-xi/</id>
     <published>2020-02-13T16:05:57.000Z</published>
     <updated>2020-03-25T18:38:23.290Z</updated>
     
@@ -418,17 +418,17 @@
     </summary>
     
     
-      <category term="java-mul" scheme="http://dreamcat.ink/blog/categories/java-mul/"/>
+      <category term="java-mul" scheme="http://dreamcat.ink/categories/java-mul/"/>
     
     
-      <category term="多线程" scheme="http://dreamcat.ink/blog/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/"/>
+      <category term="多线程" scheme="http://dreamcat.ink/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/"/>
     
   </entry>
   
   <entry>
     <title>深刻理解volatile的一切</title>
-    <link href="http://dreamcat.ink/blog/2020/02/13/shen-ke-li-jie-volatile-de-yi-qie/"/>
-    <id>http://dreamcat.ink/blog/2020/02/13/shen-ke-li-jie-volatile-de-yi-qie/</id>
+    <link href="http://dreamcat.ink/2020/02/13/shen-ke-li-jie-volatile-de-yi-qie/"/>
+    <id>http://dreamcat.ink/2020/02/13/shen-ke-li-jie-volatile-de-yi-qie/</id>
     <published>2020-02-12T16:44:43.000Z</published>
     <updated>2020-03-25T18:30:33.822Z</updated>
     
@@ -443,17 +443,17 @@
     </summary>
     
     
-      <category term="java-mul" scheme="http://dreamcat.ink/blog/categories/java-mul/"/>
+      <category term="java-mul" scheme="http://dreamcat.ink/categories/java-mul/"/>
     
     
-      <category term="多线程" scheme="http://dreamcat.ink/blog/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/"/>
+      <category term="多线程" scheme="http://dreamcat.ink/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/"/>
     
   </entry>
   
   <entry>
     <title>Java锁机制</title>
-    <link href="http://dreamcat.ink/blog/2020/02/10/java-duo-xian-cheng-suo-ji-zhi/"/>
-    <id>http://dreamcat.ink/blog/2020/02/10/java-duo-xian-cheng-suo-ji-zhi/</id>
+    <link href="http://dreamcat.ink/2020/02/10/java-duo-xian-cheng-suo-ji-zhi/"/>
+    <id>http://dreamcat.ink/2020/02/10/java-duo-xian-cheng-suo-ji-zhi/</id>
     <published>2020-02-09T17:22:20.000Z</published>
     <updated>2020-03-25T18:59:25.863Z</updated>
     
@@ -478,17 +478,17 @@
     </summary>
     
     
-      <category term="java-mul" scheme="http://dreamcat.ink/blog/categories/java-mul/"/>
+      <category term="java-mul" scheme="http://dreamcat.ink/categories/java-mul/"/>
     
     
-      <category term="多线程" scheme="http://dreamcat.ink/blog/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/"/>
+      <category term="多线程" scheme="http://dreamcat.ink/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/"/>
     
   </entry>
   
   <entry>
     <title>Spring-SpringBoot-HelloWorld项目启动流程及细节和原理</title>
-    <link href="http://dreamcat.ink/blog/2020/02/03/spring-springboot-helloworld-xiang-mu-qi-dong-liu-cheng-ji-xi-jie-he-yuan-li/"/>
-    <id>http://dreamcat.ink/blog/2020/02/03/spring-springboot-helloworld-xiang-mu-qi-dong-liu-cheng-ji-xi-jie-he-yuan-li/</id>
+    <link href="http://dreamcat.ink/2020/02/03/spring-springboot-helloworld-xiang-mu-qi-dong-liu-cheng-ji-xi-jie-he-yuan-li/"/>
+    <id>http://dreamcat.ink/2020/02/03/spring-springboot-helloworld-xiang-mu-qi-dong-liu-cheng-ji-xi-jie-he-yuan-li/</id>
     <published>2020-02-03T04:03:34.000Z</published>
     <updated>2020-03-25T19:07:43.238Z</updated>
     
@@ -503,17 +503,17 @@
     </summary>
     
     
-      <category term="java-spring" scheme="http://dreamcat.ink/blog/categories/java-spring/"/>
+      <category term="java-spring" scheme="http://dreamcat.ink/categories/java-spring/"/>
     
     
-      <category term="spring" scheme="http://dreamcat.ink/blog/tags/spring/"/>
+      <category term="spring" scheme="http://dreamcat.ink/tags/spring/"/>
     
   </entry>
   
   <entry>
     <title>Spring-SpringAOP源码分析</title>
-    <link href="http://dreamcat.ink/blog/2020/01/31/spring-springaop-yuan-ma-fen-xi/"/>
-    <id>http://dreamcat.ink/blog/2020/01/31/spring-springaop-yuan-ma-fen-xi/</id>
+    <link href="http://dreamcat.ink/2020/01/31/spring-springaop-yuan-ma-fen-xi/"/>
+    <id>http://dreamcat.ink/2020/01/31/spring-springaop-yuan-ma-fen-xi/</id>
     <published>2020-01-31T12:03:40.000Z</published>
     <updated>2020-03-29T08:16:46.096Z</updated>
     
@@ -528,17 +528,17 @@
     </summary>
     
     
-      <category term="java-spring" scheme="http://dreamcat.ink/blog/categories/java-spring/"/>
+      <category term="java-spring" scheme="http://dreamcat.ink/categories/java-spring/"/>
     
     
-      <category term="spring" scheme="http://dreamcat.ink/blog/tags/spring/"/>
+      <category term="spring" scheme="http://dreamcat.ink/tags/spring/"/>
     
   </entry>
   
   <entry>
     <title>github表情图标</title>
-    <link href="http://dreamcat.ink/blog/2020/01/20/github-biao-qing-tu-biao/"/>
-    <id>http://dreamcat.ink/blog/2020/01/20/github-biao-qing-tu-biao/</id>
+    <link href="http://dreamcat.ink/2020/01/20/github-biao-qing-tu-biao/"/>
+    <id>http://dreamcat.ink/2020/01/20/github-biao-qing-tu-biao/</id>
     <published>2020-01-20T05:15:16.000Z</published>
     <updated>2020-03-25T18:36:01.342Z</updated>
     
@@ -554,10 +554,10 @@
     </summary>
     
     
-      <category term="tools" scheme="http://dreamcat.ink/blog/categories/tools/"/>
+      <category term="tools" scheme="http://dreamcat.ink/categories/tools/"/>
     
     
-      <category term="github" scheme="http://dreamcat.ink/blog/tags/github/"/>
+      <category term="github" scheme="http://dreamcat.ink/tags/github/"/>
     
   </entry>
   
