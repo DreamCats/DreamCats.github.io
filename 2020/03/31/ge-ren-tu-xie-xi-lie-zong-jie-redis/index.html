@@ -25,13 +25,13 @@
 <meta property="og:site_name" content="Dreamcat">
 <meta property="og:description" content="毕竟Redis还是挺热门的缓存中间件，得好好学习一下子，在高并发的场景当中，也用的比较多，面试也是常问的点。  大纲图 Redis是什么简单来说redis就是一个数据库，不过与传统数据库不同的是redis的数据库是存在内存中，所以读写速度非常快，因此redis被广泛应用于缓存方向。另外，redis也经常用来做分布式锁，redis提供了多种数据类型来支持不同的业务场景。除此之外，redis 支持事">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://media.dreamcat.ink/uPic/Redis%E5%B8%B8%E8%A7%81%E9%9D%A2%E8%AF%95.png">
+<meta property="og:image" content="https://gitee.com/dreamcater/blog-img/raw/master/uPic/Redis%E5%B8%B8%E8%A7%81%E9%9D%A2%E8%AF%95-VAMUkX.png">
 <meta property="article:published_time" content="2020-03-31T13:59:25.000Z">
-<meta property="article:modified_time" content="2020-10-29T15:25:43.769Z">
+<meta property="article:modified_time" content="2020-10-30T12:55:38.030Z">
 <meta property="article:author" content="买斯基">
 <meta property="article:tag" content="redis">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://media.dreamcat.ink/uPic/Redis%E5%B8%B8%E8%A7%81%E9%9D%A2%E8%AF%95.png">
+<meta name="twitter:image" content="https://gitee.com/dreamcater/blog-img/raw/master/uPic/Redis%E5%B8%B8%E8%A7%81%E9%9D%A2%E8%AF%95-VAMUkX.png">
   <!-- Canonical links -->
   <link rel="canonical" href="http://dreamcat.ink/2020/03/31/ge-ren-tu-xie-xi-lie-zong-jie-redis/index.html">
   
@@ -389,7 +389,7 @@
         <blockquote>
 <p>毕竟Redis还是挺热门的缓存中间件，得好好学习一下子，在高并发的场景当中，也用的比较多，面试也是常问的点。</p>
 </blockquote>
-<h2 id="大纲图"><a href="#大纲图" class="headerlink" title="大纲图"></a>大纲图</h2><p><img src="http://media.dreamcat.ink/uPic/Redis%E5%B8%B8%E8%A7%81%E9%9D%A2%E8%AF%95.png" alt="Redis常见面试"></p>
+<h2 id="大纲图"><a href="#大纲图" class="headerlink" title="大纲图"></a>大纲图</h2><p><img src="https://gitee.com/dreamcater/blog-img/raw/master/uPic/Redis%E5%B8%B8%E8%A7%81%E9%9D%A2%E8%AF%95-VAMUkX.png" alt="Redis常见面试-VAMUkX"></p>
 <h3 id="Redis是什么"><a href="#Redis是什么" class="headerlink" title="Redis是什么"></a>Redis是什么</h3><p>简单来说redis就是一个<strong>数据库</strong>，不过与传统数据库不同的是redis的数据库是存在<strong>内存</strong>中，所以<strong>读写速度非常快</strong>，因此redis被广泛应用于<strong>缓存</strong>方向。另外，redis也经常用来做<strong>分布式锁</strong>，redis提供了多种数据类型来支持不同的业务场景。除此之外，<strong>redis 支持事务</strong> 、<strong>持久化</strong>、<strong>LUA脚本</strong>、<strong>LRU驱动事件</strong>、<strong>多种集群</strong>方案。</p>
 <h3 id="为什么要用Redis"><a href="#为什么要用Redis" class="headerlink" title="为什么要用Redis"></a>为什么要用Redis</h3><ol>
 <li><strong>高性能</strong>：假如用户第一次访问数据库中的某些数据。这个过程会比较慢，因为是从<strong>硬盘上读取</strong>的。将该用户访问的<strong>数据存在缓存</strong>中，这样下一次再访问这些数据的时候就可以直接从缓存中获取了。操<strong>作缓存就是直接操作内存，所以速度相当快</strong>。如果数据库中的对应数据改变的之后，同步改变缓存中相应的数据即可！</li>

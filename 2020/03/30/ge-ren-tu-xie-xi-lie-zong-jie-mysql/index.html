@@ -25,7 +25,7 @@
 <meta property="og:site_name" content="Dreamcat">
 <meta property="og:description" content="MySQL这一块的知识还是挺多的，问深度的话， 一般都是如何调优的，当然少不了MySQL的基础等知识。   数据库引擎innodb与myisam的区别InnoDB是 MySQL 默认的事务型存储引擎，只有在需要它不支持的特性时，才考虑使用其它存储引擎。 实现了四个标准的隔离级别，默认级别是可重复读(REPEATABLE READ)。在可重复读隔离级别下，通过多版本并发控制(MVCC)+ 间隙锁(">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://media.dreamcat.ink/uPic/Mysql%E9%9D%A2%E8%AF%95%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98.png">
+<meta property="og:image" content="https://gitee.com/dreamcater/blog-img/raw/master/uPic/Mysql%E9%9D%A2%E8%AF%95%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98-XMMJ7T.png">
 <meta property="og:image" content="http://media.dreamcat.ink/uPic/SQL%E6%89%A7%E8%A1%8C%E7%9A%84%E5%85%A8%E9%83%A8%E8%BF%87%E7%A8%8B.png">
 <meta property="og:image" content="http://media.dreamcat.ink/uPic/%E4%BA%8B%E5%8A%A1%E9%9A%94%E7%A6%BB%E6%80%A7.png">
 <meta property="og:image" content="https://www.pdai.tech/_images/pics/dd782132-d830-4c55-9884-cfac0a541b8e.png">
@@ -33,11 +33,11 @@
 <meta property="og:image" content="https://www.pdai.tech/_images/pics/c8d18ca9-0b09-441a-9a0c-fb063630d708.png">
 <meta property="og:image" content="https://www.pdai.tech/_images/pics/72fe492e-f1cb-4cfc-92f8-412fb3ae6fec.png">
 <meta property="article:published_time" content="2020-03-30T07:13:08.000Z">
-<meta property="article:modified_time" content="2020-10-29T15:22:08.455Z">
+<meta property="article:modified_time" content="2020-10-30T12:54:28.443Z">
 <meta property="article:author" content="买斯基">
 <meta property="article:tag" content="db">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://media.dreamcat.ink/uPic/Mysql%E9%9D%A2%E8%AF%95%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98.png">
+<meta name="twitter:image" content="https://gitee.com/dreamcater/blog-img/raw/master/uPic/Mysql%E9%9D%A2%E8%AF%95%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98-XMMJ7T.png">
   <!-- Canonical links -->
   <link rel="canonical" href="http://dreamcat.ink/2020/03/30/ge-ren-tu-xie-xi-lie-zong-jie-mysql/index.html">
   
@@ -395,7 +395,7 @@
         <blockquote>
 <p>MySQL这一块的知识还是挺多的，问深度的话， 一般都是如何调优的，当然少不了MySQL的基础等知识。</p>
 </blockquote>
-<p><img src="http://media.dreamcat.ink/uPic/Mysql%E9%9D%A2%E8%AF%95%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98.png" alt="MySQL面试常见问题"></p>
+<p><img src="https://gitee.com/dreamcater/blog-img/raw/master/uPic/Mysql%E9%9D%A2%E8%AF%95%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98-XMMJ7T.png" alt="Mysql面试常见问题-XMMJ7T"></p>
 <h3 id="数据库引擎innodb与myisam的区别"><a href="#数据库引擎innodb与myisam的区别" class="headerlink" title="数据库引擎innodb与myisam的区别"></a>数据库引擎innodb与myisam的区别</h3><h4 id="InnoDB"><a href="#InnoDB" class="headerlink" title="InnoDB"></a>InnoDB</h4><p>是 MySQL 默认的<strong>事务型</strong>存储引擎，只有在需要它不支持的特性时，才考虑使用其它存储引擎。</p>
 <p>实现了四个标准的隔离级别，默认级别是<strong>可重复读</strong>(REPEATABLE READ)。在可重复读隔离级别下，<strong>通过多版本并发控制(MVCC)+ 间隙锁(Next-Key Locking)防止幻影读。</strong></p>
 <p>主索引是<strong>聚簇索引</strong>，在索引中保存了数据，从而避免直接读取磁盘，因此对查询性能有很大的提升。</p>

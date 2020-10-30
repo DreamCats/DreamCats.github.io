@@ -1,6 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>http://dreamcat.ink/2020/04/02/ge-ren-tu-xie-xi-lie-zong-jie-ji-suan-ji-wang-luo/</loc>
+    <lastmod>2020-10-30</lastmod>
+  </url>
+  <url>
+    <loc>http://dreamcat.ink/2020/03/25/ge-ren-tu-xie-xi-lie-zong-jie-java-duo-xian-cheng/</loc>
+    <lastmod>2020-10-30</lastmod>
+  </url>
+  <url>
+    <loc>http://dreamcat.ink/2019/06/08/ming-ling-xing-de-qi-yin-ji-qiao/</loc>
+    <lastmod>2020-10-30</lastmod>
+  </url>
+  <url>
+    <loc>http://dreamcat.ink/2020/04/01/ge-ren-tu-xie-xi-lie-zong-jie-rocketmq/</loc>
+    <lastmod>2020-10-30</lastmod>
+  </url>
+  <url>
+    <loc>http://dreamcat.ink/2020/03/29/ge-ren-tu-xie-xi-lie-zong-jie-spring/</loc>
+    <lastmod>2020-10-30</lastmod>
+  </url>
+  <url>
+    <loc>http://dreamcat.ink/2020/04/01/ge-ren-tu-xie-xi-lie-zong-jie-dubbo/</loc>
+    <lastmod>2020-10-30</lastmod>
+  </url>
+  <url>
+    <loc>http://dreamcat.ink/2020/03/31/ge-ren-tu-xie-xi-lie-zong-jie-redis/</loc>
+    <lastmod>2020-10-30</lastmod>
+  </url>
+  <url>
+    <loc>http://dreamcat.ink/2020/03/30/ge-ren-tu-xie-xi-lie-zong-jie-mysql/</loc>
+    <lastmod>2020-10-30</lastmod>
+  </url>
+  <url>
+    <loc>http://dreamcat.ink/2020/01/31/spring-springaop-yuan-ma-fen-xi/</loc>
+    <lastmod>2020-10-30</lastmod>
+  </url>
+  <url>
     <loc>http://dreamcat.ink/2020/03/28/ge-ren-tu-xie-xi-lie-zong-jie-jvm/</loc>
     <lastmod>2020-10-30</lastmod>
   </url>
@@ -189,26 +225,6 @@
     <lastmod>2020-10-29</lastmod>
   </url>
   <url>
-    <loc>http://dreamcat.ink/2020/01/31/spring-springaop-yuan-ma-fen-xi/</loc>
-    <lastmod>2020-10-29</lastmod>
-  </url>
-  <url>
-    <loc>http://dreamcat.ink/2020/03/31/ge-ren-tu-xie-xi-lie-zong-jie-redis/</loc>
-    <lastmod>2020-10-29</lastmod>
-  </url>
-  <url>
-    <loc>http://dreamcat.ink/2020/04/01/ge-ren-tu-xie-xi-lie-zong-jie-dubbo/</loc>
-    <lastmod>2020-10-29</lastmod>
-  </url>
-  <url>
-    <loc>http://dreamcat.ink/2020/03/29/ge-ren-tu-xie-xi-lie-zong-jie-spring/</loc>
-    <lastmod>2020-10-29</lastmod>
-  </url>
-  <url>
-    <loc>http://dreamcat.ink/2020/04/01/ge-ren-tu-xie-xi-lie-zong-jie-rocketmq/</loc>
-    <lastmod>2020-10-29</lastmod>
-  </url>
-  <url>
     <loc>http://dreamcat.ink/2019/10/30/java-ji-he-stack-queue-yuan-ma-jie-xi/</loc>
     <lastmod>2020-10-29</lastmod>
   </url>
@@ -221,23 +237,7 @@
     <lastmod>2020-10-29</lastmod>
   </url>
   <url>
-    <loc>http://dreamcat.ink/2019/06/08/ming-ling-xing-de-qi-yin-ji-qiao/</loc>
-    <lastmod>2020-10-29</lastmod>
-  </url>
-  <url>
-    <loc>http://dreamcat.ink/2020/03/25/ge-ren-tu-xie-xi-lie-zong-jie-java-duo-xian-cheng/</loc>
-    <lastmod>2020-10-29</lastmod>
-  </url>
-  <url>
-    <loc>http://dreamcat.ink/2020/03/30/ge-ren-tu-xie-xi-lie-zong-jie-mysql/</loc>
-    <lastmod>2020-10-29</lastmod>
-  </url>
-  <url>
     <loc>http://dreamcat.ink/2020/03/28/ge-ren-tu-xie-xi-lie-zong-jie-java-ji-he/</loc>
-    <lastmod>2020-10-29</lastmod>
-  </url>
-  <url>
-    <loc>http://dreamcat.ink/2020/04/02/ge-ren-tu-xie-xi-lie-zong-jie-ji-suan-ji-wang-luo/</loc>
     <lastmod>2020-10-29</lastmod>
   </url>
   <url>

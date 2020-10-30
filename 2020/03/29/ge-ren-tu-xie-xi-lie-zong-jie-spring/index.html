@@ -25,18 +25,18 @@
 <meta property="og:site_name" content="Dreamcat">
 <meta property="og:description" content="个人感觉，Spring这一块，不仅会用，还得知道底层的源码或者是说初始化加载等过程吧，这篇就不介绍如何配置以及各个注解的使用，在这里不是重点。  大纲图 什么是Spring框架我们一般说 Spring 框架指的都是 Spring Framework，它是很多模块的集合，使用这些模块可以很方便地协助我们进行开发。这些模块是：核心容器、数据访问&#x2F;集成,、Web、AOP（面向切面编程）、工具、消息和测">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://media.dreamcat.ink/uPic/Spring%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98.png">
+<meta property="og:image" content="https://gitee.com/dreamcater/blog-img/raw/master/uPic/Spring%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98-F2ktkQ.png">
 <meta property="og:image" content="http://media.dreamcat.ink//20200201150935.png">
 <meta property="og:image" content="http://my-blog-to-use.oss-cn-beijing.aliyuncs.com/18-9-17/5496407.jpg">
 <meta property="og:image" content="http://my-blog-to-use.oss-cn-beijing.aliyuncs.com/18-10-11/60679444.jpg">
 <meta property="og:image" content="http://my-blog-to-use.oss-cn-beijing.aliyuncs.com/18-10-11/49790288.jpg">
 <meta property="og:image" content="http://media.dreamcat.ink//20200203211202.png">
 <meta property="article:published_time" content="2020-03-29T07:45:57.000Z">
-<meta property="article:modified_time" content="2020-10-29T15:25:03.615Z">
+<meta property="article:modified_time" content="2020-10-30T12:58:56.448Z">
 <meta property="article:author" content="买斯基">
 <meta property="article:tag" content="spring">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://media.dreamcat.ink/uPic/Spring%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98.png">
+<meta name="twitter:image" content="https://gitee.com/dreamcater/blog-img/raw/master/uPic/Spring%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98-F2ktkQ.png">
   <!-- Canonical links -->
   <link rel="canonical" href="http://dreamcat.ink/2020/03/29/ge-ren-tu-xie-xi-lie-zong-jie-spring/index.html">
   
@@ -394,7 +394,7 @@
         <blockquote>
 <p>个人感觉，Spring这一块，不仅会用，还得知道底层的源码或者是说初始化加载等过程吧，这篇就不介绍如何配置以及各个注解的使用，在这里不是重点。</p>
 </blockquote>
-<h2 id="大纲图"><a href="#大纲图" class="headerlink" title="大纲图"></a>大纲图</h2><p><img src="http://media.dreamcat.ink/uPic/Spring%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98.png" alt="Spring常见问题"></p>
+<h2 id="大纲图"><a href="#大纲图" class="headerlink" title="大纲图"></a>大纲图</h2><p><img src="https://gitee.com/dreamcater/blog-img/raw/master/uPic/Spring%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98-F2ktkQ.png" alt="Spring常见问题-F2ktkQ"></p>
 <h3 id="什么是Spring框架"><a href="#什么是Spring框架" class="headerlink" title="什么是Spring框架"></a>什么是Spring框架</h3><p>我们一般说 Spring 框架指的都是 Spring Framework，它是很多模块的集合，使用这些模块可以很方便地协助我们进行开发。这些模块是：核心容器、数据访问/集成,、Web、AOP（面向切面编程）、工具、消息和测试模块。比如：Core Container 中的 Core 组件是Spring 所有组件的核心，Beans 组件和 Context 组件是实现IOC和依赖注入的基础，AOP组件用来实现面向切面编程。</p>
 <p>Spring 官网列出的 Spring 的 6 个特征:</p>
 <ul>
