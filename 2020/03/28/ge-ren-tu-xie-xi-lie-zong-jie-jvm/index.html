@@ -25,7 +25,7 @@
 <meta property="og:site_name" content="Dreamcat">
 <meta property="og:description" content="个人感觉JVM这一块，了解和背的知识点挺多，代码并不是特别多，主要是后期调优，需要大量的经验罢了。不过JVM这一块一定要深刻理解。  大纲图 类文件结构概述在 Java 中，JVM 可以理解的代码就叫做字节码（即扩展名为 .class 的文件），它不面向任何特定的处理器，只面向虚拟机。Java 语言通过字节码的方式，在一定程度上解决了传统解释型语言执行效率低的问题，同时又保留了解释型语言可移植的">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://media.dreamcat.ink/uPic/JVM%E9%9D%A2%E8%AF%95.png">
+<meta property="og:image" content="https://gitee.com/dreamcater/blog-img/raw/master/uPic/JVM%E9%9D%A2%E8%AF%95-F21Sxh.png">
 <meta property="og:image" content="http://media.dreamcat.ink/uPic/%E7%B1%BB%E5%8A%A0%E8%BD%BD%E8%BF%87%E7%A8%8B.png">
 <meta property="og:image" content="https://my-blog-to-use.oss-cn-beijing.aliyuncs.com/2019-6/classloader_WPS%E5%9B%BE%E7%89%87.png">
 <meta property="og:image" content="https://my-blog-to-use.oss-cn-beijing.aliyuncs.com/2019-3/JVM%E8%BF%90%E8%A1%8C%E6%97%B6%E6%95%B0%E6%8D%AE%E5%8C%BA%E5%9F%9F.png">
@@ -44,11 +44,11 @@
 <meta property="og:image" content="http://my-blog-to-use.oss-cn-beijing.aliyuncs.com/18-8-27/22018368.jpg">
 <meta property="og:image" content="http://my-blog-to-use.oss-cn-beijing.aliyuncs.com/18-8-27/82825079.jpg">
 <meta property="article:published_time" content="2020-03-28T15:42:45.000Z">
-<meta property="article:modified_time" content="2020-10-29T15:28:14.177Z">
+<meta property="article:modified_time" content="2020-10-30T12:48:04.198Z">
 <meta property="article:author" content="买斯基">
 <meta property="article:tag" content="jvm">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://media.dreamcat.ink/uPic/JVM%E9%9D%A2%E8%AF%95.png">
+<meta name="twitter:image" content="https://gitee.com/dreamcater/blog-img/raw/master/uPic/JVM%E9%9D%A2%E8%AF%95-F21Sxh.png">
   <!-- Canonical links -->
   <link rel="canonical" href="http://dreamcat.ink/2020/03/28/ge-ren-tu-xie-xi-lie-zong-jie-jvm/index.html">
   
@@ -406,7 +406,7 @@
         <blockquote>
 <p>个人感觉JVM这一块，了解和背的知识点挺多，代码并不是特别多，主要是后期调优，需要大量的经验罢了。不过JVM这一块一定要深刻理解。</p>
 </blockquote>
-<h2 id="大纲图"><a href="#大纲图" class="headerlink" title="大纲图"></a>大纲图</h2><p><img src="http://media.dreamcat.ink/uPic/JVM%E9%9D%A2%E8%AF%95.png" alt="JVM面试"></p>
+<h2 id="大纲图"><a href="#大纲图" class="headerlink" title="大纲图"></a>大纲图</h2><p><img src="https://gitee.com/dreamcater/blog-img/raw/master/uPic/JVM%E9%9D%A2%E8%AF%95-F21Sxh.png" alt="JVM面试-F21Sxh"></p>
 <h3 id="类文件结构"><a href="#类文件结构" class="headerlink" title="类文件结构"></a>类文件结构</h3><h4 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h4><p>在 Java 中，JVM 可以理解的代码就叫做<code>字节码</code>（即扩展名为 <code>.class</code> 的文件），它不面向任何特定的处理器，只面向虚拟机。Java 语言通过字节码的方式，在一定程度上解决了传统解释型语言执行效率低的问题，同时又保留了解释型语言可移植的特点。所以 Java 程序运行时比较高效，而且，由于字节码并不针对一种特定的机器，因此，Java 程序无须重新编译便可在多种不同操作系统的计算机上运行。</p>
 <p><strong>可以说<code>.class</code>文件是不同的语言在 Java 虚拟机之间的重要桥梁，同时也是支持 Java 跨平台很重要的一个原因。</strong></p>
 <h4 id="类文件总结构"><a href="#类文件总结构" class="headerlink" title="类文件总结构"></a>类文件总结构</h4><pre class=" language-java"><code class="language-java">ClassFile <span class="token punctuation">{</span>

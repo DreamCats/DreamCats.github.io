@@ -18,18 +18,18 @@
   
   
   <title>深刻理解volatile的一切 | Dreamcat</title>
-  <meta name="description" content="引言 不得不说，如果谈到volatile只会它的作用：可见性，可序性和不能保证原子性，就太Low了些，因此还得熟悉其中的奥妙才行呀…">
+  <meta name="description" content="引言 不得不说，如果谈到volatile只会它的作用：可见性，可序性和不能保证原子性，就太Low了些，因此还得熟悉其中的奥妙才行呀…  可见性volatile的可见性是指当一个变量被volatile修饰后，这个变量就对所有线程均可见。白话点就是说当一个线程修改了一个volatile修饰的变量后，其他线程可以立刻得知这个变量的修改，拿到最这个变量最新的值。 public class Volatile">
 <meta property="og:type" content="article">
 <meta property="og:title" content="深刻理解volatile的一切">
 <meta property="og:url" content="http://dreamcat.ink/2020/02/13/shen-ke-li-jie-volatile-de-yi-qie/index.html">
 <meta property="og:site_name" content="Dreamcat">
-<meta property="og:description" content="引言 不得不说，如果谈到volatile只会它的作用：可见性，可序性和不能保证原子性，就太Low了些，因此还得熟悉其中的奥妙才行呀…">
+<meta property="og:description" content="引言 不得不说，如果谈到volatile只会它的作用：可见性，可序性和不能保证原子性，就太Low了些，因此还得熟悉其中的奥妙才行呀…  可见性volatile的可见性是指当一个变量被volatile修饰后，这个变量就对所有线程均可见。白话点就是说当一个线程修改了一个volatile修饰的变量后，其他线程可以立刻得知这个变量的修改，拿到最这个变量最新的值。 public class Volatile">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://segmentfault.com/img/bV7PaN?w=485&h=313">
 <meta property="og:image" content="https://segmentfault.com/img/bV7Pbg?w=500&h=306">
 <meta property="og:image" content="https://segmentfault.com/img/bV7Pbl?w=491&h=465">
 <meta property="article:published_time" content="2020-02-12T16:44:43.000Z">
-<meta property="article:modified_time" content="2020-10-29T15:54:29.699Z">
+<meta property="article:modified_time" content="2020-10-30T12:37:34.705Z">
 <meta property="article:author" content="买斯基">
 <meta property="article:tag" content="多线程">
 <meta name="twitter:card" content="summary">
@@ -391,8 +391,6 @@
         <h2 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h2><blockquote>
 <p>不得不说，如果谈到volatile只会它的作用：可见性，可序性和不能保证原子性，就太Low了些，因此还得熟悉其中的奥妙才行呀…</p>
 </blockquote>
-<a id="more"></a>
-
 <h2 id="可见性"><a href="#可见性" class="headerlink" title="可见性"></a>可见性</h2><p><strong>volatile的可见性是指当一个变量被volatile修饰后，这个变量就对所有线程均可见。白话点就是说当一个线程修改了一个volatile修饰的变量后，其他线程可以立刻得知这个变量的修改，拿到最这个变量最新的值。</strong></p>
 <pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">VolatileVisibleDemo</span> <span class="token punctuation">{</span>
 

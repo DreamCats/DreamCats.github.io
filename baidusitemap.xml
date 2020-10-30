@@ -1,8 +1,64 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>http://dreamcat.ink/2020/03/28/ge-ren-tu-xie-xi-lie-zong-jie-jvm/</loc>
+    <lastmod>2020-10-30</lastmod>
+  </url>
+  <url>
+    <loc>http://dreamcat.ink/2020/03/27/ge-ren-tu-xie-xi-lie-zong-jie-java-ji-chu/</loc>
+    <lastmod>2020-10-30</lastmod>
+  </url>
+  <url>
+    <loc>http://dreamcat.ink/2019/09/12/spring-mybatisplus-dai-ma-sheng-cheng-qi/</loc>
+    <lastmod>2020-10-30</lastmod>
+  </url>
+  <url>
+    <loc>http://dreamcat.ink/2019/05/28/windows-mac-he-linux-an-zhuang-redis/</loc>
+    <lastmod>2020-10-30</lastmod>
+  </url>
+  <url>
+    <loc>http://dreamcat.ink/2019/05/29/windows-mac-he-linux-an-zhuang-mongodb/</loc>
+    <lastmod>2020-10-30</lastmod>
+  </url>
+  <url>
+    <loc>http://dreamcat.ink/2019/07/08/windows-mac-he-linux-an-zhuang-java/</loc>
+    <lastmod>2020-10-30</lastmod>
+  </url>
+  <url>
+    <loc>http://dreamcat.ink/2019/05/29/vscode-pei-zhi-zhu-ti-zi-ti-he-chang-yong-cha-jian/</loc>
+    <lastmod>2020-10-30</lastmod>
+  </url>
+  <url>
+    <loc>http://dreamcat.ink/2019/05/24/mac-zhong-duan-iterm2-zsh-oh-my-zsh/</loc>
+    <lastmod>2020-10-30</lastmod>
+  </url>
+  <url>
+    <loc>http://dreamcat.ink/2020/02/10/java-duo-xian-cheng-suo-ji-zhi/</loc>
+    <lastmod>2020-10-30</lastmod>
+  </url>
+  <url>
+    <loc>http://dreamcat.ink/2019/10/31/java-ji-he-treeset-treemap-yuan-ma-jie-xi/</loc>
+    <lastmod>2020-10-30</lastmod>
+  </url>
+  <url>
+    <loc>http://dreamcat.ink/2019/05/24/github-pages-he-hexo-da-jian-ge-ren-bo-ke/</loc>
+    <lastmod>2020-10-30</lastmod>
+  </url>
+  <url>
+    <loc>http://dreamcat.ink/2019/05/25/frp-nei-wang-chuan-tou/</loc>
+    <lastmod>2020-10-30</lastmod>
+  </url>
+  <url>
+    <loc>http://dreamcat.ink/2020/02/13/shen-ke-li-jie-volatile-de-yi-qie/</loc>
+    <lastmod>2020-10-30</lastmod>
+  </url>
+  <url>
+    <loc>http://dreamcat.ink/2019/08/08/jie-jue-vue-kua-yu-de-wen-ti/</loc>
+    <lastmod>2020-10-30</lastmod>
+  </url>
+  <url>
     <loc>http://dreamcat.ink/2020/03/29/ge-ren-tu-xie-xi-lie-zong-jie-mybatis/</loc>
-    <lastmod>2020-10-29</lastmod>
+    <lastmod>2020-10-30</lastmod>
   </url>
   <url>
     <loc>http://dreamcat.ink/2020/02/14/java-duo-xian-cheng-cas-yuan-li-pou-xi/</loc>
@@ -10,14 +66,6 @@
   </url>
   <url>
     <loc>http://dreamcat.ink/2019/07/14/chang-yong-de-sql-yu-ju/</loc>
-    <lastmod>2020-10-29</lastmod>
-  </url>
-  <url>
-    <loc>http://dreamcat.ink/2019/08/08/jie-jue-vue-kua-yu-de-wen-ti/</loc>
-    <lastmod>2020-10-29</lastmod>
-  </url>
-  <url>
-    <loc>http://dreamcat.ink/2020/02/13/shen-ke-li-jie-volatile-de-yi-qie/</loc>
     <lastmod>2020-10-29</lastmod>
   </url>
   <url>
@@ -30,14 +78,6 @@
   </url>
   <url>
     <loc>http://dreamcat.ink/2019/12/10/centos7-pei-zhi-dubbo-he-zookeeper/</loc>
-    <lastmod>2020-10-29</lastmod>
-  </url>
-  <url>
-    <loc>http://dreamcat.ink/2019/05/25/frp-nei-wang-chuan-tou/</loc>
-    <lastmod>2020-10-29</lastmod>
-  </url>
-  <url>
-    <loc>http://dreamcat.ink/2019/05/24/github-pages-he-hexo-da-jian-ge-ren-bo-ke/</loc>
     <lastmod>2020-10-29</lastmod>
   </url>
   <url>
@@ -69,23 +109,11 @@
     <lastmod>2020-10-29</lastmod>
   </url>
   <url>
-    <loc>http://dreamcat.ink/2019/10/31/java-ji-he-treeset-treemap-yuan-ma-jie-xi/</loc>
-    <lastmod>2020-10-29</lastmod>
-  </url>
-  <url>
     <loc>http://dreamcat.ink/2019/10/31/java-ji-he-weakhashmap-yuan-ma-jie-xi/</loc>
     <lastmod>2020-10-29</lastmod>
   </url>
   <url>
-    <loc>http://dreamcat.ink/2020/02/10/java-duo-xian-cheng-suo-ji-zhi/</loc>
-    <lastmod>2020-10-29</lastmod>
-  </url>
-  <url>
     <loc>http://dreamcat.ink/2019/11/12/linux-ji-chu/</loc>
-    <lastmod>2020-10-29</lastmod>
-  </url>
-  <url>
-    <loc>http://dreamcat.ink/2019/05/24/mac-zhong-duan-iterm2-zsh-oh-my-zsh/</loc>
     <lastmod>2020-10-29</lastmod>
   </url>
   <url>
@@ -129,10 +157,6 @@
     <lastmod>2020-10-29</lastmod>
   </url>
   <url>
-    <loc>http://dreamcat.ink/2019/05/29/vscode-pei-zhi-zhu-ti-zi-ti-he-chang-yong-cha-jian/</loc>
-    <lastmod>2020-10-29</lastmod>
-  </url>
-  <url>
     <loc>http://dreamcat.ink/2019/09/12/spring-vue-he-shiro-de-md5-jia-mi/</loc>
     <lastmod>2020-10-29</lastmod>
   </url>
@@ -141,19 +165,7 @@
     <lastmod>2020-10-29</lastmod>
   </url>
   <url>
-    <loc>http://dreamcat.ink/2019/07/08/windows-mac-he-linux-an-zhuang-java/</loc>
-    <lastmod>2020-10-29</lastmod>
-  </url>
-  <url>
-    <loc>http://dreamcat.ink/2019/05/29/windows-mac-he-linux-an-zhuang-mongodb/</loc>
-    <lastmod>2020-10-29</lastmod>
-  </url>
-  <url>
     <loc>http://dreamcat.ink/2019/05/27/windows-mac-he-linux-an-zhuang-mysql/</loc>
-    <lastmod>2020-10-29</lastmod>
-  </url>
-  <url>
-    <loc>http://dreamcat.ink/2019/05/28/windows-mac-he-linux-an-zhuang-redis/</loc>
     <lastmod>2020-10-29</lastmod>
   </url>
   <url>
@@ -165,10 +177,6 @@
     <lastmod>2020-10-29</lastmod>
   </url>
   <url>
-    <loc>http://dreamcat.ink/2019/09/12/spring-mybatisplus-dai-ma-sheng-cheng-qi/</loc>
-    <lastmod>2020-10-29</lastmod>
-  </url>
-  <url>
     <loc>http://dreamcat.ink/2019/03/24/kai-yuan-de-github-xiang-mu-zong-jie/</loc>
     <lastmod>2020-10-29</lastmod>
   </url>
@@ -177,15 +185,7 @@
     <lastmod>2020-10-29</lastmod>
   </url>
   <url>
-    <loc>http://dreamcat.ink/2020/03/27/ge-ren-tu-xie-xi-lie-zong-jie-java-ji-chu/</loc>
-    <lastmod>2020-10-29</lastmod>
-  </url>
-  <url>
     <loc>http://dreamcat.ink/2019/10/30/java-ji-he-linkedlist-yuan-ma-jie-xi/</loc>
-    <lastmod>2020-10-29</lastmod>
-  </url>
-  <url>
-    <loc>http://dreamcat.ink/2020/03/28/ge-ren-tu-xie-xi-lie-zong-jie-jvm/</loc>
     <lastmod>2020-10-29</lastmod>
   </url>
   <url>

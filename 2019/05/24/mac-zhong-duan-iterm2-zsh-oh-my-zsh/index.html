@@ -26,7 +26,7 @@
 <meta property="og:description" content="引言Mac或者linux终端配置… 工具准备 iterm2 iterm2 Solarized Dark Higher Contrast 配色方案 Monaco for Powerline 字体 zsh （Mac 系统自带，无需安装） Oh-My-Zsh Oh-My-Zsh powerlevel9k 主题  开始安装安装 iTerm2 Solarized Dark Higher Contrast 配">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2019-05-24T11:54:07.000Z">
-<meta property="article:modified_time" content="2020-10-29T15:49:13.889Z">
+<meta property="article:modified_time" content="2020-10-30T12:44:29.485Z">
 <meta property="article:author" content="买斯基">
 <meta property="article:tag" content="终端">
 <meta name="twitter:card" content="summary">
@@ -330,7 +330,7 @@
   <div class="slimContent">
     <nav id="toc" class="article-toc">
       <h3 class="toc-title">文章目录</h3>
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#引言"><span class="toc-number">1.</span> <span class="toc-text">引言</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#工具准备"><span class="toc-number">1.1.</span> <span class="toc-text">工具准备</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#开始安装"><span class="toc-number">1.2.</span> <span class="toc-text">开始安装</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#安装-iTerm2-Solarized-Dark-Higher-Contrast-配色方案："><span class="toc-number">1.2.1.</span> <span class="toc-text">安装 iTerm2 Solarized Dark Higher Contrast 配色方案：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#安装-Monaco-for-Powerline-字体："><span class="toc-number">1.2.2.</span> <span class="toc-text">安装 Monaco for Powerline 字体：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#安装配置-zsh："><span class="toc-number">1.2.3.</span> <span class="toc-text">安装配置 zsh：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#安装-Oh-My-Zsh："><span class="toc-number">1.2.4.</span> <span class="toc-text">安装 Oh-My-Zsh：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#安装配置-Oh-My-Zsh-powerlevel9k-主题："><span class="toc-number">1.2.5.</span> <span class="toc-text">安装配置 Oh-My-Zsh powerlevel9k 主题：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#配置-zsh-命令语法高"><span class="toc-number">1.2.6.</span> <span class="toc-text">配置 zsh 命令语法高</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#zsh-syntax-highlighting-命令有语法高亮效"><span class="toc-number">1.2.6.1.</span> <span class="toc-text">zsh-syntax-highlighting 命令有语法高亮效</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#zsh-autosuggestions-代码补全插件"><span class="toc-number">1.2.6.2.</span> <span class="toc-text">zsh-autosuggestions 代码补全插件</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#简单配置插件信息-zshrc"><span class="toc-number">1.2.6.3.</span> <span class="toc-text">简单配置插件信息(.zshrc)</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#常用zsh（powerlevel9k）主题配置"><span class="toc-number">1.3.</span> <span class="toc-text">常用zsh（powerlevel9k）主题配置</span></a></li></ol></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#引言"><span class="toc-number">1.</span> <span class="toc-text">引言</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#工具准备"><span class="toc-number">1.1.</span> <span class="toc-text">工具准备</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#开始安装"><span class="toc-number">1.2.</span> <span class="toc-text">开始安装</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#安装-iTerm2"><span class="toc-number">1.2.1.</span> <span class="toc-text">安装 iTerm2</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#"><span class="toc-number">1.2.2.</span> <span class="toc-text"></span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#安装配置-zsh："><span class="toc-number">1.2.3.</span> <span class="toc-text">安装配置 zsh：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#安装-Oh-My-Zsh："><span class="toc-number">1.2.4.</span> <span class="toc-text">安装 Oh-My-Zsh：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#安装配置-Oh-My-Zsh-powerlevel9k-主题："><span class="toc-number">1.2.5.</span> <span class="toc-text">安装配置 Oh-My-Zsh powerlevel9k 主题：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#配置-zsh-命令语法高"><span class="toc-number">1.2.6.</span> <span class="toc-text">配置 zsh 命令语法高</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#简单配置插件信息-zshrc"><span class="toc-number">1.2.7.</span> <span class="toc-text">简单配置插件信息(.zshrc)</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#常用zsh（powerlevel9k）主题配置"><span class="toc-number">1.3.</span> <span class="toc-text">常用zsh（powerlevel9k）主题配置</span></a></li></ol></li></ol>
     </nav>
   </div>
 </aside>
@@ -393,25 +393,49 @@
 <li><a href="http://ohmyz.sh/" target="_blank" rel="noopener">Oh-My-Zsh</a></li>
 <li><a href="https://github.com/bhilburn/powerlevel9k" target="_blank" rel="noopener">Oh-My-Zsh powerlevel9k 主题</a></li>
 </ol>
-<h3 id="开始安装"><a href="#开始安装" class="headerlink" title="开始安装"></a>开始安装</h3><h4 id="安装-iTerm2-Solarized-Dark-Higher-Contrast-配色方案："><a href="#安装-iTerm2-Solarized-Dark-Higher-Contrast-配色方案：" class="headerlink" title="安装 iTerm2 Solarized Dark Higher Contrast 配色方案："></a>安装 iTerm2 <a href="https://github.com/mbadolato/iTerm2-Color-Schemes/blob/master/schemes/Solarized%20Dark%20Higher%20Contrast.itermcolors" target="_blank" rel="noopener">Solarized Dark Higher Contrast 配色方案</a>：</h4><p>   将该配色方案文件（Solarized Dark Higher Contrast.itermcolors）复制出来，保存到本地，文件命名为 SolarizedDarkHigherContrast.itermcolors ，然后双击即可安装。安装完后打开 iTerm2 终端，依次选择菜单栏：<strong>iTerm2 –&gt; Preferences –&gt; Profiles –&gt; Colors –&gt; Colors Presets –&gt; SolarizedDarkHigherContrast</strong>，至此 iTerm2 Solarized Dark Higher Contrast 配色方案已成功安装。</p>
-<h4 id="安装-Monaco-for-Powerline-字体："><a href="#安装-Monaco-for-Powerline-字体：" class="headerlink" title="安装 Monaco for Powerline 字体："></a>安装 <a href="https://github.com/supermarin/powerline-fonts" target="_blank" rel="noopener">Monaco for Powerline 字体</a>：</h4><p>   将该仓库克隆到本地，然后进入工程目录的 Monaco 目录，双击后缀名为 .otf 的字体文件即可完成该字体的安装。安装该字体的原因主要是为了和 Oh-My-Zsh 的 powerlevel9k 主题相兼容，如果不安装该字体，那么后面安装 powerlevel9kn 主题后会出现乱码。</p>
-<p><code>git clone https://github.com/supermarin/powerline-fonts.git</code></p>
-<p>   Iterm2 偏好设置-&gt;profile-&gt;Text-&gt;Font-&gt;Change Font 更改字体</p>
-<h4 id="安装配置-zsh："><a href="#安装配置-zsh：" class="headerlink" title="安装配置 zsh："></a>安装配置 zsh：</h4><p>   zsh 一般 Mac 已经自带了，无需额外安装。可以用 cat /etc/shells 查看 zsh 是否安装，如果列出了 /bin/zsh 则表明 zsh 已经安装了。<br>   接下来修改 iTerm2 终端的默认 Shell，可以用 echo $SHELL 查看当前 Shell 是什么，如果不是 /bin/zsh 则用如下命令修改 iTerm2 的默认 Shell 为 zsh：</p>
-<p><code>chsh -s /bin/zsh</code></p>
-<h4 id="安装-Oh-My-Zsh："><a href="#安装-Oh-My-Zsh：" class="headerlink" title="安装 Oh-My-Zsh："></a>安装 <a href="http://ohmyz.sh/" target="_blank" rel="noopener">Oh-My-Zsh</a>：</h4><p><code>sh -c &quot;$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)&quot;</code></p>
+<h3 id="开始安装"><a href="#开始安装" class="headerlink" title="开始安装"></a>开始安装</h3><h4 id="安装-iTerm2"><a href="#安装-iTerm2" class="headerlink" title="安装 iTerm2"></a>安装 iTerm2</h4><ul>
+<li><p><a href="https://github.com/mbadolato/iTerm2-Color-Schemes/blob/master/schemes/Solarized%20Dark%20Higher%20Contrast.itermcolors" target="_blank" rel="noopener">Solarized Dark Higher Contrast 配色方案</a>：</p>
+</li>
+<li><p>将该配色方案文件（Solarized Dark Higher Contrast.itermcolors）复制出来，保存到本地，文件命名为 SolarizedDarkHigherContrast.itermcolors ，然后双击即可安装。安装完后打开 iTerm2 终端，依次选择菜单栏：<strong>iTerm2 –&gt; Preferences –&gt; Profiles –&gt; Colors –&gt; Colors Presets –&gt; SolarizedDarkHigherContrast</strong>，至此 iTerm2 Solarized Dark Higher Contrast 配色方案已成功安装。</p>
+</li>
+</ul>
+<h4 id=""><a href="#" class="headerlink" title=""></a></h4><ul>
+<li><p>安装 <a href="https://github.com/supermarin/powerline-fonts" target="_blank" rel="noopener">Monaco for Powerline 字体</a>：</p>
+</li>
+<li><p>将该仓库克隆到本地，然后进入工程目录的 Monaco 目录，双击后缀名为 .otf 的字体文件即可完成该字体的安装。安装该字体的原因主要是为了和 Oh-My-Zsh 的 powerlevel9k 主题相兼容，如果不安装该字体，那么后面安装 powerlevel9kn 主题后会出现乱码。</p>
+</li>
+<li><p><code>git clone https://github.com/supermarin/powerline-fonts.git</code></p>
+</li>
+<li><p>Iterm2 偏好设置-&gt;profile-&gt;Text-&gt;Font-&gt;Change Font 更改字体</p>
+</li>
+</ul>
+<h4 id="安装配置-zsh："><a href="#安装配置-zsh：" class="headerlink" title="安装配置 zsh："></a>安装配置 zsh：</h4><ul>
+<li><p>zsh 一般 Mac 已经自带了，无需额外安装。可以用 cat /etc/shells 查看 zsh 是否安装，如果列出了 /bin/zsh 则表明 zsh 已经安装了。 </p>
+</li>
+<li><p>接下来修改 iTerm2 终端的默认 Shell，可以用 echo $SHELL 查看当前 Shell 是什么，如果不是 /bin/zsh 则用如下命令修改 iTerm2 的默认 Shell 为 zsh：</p>
+</li>
+<li><p><code>chsh -s /bin/zsh</code></p>
+</li>
+</ul>
+<h4 id="安装-Oh-My-Zsh："><a href="#安装-Oh-My-Zsh：" class="headerlink" title="安装 Oh-My-Zsh："></a>安装 <a href="http://ohmyz.sh/" target="_blank" rel="noopener">Oh-My-Zsh</a>：</h4><ul>
+<li><code>sh -c &quot;$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)&quot;</code></li>
+</ul>
 <h4 id="安装配置-Oh-My-Zsh-powerlevel9k-主题："><a href="#安装配置-Oh-My-Zsh-powerlevel9k-主题：" class="headerlink" title="安装配置 Oh-My-Zsh powerlevel9k 主题："></a>安装配置 <a href="https://github.com/bhilburn/powerlevel9k" target="_blank" rel="noopener">Oh-My-Zsh powerlevel9k 主题</a>：</h4><ul>
 <li>克隆该仓库到 oh-my-zsh 用户自定义主题目录<code>git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/themes/powerlevel9k</code></li>
 <li>修改 ~/.zshrc 配置文件，配置该主题<code>ZSH_THEME=&quot;powerlevel9k/powerlevel9k&quot;</code></li>
 <li>配置代码见文章底部</li>
 </ul>
-<h4 id="配置-zsh-命令语法高"><a href="#配置-zsh-命令语法高" class="headerlink" title="配置 zsh 命令语法高"></a>配置 zsh 命令语法高</h4><h5 id="zsh-syntax-highlighting-命令有语法高亮效"><a href="#zsh-syntax-highlighting-命令有语法高亮效" class="headerlink" title="zsh-syntax-highlighting 命令有语法高亮效"></a><a href="https://github.com/zsh-users/zsh-syntax-highlighting" target="_blank" rel="noopener">zsh-syntax-highlighting</a> 命令有语法高亮效</h5><ul>
-<li><code>git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting</code></li>
+<h4 id="配置-zsh-命令语法高"><a href="#配置-zsh-命令语法高" class="headerlink" title="配置 zsh 命令语法高"></a>配置 zsh 命令语法高</h4><ul>
+<li><p><a href="https://github.com/zsh-users/zsh-syntax-highlighting" target="_blank" rel="noopener">zsh-syntax-highlighting</a> 命令有语法高亮效</p>
+</li>
+<li><p><code>git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting</code></p>
+</li>
+<li><p><a href="https://github.com/zsh-users/zsh-autosuggestions" target="_blank" rel="noopener">zsh-autosuggestions</a> 代码补全插件</p>
+</li>
+<li><p><code>git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions</code></p>
+</li>
 </ul>
-<h5 id="zsh-autosuggestions-代码补全插件"><a href="#zsh-autosuggestions-代码补全插件" class="headerlink" title="zsh-autosuggestions 代码补全插件"></a><a href="https://github.com/zsh-users/zsh-autosuggestions" target="_blank" rel="noopener">zsh-autosuggestions</a> 代码补全插件</h5><ul>
-<li><code>git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions</code></li>
-</ul>
-<h5 id="简单配置插件信息-zshrc"><a href="#简单配置插件信息-zshrc" class="headerlink" title="简单配置插件信息(.zshrc)"></a>简单配置插件信息(.zshrc)</h5><pre class=" language-shell"><code class="language-shell"># Add wisely, as too many plugins slow down shell startup.
+<h4 id="简单配置插件信息-zshrc"><a href="#简单配置插件信息-zshrc" class="headerlink" title="简单配置插件信息(.zshrc)"></a>简单配置插件信息(.zshrc)</h4><pre class=" language-shell"><code class="language-shell"># Add wisely, as too many plugins slow down shell startup.
 plugins=(
    git
    extract
