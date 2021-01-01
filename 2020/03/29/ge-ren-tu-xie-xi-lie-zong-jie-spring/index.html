@@ -25,18 +25,17 @@
 <meta property="og:site_name" content="Dreamcat">
 <meta property="og:description" content="个人感觉，Spring这一块，不仅会用，还得知道底层的源码或者是说初始化加载等过程吧，这篇就不介绍如何配置以及各个注解的使用，在这里不是重点。  大纲图 什么是Spring框架我们一般说 Spring 框架指的都是 Spring Framework，它是很多模块的集合，使用这些模块可以很方便地协助我们进行开发。这些模块是：核心容器、数据访问&#x2F;集成,、Web、AOP（面向切面编程）、工具、消息和测">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://gitee.com/dreamcater/blog-img/raw/master/uPic/Spring%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98-F2ktkQ.png">
-<meta property="og:image" content="http://media.dreamcat.ink//20200201150935.png">
-<meta property="og:image" content="http://my-blog-to-use.oss-cn-beijing.aliyuncs.com/18-9-17/5496407.jpg">
+<meta property="og:image" content="https://gitee.com/dreamcater/blog-img/raw/master/uPic/Spring-3IupsD.png">
+<meta property="og:image" content="https://gitee.com/dreamcater/blog-img/raw/master/uPic/bean%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F-GbJvfY.png">
 <meta property="og:image" content="http://my-blog-to-use.oss-cn-beijing.aliyuncs.com/18-10-11/60679444.jpg">
 <meta property="og:image" content="http://my-blog-to-use.oss-cn-beijing.aliyuncs.com/18-10-11/49790288.jpg">
 <meta property="og:image" content="http://media.dreamcat.ink//20200203211202.png">
 <meta property="article:published_time" content="2020-03-29T07:45:57.000Z">
-<meta property="article:modified_time" content="2020-10-30T12:58:56.448Z">
+<meta property="article:modified_time" content="2021-01-01T09:55:15.383Z">
 <meta property="article:author" content="买斯基">
 <meta property="article:tag" content="spring">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://gitee.com/dreamcater/blog-img/raw/master/uPic/Spring%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98-F2ktkQ.png">
+<meta name="twitter:image" content="https://gitee.com/dreamcater/blog-img/raw/master/uPic/Spring-3IupsD.png">
   <!-- Canonical links -->
   <link rel="canonical" href="http://dreamcat.ink/2020/03/29/ge-ren-tu-xie-xi-lie-zong-jie-spring/index.html">
   
@@ -381,7 +380,7 @@
         <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2020/03/29/ge-ren-tu-xie-xi-lie-zong-jie-spring/#comments" class="article-comment-link">评论</a></span>
         
 	
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 5.1k(字)</span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 5k(字)</span>
 	
 	
 		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 19(分)</span>
@@ -394,7 +393,7 @@
         <blockquote>
 <p>个人感觉，Spring这一块，不仅会用，还得知道底层的源码或者是说初始化加载等过程吧，这篇就不介绍如何配置以及各个注解的使用，在这里不是重点。</p>
 </blockquote>
-<h2 id="大纲图"><a href="#大纲图" class="headerlink" title="大纲图"></a>大纲图</h2><p><img src="https://gitee.com/dreamcater/blog-img/raw/master/uPic/Spring%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98-F2ktkQ.png" alt="Spring常见问题-F2ktkQ"></p>
+<h2 id="大纲图"><a href="#大纲图" class="headerlink" title="大纲图"></a>大纲图</h2><p><img src="https://gitee.com/dreamcater/blog-img/raw/master/uPic/Spring-3IupsD.png" alt="Spring"></p>
 <h3 id="什么是Spring框架"><a href="#什么是Spring框架" class="headerlink" title="什么是Spring框架"></a>什么是Spring框架</h3><p>我们一般说 Spring 框架指的都是 Spring Framework，它是很多模块的集合，使用这些模块可以很方便地协助我们进行开发。这些模块是：核心容器、数据访问/集成,、Web、AOP（面向切面编程）、工具、消息和测试模块。比如：Core Container 中的 Core 组件是Spring 所有组件的核心，Beans 组件和 Context 组件是实现IOC和依赖注入的基础，AOP组件用来实现面向切面编程。</p>
 <p>Spring 官网列出的 Spring 的 6 个特征:</p>
 <ul>
@@ -433,10 +432,13 @@
 
       <span class="token comment" spellcheck="true">// 准备工作，记录下容器的启动时间、标记“已启动”状态、处理配置文件中的占位符</span>
       <span class="token function">prepareRefresh</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-      <span class="token comment" spellcheck="true">// 这步比较关键，这步完成后，配置文件就会解析成一个个 Bean 定义，注册到 BeanFactory 中，</span>
-      <span class="token comment" spellcheck="true">// 当然，这里说的 Bean 还没有初始化，只是配置信息都提取出来了，</span>
-      <span class="token comment" spellcheck="true">// 注册也只是将这些信息都保存到了注册中心(说到底核心是一个 beanName-> beanDefinition 的 map)</span>
+      <span class="token comment" spellcheck="true">// Tell the subclass to refresh the internal bean factory.</span>
+      <span class="token comment" spellcheck="true">//获得容器ApplicationContext的子类BeanFactory。步骤如下：</span>
+      <span class="token comment" spellcheck="true">//1.如果已经有了BeanFactory就销毁它里面的单例Bean并关闭这个BeanFactory。</span>
+      <span class="token comment" spellcheck="true">//2.创建一个新的BeanFactory。</span>
+      <span class="token comment" spellcheck="true">//3.对这个BeanFactory进行定制（customize),如allowBeanDefinitionOverriding等参数</span>
+      <span class="token comment" spellcheck="true">//4.转载BeanDefinitions(读取配置文件，将xml转换成对应得BeanDefinition)</span>
+      <span class="token comment" spellcheck="true">//5.检查是否同时启动了两个BeanFactory。 </span>
       ConfigurableListableBeanFactory beanFactory <span class="token operator">=</span> <span class="token function">obtainFreshBeanFactory</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
       <span class="token comment" spellcheck="true">// 设置 BeanFactory 的类加载器，添加几个 BeanPostProcessor，手动注册几个特殊的 bean</span>
@@ -444,16 +446,14 @@
       <span class="token function">prepareBeanFactory</span><span class="token punctuation">(</span>beanFactory<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
       <span class="token keyword">try</span> <span class="token punctuation">{</span>
-         <span class="token comment" spellcheck="true">// 【这里需要知道 BeanFactoryPostProcessor 这个知识点，Bean 如果实现了此接口，</span>
-         <span class="token comment" spellcheck="true">// 那么在容器初始化以后，Spring 会负责调用里面的 postProcessBeanFactory 方法。】</span>
-
-         <span class="token comment" spellcheck="true">// 这里是提供给子类的扩展点，到这里的时候，所有的 Bean 都加载、注册完成了，但是都还没有初始化</span>
+         <span class="token comment" spellcheck="true">// 设置beanFactory的后置处理器</span>
          <span class="token comment" spellcheck="true">// 具体的子类可以在这步的时候添加一些特殊的 BeanFactoryPostProcessor 的实现类或做点什么事</span>
          <span class="token function">postProcessBeanFactory</span><span class="token punctuation">(</span>beanFactory<span class="token punctuation">)</span><span class="token punctuation">;</span>
+         <span class="token comment" spellcheck="true">// 调用beanFactory的后置处理器</span>
          <span class="token comment" spellcheck="true">// 调用 BeanFactoryPostProcessor 各个实现类的 postProcessBeanFactory(factory) 方法</span>
          <span class="token function">invokeBeanFactoryPostProcessors</span><span class="token punctuation">(</span>beanFactory<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-         <span class="token comment" spellcheck="true">// 注册 BeanPostProcessor 的实现类，注意看和 BeanFactoryPostProcessor 的区别</span>
+         <span class="token comment" spellcheck="true">// 注册 BeanPostProcessor 的实现类（bean的后置处理器）</span>
          <span class="token comment" spellcheck="true">// 此接口两个方法: postProcessBeforeInitialization 和 postProcessAfterInitialization</span>
          <span class="token comment" spellcheck="true">// 两个方法分别在 Bean 初始化之前和初始化之后得到执行。注意，到这里 Bean 还没初始化</span>
          <span class="token function">registerBeanPostProcessors</span><span class="token punctuation">(</span>beanFactory<span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -464,7 +464,7 @@
          <span class="token comment" spellcheck="true">// 初始化当前 ApplicationContext 的事件广播器，这里也不展开了</span>
          <span class="token function">initApplicationEventMulticaster</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-         <span class="token comment" spellcheck="true">// 从方法名就可以知道，典型的模板方法(钩子方法)，</span>
+         <span class="token comment" spellcheck="true">// 模板方法(钩子方法)，</span>
          <span class="token comment" spellcheck="true">// 具体的子类可以在这里初始化一些特殊的 Bean（在初始化 singleton beans 之前）</span>
          <span class="token function">onRefresh</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
@@ -533,12 +533,11 @@
 <p>更详细的源码可看</p>
 <ol>
 <li><a href="http://dreamcat.ink/2020/01/31/spring-springaop-yuan-ma-fen-xi/">http://dreamcat.ink/2020/01/31/spring-springaop-yuan-ma-fen-xi/ </a></li>
-<li><a href="https://javadoop.com/post/spring-ioc]" target="_blank" rel="noopener"> https://javadoop.com/post/spring-ioc</a></li>
+<li><a href="https://javadoop.com/post/spring-ioc]" target="_blank" rel="noopener">https://javadoop.com/post/spring-ioc</a></li>
 </ol>
 <h4 id="AOP"><a href="#AOP" class="headerlink" title="AOP"></a>AOP</h4><p>AOP(Aspect-Oriented Programming:面向切面编程)能够将那些与业务无关，<strong>却为业务模块所共同调用的逻辑或责任（例如事务处理、日志管理、权限控制等）封装起来</strong>，便于<strong>减少系统的重复代码</strong>，<strong>降低模块间的耦合度</strong>，并<strong>有利于未来的可拓展性和可维护性</strong>。<br><strong>Spring AOP就是基于动态代理的</strong>，如果要代理的对象，实现了某个接口，那么Spring AOP会使用<strong>JDK Proxy</strong>，去创建代理对象，而对于没有实现接口的对象，就无法使用 JDK Proxy 去进行代理了，这时候Spring AOP会使用<strong>Cglib</strong> ，这时候Spring AOP会使用 <strong>Cglib</strong> 生成一个被代理对象的子类来作为代理。<br>当然你也可以使用 AspectJ ,Spring AOP 已经集成了AspectJ ，AspectJ 应该算的上是 Java 生态系统中最完整的 AOP 框架了。<br>使用 AOP 之后我们可以把一些通用功能抽象出来，在需要用到的地方直接使用即可，这样大大简化了代码量。我们需要增加新功能时也方便，这样也提高了系统扩展性。日志功能、事务管理等等场景都用到了 AOP 。</p>
 <h5 id="Spring-AOP-和-AspectJ-AOP-有什么区别"><a href="#Spring-AOP-和-AspectJ-AOP-有什么区别" class="headerlink" title="Spring AOP 和 AspectJ AOP 有什么区别"></a>Spring AOP 和 AspectJ AOP 有什么区别</h5><p><strong>Spring AOP 属于运行时增强，而 AspectJ 是编译时增强。</strong> Spring AOP 基于代理(Proxying)，而 AspectJ 基于字节码操作(Bytecode Manipulation)<br>Spring AOP 已经集成了 AspectJ ，AspectJ 应该算的上是 Java 生态系统中最完整的 AOP 框架了。AspectJ 相比于 Spring AOP 功能更加强大，但是 Spring AOP 相对来说更简单，<br>如果我们的切面比较少，那么两者性能差异不大。但是，当切面太多的话，最好选择 AspectJ ，它比Spring AOP 快很多。</p>
-<h5 id="源码总结"><a href="#源码总结" class="headerlink" title="源码总结"></a>源码总结</h5><p><img src="http://media.dreamcat.ink//20200201150935.png" alt="AnnotationAwareAspectJAutoProxyCreator"></p>
-<ol>
+<h5 id="源码总结"><a href="#源码总结" class="headerlink" title="源码总结"></a>源码总结</h5><ol>
 <li>@EnableAspectJAutoProxy 开启AOP功能</li>
 <li>@EnableAspectJAutoProxy 会给容器中注册一个组件 AnnotationAwareAspectJAutoProxyCreator</li>
 <li>AnnotationAwareAspectJAutoProxyCreator是一个后置处理器；</li>
@@ -592,7 +591,7 @@
 <li><code>@Service</code> : 对应服务层，主要涉及一些复杂的逻辑，需要用到 Dao层。</li>
 <li><code>@Controller</code> : 对应 Spring MVC 控制层，主要用户接受用户请求并调用 Service 层返回数据给前端页面。</li>
 </ul>
-<h4 id="Bean的声明周期"><a href="#Bean的声明周期" class="headerlink" title="Bean的声明周期"></a>Bean的声明周期</h4><p><img src="http://my-blog-to-use.oss-cn-beijing.aliyuncs.com/18-9-17/5496407.jpg" alt="bean周期"></p>
+<h4 id="Bean的声明周期"><a href="#Bean的声明周期" class="headerlink" title="Bean的声明周期"></a>Bean的声明周期</h4><p><img src="https://gitee.com/dreamcater/blog-img/raw/master/uPic/bean%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F-GbJvfY.png" alt="bean的生命周期"></p>
 <ul>
 <li>Bean 容器找到配置文件中 Spring Bean 的定义。</li>
 <li>Bean 容器利用 Java Reflection API 创建一个Bean的实例。</li>

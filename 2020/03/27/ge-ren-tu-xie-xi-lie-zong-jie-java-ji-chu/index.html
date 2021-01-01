@@ -25,19 +25,19 @@
 <meta property="og:site_name" content="Dreamcat">
 <meta property="og:description" content="大纲图 简述线程、程序、进程的基本概念。以及他们之间关系是什么?线程与进程相似，但线程是一个比进程更小的执行单位。一个进程在其执行的过程中可以产生多个线程。与进程不同的是同类的多个线程共享同一块内存空间和一组系统资源，所以系统在产生一个线程，或是在各个线程之间作切换工作时，负担要比进程小得多，也正因为如此，线程也被称为轻量级进程。 程序是含有指令和数据的文件，被存储在磁盘或其他的数据存储设备中，也">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://gitee.com/dreamcater/blog-img/raw/master/uPic/%E5%9F%BA%E7%A1%80%E9%9D%A2%E8%AF%95-AFZRNg.png">
+<meta property="og:image" content="https://gitee.com/dreamcater/blog-img/raw/master/uPic/Java%E5%9F%BA%E7%A1%80-OPu6Gh.png">
 <meta property="og:image" content="http://my-blog-to-use.oss-cn-beijing.aliyuncs.com/18-9-15/86735519.jpg">
-<meta property="og:image" content="http://media.dreamcat.ink/uPic/%E5%9F%BA%E6%9C%AC%E7%B1%BB%E5%9E%8B%E4%BC%A0%E9%80%92%20.png">
-<meta property="og:image" content="http://media.dreamcat.ink/uPic/%E6%95%B0%E7%BB%84%E7%B1%BB%E5%9E%8B%E4%BC%A0%E9%80%92.png">
-<meta property="og:image" content="http://media.dreamcat.ink/uPic/%E5%AF%B9%E8%B1%A1%E5%BC%95%E7%94%A8%E4%BC%A0%E9%80%92.png">
-<meta property="og:image" content="http://media.dreamcat.ink/uPic/%E5%BC%82%E5%B8%B8%E5%88%86%E7%B1%BB.png">
+<meta property="og:image" content="https://gitee.com/dreamcater/blog-img/raw/master/uPic/%E5%9F%BA%E6%9C%AC%E7%B1%BB%E5%9E%8B%E4%BC%A0%E9%80%92-QPPzXh.png">
+<meta property="og:image" content="https://gitee.com/dreamcater/blog-img/raw/master/uPic/%E6%95%B0%E7%BB%84%E7%B1%BB%E5%9E%8B%E6%8E%A8%E6%96%AD-fxStps.png">
+<meta property="og:image" content="https://gitee.com/dreamcater/blog-img/raw/master/uPic/%E5%AF%B9%E8%B1%A1%E5%BC%95%E7%94%A8%E4%BC%A0%E9%80%92-m3CrXE.png">
+<meta property="og:image" content="https://gitee.com/dreamcater/blog-img/raw/master/uPic/%E5%BC%82%E5%B8%B8%E5%88%86%E7%B1%BB-69XgYJ.png">
 <meta property="og:image" content="https://my-blog-to-use.oss-cn-beijing.aliyuncs.com/2019-7/java-deep-and-shallow-copy.jpg">
 <meta property="article:published_time" content="2020-03-27T07:07:33.000Z">
-<meta property="article:modified_time" content="2020-10-30T12:47:08.478Z">
+<meta property="article:modified_time" content="2021-01-01T09:51:02.670Z">
 <meta property="article:author" content="买斯基">
 <meta property="article:tag" content="java基础">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://gitee.com/dreamcater/blog-img/raw/master/uPic/%E5%9F%BA%E7%A1%80%E9%9D%A2%E8%AF%95-AFZRNg.png">
+<meta name="twitter:image" content="https://gitee.com/dreamcater/blog-img/raw/master/uPic/Java%E5%9F%BA%E7%A1%80-OPu6Gh.png">
   <!-- Canonical links -->
   <link rel="canonical" href="http://dreamcat.ink/2020/03/27/ge-ren-tu-xie-xi-lie-zong-jie-java-ji-chu/index.html">
   
@@ -392,7 +392,7 @@
     </div>
     <div class="article-entry marked-body" itemprop="articleBody">
       
-        <h2 id="大纲图"><a href="#大纲图" class="headerlink" title="大纲图"></a>大纲图</h2><p><img src="https://gitee.com/dreamcater/blog-img/raw/master/uPic/%E5%9F%BA%E7%A1%80%E9%9D%A2%E8%AF%95-AFZRNg.png" alt="基础面试-AFZRNg"></p>
+        <h2 id="大纲图"><a href="#大纲图" class="headerlink" title="大纲图"></a>大纲图</h2><p><img src="https://gitee.com/dreamcater/blog-img/raw/master/uPic/Java%E5%9F%BA%E7%A1%80-OPu6Gh.png" alt="Java基础"></p>
 <h3 id="简述线程、程序、进程的基本概念。以及他们之间关系是什么"><a href="#简述线程、程序、进程的基本概念。以及他们之间关系是什么" class="headerlink" title="简述线程、程序、进程的基本概念。以及他们之间关系是什么?"></a>简述线程、程序、进程的基本概念。以及他们之间关系是什么?</h3><p><strong>线程</strong>与进程相似，但线程是一个比进程更小的执行单位。一个进程在其执行的过程中可以产生多个线程。与进程不同的是同类的多个线程共享同一块内存空间和一组系统资源，所以系统在产生一个线程，或是在各个线程之间作切换工作时，负担要比进程小得多，也正因为如此，线程也被称为轻量级进程。</p>
 <p><strong>程序</strong>是含有指令和数据的文件，被存储在磁盘或其他的数据存储设备中，也就是说程序是静态的代码。</p>
 <p><strong>进程</strong>是程序的一次执行过程，是系统运行程序的基本单位，因此进程是动态的。系统运行一个程序即是一个进程从创建，运行到消亡的过程。简单来说，一个进程就是一个执行中的程序，它在计算机中一个指令接着一个指令地执行着，同时，每个进程还占有某些系统资源如CPU时间，内存空间，文件，输入输出设备的使用权等等。换句话说，当程序在执行时，将会被操作系统载入内存中。 线程是进程划分成的更小的运行单位。线程和进程最大的不同在于基本上各进程是独立的，而各线程则不一定，因为同一进程中的线程极有可能会相互影响。从另一角度来说，进程属于操作系统的范畴，主要是同一段时间内，可以同时执行一个以上的程序，而线程则是在同一程序内几乎同时执行一个以上的程序段。</p>
@@ -599,7 +599,7 @@
 <span class="token comment" spellcheck="true">// b = 10</span>
 <span class="token comment" spellcheck="true">// num1 = 10</span>
 <span class="token comment" spellcheck="true">// num2 = 20</span></code></pre>
-<p><img src="http://media.dreamcat.ink/uPic/%E5%9F%BA%E6%9C%AC%E7%B1%BB%E5%9E%8B%E4%BC%A0%E9%80%92%20.png" alt="基本类型传递"></p>
+<p><img src="https://gitee.com/dreamcater/blog-img/raw/master/uPic/%E5%9F%BA%E6%9C%AC%E7%B1%BB%E5%9E%8B%E4%BC%A0%E9%80%92-QPPzXh.png" alt="基本类型传递"></p>
 <p>在 swap 方法中，a、b 的值进行交换，并不会影响到 num1、num2。因为，a、b 中的值，只是从 num1、num2 的复制过来的。也就是说，a、b 相当于 num1、num2 的副本，副本的内容无论怎么修改，都不会影响到原件本身。</p>
 <p>接下来看数组：</p>
 <pre class=" language-java"><code class="language-java">    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
@@ -616,7 +616,7 @@
     <span class="token punctuation">}</span>
 <span class="token comment" spellcheck="true">// 1</span>
 <span class="token comment" spellcheck="true">// 0</span></code></pre>
-<p><img src="http://media.dreamcat.ink/uPic/%E6%95%B0%E7%BB%84%E7%B1%BB%E5%9E%8B%E4%BC%A0%E9%80%92.png" alt="数组类型传递"></p>
+<p><img src="https://gitee.com/dreamcater/blog-img/raw/master/uPic/%E6%95%B0%E7%BB%84%E7%B1%BB%E5%9E%8B%E6%8E%A8%E6%96%AD-fxStps.png" alt="数组类型传递"></p>
 <p>array 被初始化 arr 的拷贝也就是一个对象的引用，也就是说 array 和 arr 指向的是同一个数组对象。 因此，外部对引用对象的改变会反映到所对应的对象上。</p>
 <p><strong>通过 example2 我们已经看到，实现一个改变对象参数状态的方法并不是一件难事。理由很简单，方法得到的是对象引用的拷贝，对象引用及其他的拷贝同时引用同一个对象。</strong></p>
 <p>再看对象引用例子：</p>
@@ -642,7 +642,7 @@
 <span class="token comment" spellcheck="true">// y:Mai</span>
 <span class="token comment" spellcheck="true">// s1:Mai</span>
 <span class="token comment" spellcheck="true">// s2:Feng</span></code></pre>
-<p><img src="http://media.dreamcat.ink/uPic/%E5%AF%B9%E8%B1%A1%E5%BC%95%E7%94%A8%E4%BC%A0%E9%80%92.png" alt="对象引用传递"></p>
+<p><img src="https://gitee.com/dreamcater/blog-img/raw/master/uPic/%E5%AF%B9%E8%B1%A1%E5%BC%95%E7%94%A8%E4%BC%A0%E9%80%92-m3CrXE.png" alt="对象引用传递"></p>
 <p><strong>方法并没有改变存储在变量 s1 和 s2 中的对象引用。swap 方法的参数 x 和 y 被初始化为两个对象引用的拷贝，这个方法交换的是这两个拷贝</strong></p>
 <p>下面再总结一下 Java 中方法参数的使用情况：</p>
 <ul>
@@ -864,7 +864,7 @@ str1 <span class="token operator">==</span> str6<span class="token punctuation">
 <li>RuntimeException</li>
 <li>NullPointerException、ArrayIndexOutOfBoundsException、ClassCastException。</li>
 </ul>
-<h4 id="Throwable图解"><a href="#Throwable图解" class="headerlink" title="Throwable图解"></a>Throwable图解</h4><p><img src="http://media.dreamcat.ink/uPic/%E5%BC%82%E5%B8%B8%E5%88%86%E7%B1%BB.png" alt="异常分类"></p>
+<h4 id="Throwable图解"><a href="#Throwable图解" class="headerlink" title="Throwable图解"></a>Throwable图解</h4><p><img src="https://gitee.com/dreamcater/blog-img/raw/master/uPic/%E5%BC%82%E5%B8%B8%E5%88%86%E7%B1%BB-69XgYJ.png" alt="异常分类"></p>
 <h3 id="IO"><a href="#IO" class="headerlink" title="IO"></a>IO</h3><h4 id="获取用键盘输入常用的两种方法"><a href="#获取用键盘输入常用的两种方法" class="headerlink" title="获取用键盘输入常用的两种方法"></a>获取用键盘输入常用的两种方法</h4><p>方法1：通过 Scanner</p>
 <pre class=" language-java"><code class="language-java">Scanner input <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Scanner</span><span class="token punctuation">(</span>System<span class="token punctuation">.</span>in<span class="token punctuation">)</span><span class="token punctuation">;</span>
 String s  <span class="token operator">=</span> input<span class="token punctuation">.</span><span class="token function">nextLine</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -1035,9 +1035,9 @@ String s <span class="token operator">=</span> input<span class="token punctuati
 <li><p><strong>浅拷贝</strong>：对基本数据类型进行值传递，对引用数据类型进行引用传递般的拷贝，此为浅拷贝。</p>
 </li>
 <li><p><strong>深拷贝</strong>：对基本数据类型进行值传递，对引用数据类型，创建一个新的对象，并复制其内容，此为深拷贝。</p>
-<p><img src="https://my-blog-to-use.oss-cn-beijing.aliyuncs.com/2019-7/java-deep-and-shallow-copy.jpg" alt="deep and shallow copy"></p>
 </li>
 </ol>
+<p><img src="https://my-blog-to-use.oss-cn-beijing.aliyuncs.com/2019-7/java-deep-and-shallow-copy.jpg" alt="deep and shallow copy"></p>
 <h4 id="浅拷贝例子"><a href="#浅拷贝例子" class="headerlink" title="浅拷贝例子"></a>浅拷贝例子</h4><pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">ShallowCopyDemo</span> <span class="token punctuation">{</span>
     <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token keyword">throws</span> CloneNotSupportedException <span class="token punctuation">{</span>
         <span class="token comment" spellcheck="true">// 原始对象</span>
@@ -1095,6 +1095,9 @@ String s <span class="token operator">=</span> input<span class="token punctuati
 原始对象和拷贝对象的subj属性是否一样: false
 更新后的原始对象: 小 - 疯
 更新原始对象后的克隆对象: 峰 - 买</code></pre><p><strong>可以看到，浅拷贝中的引用类型创建一份新对象</strong>。</p>
+<blockquote>
+<p>创作不易哇，觉得有帮助的话，给个小小的star呗。<a href="https://github.com/DreamCats/JavaBooks" target="_blank" rel="noopener">github地址</a>😁😁😁</p>
+</blockquote>
 
       
     </div>
